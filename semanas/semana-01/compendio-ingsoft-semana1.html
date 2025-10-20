@@ -1,0 +1,1817 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 1 - Ingeniería de Software Moderna</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UIDE Theme CSS -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        .concept-box h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .r-hstack {
+                flex-direction: column;
+            }
+
+            .concept-box {
+                padding: 1rem;
+                font-size: 0.9em;
+            }
+
+            .concept-box h4 {
+                font-size: 1.1em;
+            }
+        }
+
+        .timeline-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1>Ingeniería de Software Moderna</h1>
+                    <h2>Semana 1</h2>
+
+                    <div class="course-info">
+                        <strong>LTI_05A_INS</strong> • Quinto Nivel<br>
+                        <strong>Ingeniería del Software</strong><br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em><br>
+                        Universidad Internacional del Ecuador • 2025
+                    </div>
+
+                    <div
+                        style="background: rgba(233, 171, 33, 0.1); border-radius: 8px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                        <strong>Unidad 1: Fundamentos e Introducción</strong><br>
+                        <em>Semana 1 de 16 • Ingeniería de software moderna, ética de IA y descubrimiento de
+                            proyectos</em>
+                    </div>
+
+                    <div style="margin-top: 2em; font-size: 0.9em; font-style: italic; color: var(--uide-secondary);">
+                        Transformación digital, inteligencia artificial y gestión de proyectos
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Slide -->
+            <section data-background-color="#f8f8f8">
+                <blockquote style="font-size: 1.2em; text-align: center;">
+                    <p><strong>"El software sofisticado ahora está incrustado dentro de todo, desde la electrónica de
+                            consumo hasta los dispositivos médicos y los vehículos autónomos."</strong></p>
+                    <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                        — Tendencias modernas en Ingeniería de Software
+                    </footer>
+                </blockquote>
+            </section>
+
+            <!-- Curriculum Context -->
+            <section data-background-color="#f8f8f8">
+                <h2>Contexto en la Unidad 1</h2>
+
+                <section>
+                    <h3>Progresión Temática</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Semana 1 (Actual)</h4>
+                            <div
+                                style="background: rgba(233, 171, 33, 0.2); padding: 1em; border-radius: 8px; border: 2px solid var(--uide-accent);">
+                                <strong>Ingeniería de Software Moderna</strong><br>
+                                <small>Nube, IA, producto, ética y descubrimiento de proyectos</small>
+                            </div>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Próximamente</h4>
+                            <div style="background: rgba(145, 0, 72, 0.1); padding: 1em; border-radius: 8px;">
+                                <strong>Semana 2</strong><br>
+                                <small>Ingeniería de Requerimientos</small>
+                            </div>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Futuro</h4>
+                            <div style="background: rgba(35, 53, 110, 0.1); padding: 1em; border-radius: 8px;">
+                                <strong>Unidad 2</strong><br>
+                                <small>Diseño y Arquitectura</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Temas de la Semana 1</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Contenidos Principales</h4>
+                            <ul>
+                                <li><mark>Ingeniería de Software Moderna (Nube, IA, Producto)</mark></li>
+                                <li><mark>Ética, Privacidad y Uso Responsable de IA</mark></li>
+                                <li><mark>Descubrimiento Inicial del Proyecto</mark></li>
+                                <li><mark>Contexto y Stakeholders</mark></li>
+                            </ul>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Objetivos de Aprendizaje</h4>
+                            <ul>
+                                <li><strong>Transformación digital:</strong> Comprender la evolución hacia cloud y IA
+                                </li>
+                                <li><strong>Responsabilidad ética:</strong> Principios para desarrollo responsable</li>
+                                <li><strong>Gestión de proyectos:</strong> Fundamentos del descubrimiento inicial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Definición de Ingeniería de Software -->
+            <section data-transition="convex">
+                <h2>¿Qué es la Ingeniería de Software?</h2>
+
+                <section data-auto-animate>
+                    <h3>Definición Formal</h3>
+                    <div class="concept-box">
+                        <blockquote>
+                            <p><strong>"La ingeniería de software (IS) es una disciplina de ingeniería que se ocupa de
+                                    todos los aspectos de la producción de software."</strong></p>
+                            <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                                — Definición moderna
+                            </footer>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Crisis del Software (1968)</h3>
+                    <div class="concept-box">
+                        <h4>Origen del Concepto</h4>
+                        <p>El concepto surgió originalmente en <strong>1968</strong>, en una conferencia destinada a
+                            discutir la denominada <strong>"crisis del software"</strong>.</p>
+
+                        <div class="fragment"
+                            style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Problemas de los Grandes Sistemas</h5>
+                            <p>En sus inicios, los grandes sistemas de software a menudo presentaban:</p>
+                            <ul style="text-align: left; font-size: 0.9em;">
+                                <li><strong>Retrasos:</strong> No cumplían con los plazos establecidos</li>
+                                <li><strong>Funcionalidad incompleta:</strong> No cumplían con la funcionalidad
+                                    requerida por los usuarios</li>
+                                <li><strong>Sobrecostos:</strong> Costaban más de lo esperado</li>
+                                <li><strong>Falta de fiabilidad:</strong> Carecían de fiabilidad en su funcionamiento
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Disciplina de Ingeniería</h3>
+                    <div class="concept-box">
+                        <p>La ingeniería de software es una <mark>disciplina de ingeniería</mark> que se diferencia de
+                            la programación:</p>
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-code"></i> Programación</h5>
+                                    <p>Actividad personal, foco en código individual</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-cogs"></i> Ingeniería de Software</h5>
+                                    <p>Actividad en equipo, sistemas grandes y complejos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Características Fundamentales</h3>
+                    <div class="concept-box">
+                        <h4>Los ingenieros de software deben adoptar un enfoque sistemático y organizado</h4>
+                        <div class="r-vstack">
+                            <div class="fragment"
+                                style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-users"></i> Trabajo en Equipo</h5>
+                                <p>Colaboración efectiva en equipos multidisciplinarios</p>
+                            </div>
+
+                            <div class="fragment"
+                                style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-project-diagram"></i> Sistemas Complejos</h5>
+                                <p>Desarrollo de software de gran escala y complejidad</p>
+                            </div>
+
+                            <div class="fragment"
+                                style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-clock"></i> Restricciones de Tiempo</h5>
+                                <p>Entrega dentro de plazos y presupuestos establecidos</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Aspectos de la Producción de Software</h3>
+                    <div class="concept-box">
+                        <h4>Ciclo de Vida Completo</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-clipboard-list"></i> Especificación</h5>
+                                    <p>Definición de requerimientos y funcionalidades</p>
+                                </div>
+                                <div
+                                    style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-drafting-compass"></i> Diseño</h5>
+                                    <p>Arquitectura y estructura del sistema</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-hammer"></i> Implementación</h5>
+                                    <p>Construcción y codificación del software</p>
+                                </div>
+                                <div
+                                    style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-tools"></i> Mantenimiento</h5>
+                                    <p>Evolución y soporte post-implementación</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Importancia en la Era Digital</h3>
+                    <div class="concept-box">
+                        <h4>Progreso Notable</h4>
+                        <p>El progreso ha sido <strong>notable desde entonces</strong>, y hoy en día, las sociedades
+                            dependen de sistemas de software profesionales para:</p>
+
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-building"></i> Infraestructuras Nacionales</h5>
+                                    <p>Servicios públicos y manufactura</p>
+                                </div>
+                                <div
+                                    style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-chart-line"></i> Finanzas</h5>
+                                    <p>Sistemas bancarios y financieros</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-cogs"></i> Actividades Fundamentales</h5>
+                                    <p>Especificación, desarrollo, validación y evolución del software</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="fragment" style="text-align: center; margin-top: 1.5rem; font-weight: bold;">
+                            <i class="fas fa-exclamation-triangle"></i> La IS incluye todos los aspectos de la
+                            producción de software
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Enfoque en Productos y Agilidad -->
+            <section data-transition="convex">
+                <h2>Enfoque en Productos y Evolución a la Agilidad</h2>
+
+                <section data-auto-animate>
+                    <h3>Software como Producto</h3>
+                    <div class="concept-box">
+                        <h4>Cambio de Paradigma</h4>
+                        <p>Un enfoque moderno de la IS se centra en los <strong>productos de software</strong> en lugar
+                            de solo en los proyectos.</p>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-store"></i> Productos Genéricos</h5>
+                                    <p>Sistemas independientes vendidos en el <strong>mercado abierto</strong></p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-user-tie"></i> Productos Personalizados</h5>
+                                    <p>Desarrollados para un <strong>cliente específico</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Métodos Ágiles</h3>
+                    <div class="concept-box">
+                        <h4>Entrega y Desarrollo Rápidos</h4>
+                        <p>En el entorno empresarial actual, que cambia rápidamente, la <strong>entrega y el desarrollo
+                                rápidos</strong> son, por lo general, el requerimiento fundamental de los sistemas de
+                            software.</p>
+
+                        <div class="fragment"
+                            style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-history"></i> Origen de los Métodos Ágiles</h5>
+                            <p>Los métodos ágiles, como <strong>Scrum y la Programación Extrema (XP)</strong>, surgieron
+                                en la década de 1990 por el descontento con los enfoques engorrosos de la ingeniería de
+                                software basada en la planeación.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Desarrollo Incremental</h3>
+                    <div class="concept-box">
+                        <h4>Aspecto Clave de los Enfoques Ágiles</h4>
+                        <p>Las actividades de <strong>especificación, desarrollo y validación están
+                                entrelazadas</strong> en lugar de separadas.</p>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Beneficios del Desarrollo Incremental</h3>
+                    <div class="concept-box">
+                        <h4>Entrega Rápida de Valor</h4>
+                        <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-rocket"></i> Beneficio Principal</h5>
+                            <blockquote style="font-size: 1em;">
+                                <p><strong>"Es posible que sea más rápida la entrega e implementación de software útil
+                                        al cliente, aun si no se ha incluido toda la funcionalidad"</strong></p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Programación Extrema (XP)</h3>
+                    <div class="concept-box">
+                        <h4>Enfoque "Extremo" del Desarrollo Incremental</h4>
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-bolt"></i> Características de XP</h5>
+                            <p>La Programación Extrema (XP) adopta un enfoque <strong>"extremo"</strong> de este desarrollo incremental:</p>
+                            <ul style="text-align: left; font-size: 0.95em; margin-top: 1rem;">
+                                <li>Las nuevas versiones del software se construyen <strong>varias veces al día</strong></li>
+                                <li>Se entregan a los clientes cada <strong>dos semanas aproximadamente</strong></li>
+                                <li>Feedback continuo y adaptación rápida a cambios</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Ingeniería de Software Moderna -->
+            <section data-transition="convex">
+                <h2>La Era del Cloud y la Arquitectura Nativa</h2>
+
+                <section data-auto-animate>
+                    <h3>Definición Moderna</h3>
+                    <div class="concept-box">
+                        <blockquote>
+                            <p><strong>"El software sofisticado ahora está incrustado dentro de todo, desde la
+                                    electrónica de consumo hasta los dispositivos médicos y los vehículos
+                                    autónomos."</strong></p>
+                        </blockquote>
+                        <p class="fragment">Las sociedades dependen de sistemas de software profesionales para
+                            infraestructuras nacionales, servicios públicos, manufactura y finanzas.</p>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>El Ecosistema Cloud</h3>
+                    <div class="concept-box">
+                        <h4>Arquitectura Nativa en la Nube</h4>
+                        <p>La computación en nube (Cloud computing) se ha consolidado como la <strong>forma habitual y
+                                estándar</strong> en que las empresas tecnológicas acceden a infraestructuras de TI.</p>
+
+                        <div class="fragment"
+                            style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-lightbulb"></i> Visión Original</h5>
+                            <p>El concepto se materializó con la visión de <strong>catalogar la computación como una
+                                    utilidad pública</strong>.</p>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-cloud"></i> Implementación</h5>
+                                    <p>Se implementa usando una "nube" de <strong>servidores de un proveedor
+                                            externo</strong> y tecnología de virtualización</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-cogs"></i> Servicios Administrados</h5>
+                                    <p>Permite a las organizaciones utilizar <strong>servicios administrados por
+                                            terceros</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Modelos de Servicio Cloud</h3>
+                    <div class="concept-box">
+                        <h4>Los Tres Principales Modelos</h4>
+                        <p>Los proveedores de servicios en la nube ofrecen <strong>tres modelos principales</strong> de servicio.</p>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>IaaS - Infrastructure as a Service</h3>
+                    <div class="concept-box">
+                        <h4>Modelo 1: Infraestructura como Servicio</h4>
+                        <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-server"></i> Características de IaaS</h5>
+                            <p>El <strong>usuario controla el sistema operativo y las aplicaciones</strong>; el proveedor gestiona el hardware y el almacenamiento.</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <h6>Usuario gestiona:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Sistema operativo</li>
+                                        <li>Aplicaciones</li>
+                                        <li>Middleware</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Proveedor gestiona:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Hardware</li>
+                                        <li>Almacenamiento</li>
+                                        <li>Redes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>PaaS - Platform as a Service</h3>
+                    <div class="concept-box">
+                        <h4>Modelo 2: Plataforma como Servicio</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-layer-group"></i> Características de PaaS</h5>
+                            <p>El proveedor ofrece, ejecuta y mantiene el <strong>software del sistema y otros recursos</strong>, incluyendo el diseño, desarrollo y alojamiento de aplicaciones.</p>
+                            <div style="margin-top: 1rem;">
+                                <h6>Incluye:</h6>
+                                <ul style="text-align: left; font-size: 0.9em;">
+                                    <li>Entorno de desarrollo</li>
+                                    <li>Base de datos</li>
+                                    <li>Servidor web</li>
+                                    <li>Sistema operativo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>SaaS - Software as a Service</h3>
+                    <div class="concept-box">
+                        <h4>Modelo 3: Software como Servicio</h4>
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-cloud-download-alt"></i> Características de SaaS</h5>
+                            <p>Las aplicaciones se ofrecen al <strong>usuario final</strong>, sin que este se preocupe por el mantenimiento del servicio o la gestión de la infraestructura.</p>
+                            <div style="margin-top: 1rem;">
+                                <h6>Ventajas para el usuario:</h6>
+                                <ul style="text-align: left; font-size: 0.9em;">
+                                    <li>Acceso inmediato a la aplicación</li>
+                                    <li>Sin instalación ni mantenimiento</li>
+                                    <li>Actualizaciones automáticas</li>
+                                    <li>Escalabilidad transparente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Arquitecturas Cloud Native</h3>
+                    <div class="concept-box">
+                        <h4>Cloud Native Computing Foundation (CNCF)</h4>
+                        <blockquote style="font-size: 0.9em;">
+                            <p><strong>"El conjunto de tecnologías que descomponen las aplicaciones en microservicios y
+                                    los empaquetan en contenedores ligeros para desplegarlos y orquestarlos a través de
+                                    una variedad de servidores"</strong></p>
+                            <footer>— CNCF</footer>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Microservicios y Contenedores</h3>
+                    <div class="concept-box">
+                        <h4>Componentes Fundamentales</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-sitemap"></i> Microservicios</h5>
+                                    <p><strong>Descomponer aplicaciones</strong> en servicios pequeños e independientes</p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Desarrollo independiente</li>
+                                        <li>Escalado granular</li>
+                                        <li>Tecnologías diversas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-box"></i> Contenedores Ligeros</h5>
+                                    <p><strong>Empaquetado eficiente</strong> para despliegue portátil</p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Portabilidad total</li>
+                                        <li>Inicio rápido</li>
+                                        <li>Uso eficiente de recursos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Orquestación e IA Integrada</h3>
+                    <div class="concept-box">
+                        <h4>Gestión Avanzada y Inteligencia</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-network-wired"></i> Orquestación</h5>
+                                    <p><strong>Despliegue automatizado</strong> a través de múltiples servidores</p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Kubernetes</li>
+                                        <li>Gestión automática</li>
+                                        <li>Alta disponibilidad</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-robot"></i> IA/ML Integrado</h5>
+                                    <p><strong>Inteligencia artificial</strong> para operaciones avanzadas</p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Monitoreo inteligente</li>
+                                        <li>Detección de anomalías</li>
+                                        <li>Ajustes proactivos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Arquitectura Cloud Native Madura</h3>
+                    <div class="concept-box">
+                        <h4>Evolución hacia IA y ML</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-brain"></i> Futuro de Cloud Native</h5>
+                            <p>La arquitectura cloud native madura <strong>utilizará inteligencia artificial y aprendizaje automático (ML)</strong> para:</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Monitorear sistemas</li>
+                                        <li>Detectar anomalías</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Realizar ajustes proactivos</li>
+                                        <li>Evitar degradación del rendimiento</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- IA en Ingeniería de Software -->
+            <section>
+                <h2>Inteligencia Artificial en Ingeniería de Software</h2>
+
+                <section>
+                    <h3>AIFSD - AI for Software Development</h3>
+                    <div class="concept-box">
+                        <h4>Revolución de la IA en Desarrollo</h4>
+                        <p>La <strong>Inteligencia Artificial (IA) está revolucionando todo</strong>, siendo una de las
+                            tecnologías más disruptivas de la Cuarta Revolución Industrial.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>IA en Ingeniería de Software</h3>
+                    <div class="concept-box">
+                        <h4>Aplicación para Mejorar Productividad</h4>
+                        <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-cogs"></i> Enfoque Dual de la IA</h5>
+                            <p>En la ingeniería de software, la IA se está aplicando para:</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                        <h6><i class="fas fa-rocket"></i> Productividad</h6>
+                                        <p>Mejorar la <strong>productividad</strong> del desarrollo</p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                        <h6><i class="fas fa-shield-alt"></i> Confiabilidad</h6>
+                                        <p>Aumentar la <strong>confiabilidad</strong> del software</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                            <h5><i class="fas fa-sync-alt"></i> Automatización de Procesos</h5>
+                            <p>La IA permite <strong>automatizar procesos</strong> tradicionalmente manuales en el ciclo de desarrollo de software.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Impacto en la Cuarta Revolución Industrial</h3>
+                    <div class="concept-box">
+                        <h4>Tecnología Disruptiva</h4>
+                        <div style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-industry"></i> Cuarta Revolución Industrial</h5>
+                            <p>La IA es considerada una de las <strong>tecnologías más disruptivas</strong> de nuestra era, transformando:</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Procesos de desarrollo</li>
+                                        <li>Metodologías de trabajo</li>
+                                        <li>Roles profesionales</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Arquitecturas de software</li>
+                                        <li>Herramientas de desarrollo</li>
+                                        <li>Ciclos de vida del software</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Adopción Empresarial de IA</h3>
+                    <div class="concept-box">
+                        <h4>Crecimiento Exponencial</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-chart-line"></i> Estadísticas de Adopción</h5>
+                            <blockquote style="font-size: 1.1em;">
+                                <p><strong>"Para el año 2028, el 90% de los ingenieros de software empresarial
+                                        utilizarán asistentes de código basados en IA (14% en 2024)"</strong></p>
+                            </blockquote>
+                            <div style="margin-top: 1.5rem;">
+                                <div class="r-hstack">
+                                    <div class="column">
+                                        <h6>2024:</h6>
+                                        <p style="font-size: 2em; margin: 0; color: var(--uide-primary);">14%</p>
+                                    </div>
+                                    <div class="column">
+                                        <h6>2028 (Proyectado):</h6>
+                                        <p style="font-size: 2em; margin: 0; color: var(--uide-accent);">90%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>IA Generativa en Desarrollo</h3>
+                    <div class="concept-box">
+                        <h4>Herramientas y Aplicaciones</h4>
+                        <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-robot"></i> Herramientas Principales</h5>
+                            <p>La IA generativa, que se centra en la <strong>creación de contenido nuevo y original</strong> como texto e imágenes, ha tenido un impacto significativo en el desarrollo de software.</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <h6>Herramientas Populares:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li><strong>GitHub Copilot</strong></li>
+                                        <li>Replit Ghostwriter</li>
+                                        <li>Amazon CodeWhisperer</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Capacidades:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Generación de código</li>
+                                        <li>Depuración automática</li>
+                                        <li>Documentación automática</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Transformación del Rol del Desarrollador</h3>
+                    <div class="concept-box">
+                        <h4>De Implementación a Orquestación</h4>
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-user-cog"></i> Evolución del Rol</h5>
+                            <p>La adopción de la IA en el desarrollo de software (AIFSD) tiene <strong>implicaciones significativas</strong>, llevando a que el rol del desarrollador se desplace:</p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <div style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                        <h6>Antes:</h6>
+                                        <ul style="text-align: left; font-size: 0.9em;">
+                                            <li>Implementación manual</li>
+                                            <li>Codificación línea por línea</li>
+                                            <li>Depuración manual</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                        <h6>Ahora:</h6>
+                                        <ul style="text-align: left; font-size: 0.9em;">
+                                            <li><strong>Orquestación</strong> de sistemas</li>
+                                            <li><strong>Diseño</strong> de arquitecturas</li>
+                                            <li>Supervisión de IA</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Riesgos y Supervisión</h3>
+                    <div class="concept-box">
+                        <h4>La Necesidad de Supervisión Cuidadosa</h4>
+
+                        <div
+                            style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 12px; margin: 1rem 0;">
+                            <blockquote style="font-size: 1.1em;">
+                                <p><strong>"Si no prestas atención a lo que hace la IA, debido a los volúmenes que puede
+                                        producir, será una muerte por mil cortes de papel"</strong></p>
+                                <footer>— Ferri, citado en Thoughtworks</footer>
+                            </blockquote>
+                        </div>
+
+                        <div class="fragment">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Amplificación de Errores</h5>
+                            <p>La aceleración del proceso también <strong>amplifica los errores</strong> si no se ejerce
+                                una supervisión cuidadosa.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>AIOps - AI for IT Operations</h3>
+                    <div class="concept-box">
+                        <h4>Inteligencia Artificial para Operaciones de TI</h4>
+                        <p>Combina IA y algoritmos de <strong>Machine Learning</strong> con prácticas tradicionales de
+                            gestión de Operaciones de TI.</p>
+
+                        <div class="fragment"
+                            style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-bullseye"></i> Objetivos de AIOps</h5>
+                            <blockquote style="font-size: 0.9em;">
+                                <p><strong>"Alta inteligencia de servicio. Un servicio impulsado por AIOps será
+                                        consciente a tiempo de los cambios desde múltiples aspectos, por ejemplo,
+                                        degradación de la calidad, aumento de los costes, aumento de la carga de
+                                        trabajo, etc."</strong></p>
+                            </blockquote>
+                            <p>Autoconciencia y predictibilidad que desencadena comportamientos de
+                                <strong>autoadaptación o autocuración</strong> con escasa intervención humana.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Software como Producto</h3>
+                    <div class="concept-box">
+                        <h4>Más Allá de la Programación</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-exclamation-triangle"></i> Importancia de la Calidad</h5>
+                                    <p>Si el software falla, "las personas y las grandes empresas pueden experimentar
+                                        desde <strong>inconvenientes menores hasta consecuencias catastróficas</strong>"
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-bullseye"></i> Enfoque de Producto</h5>
+                                    <p>Comprensión de las <strong>necesidades del cliente</strong> y arquitectura del
+                                        software</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fragment" style="margin-top: 1.5rem;">
+                            <h5>SOA - Service-Oriented Architecture</h5>
+                            <p>La Web evoluciona "desde un almacén de información hacia una <strong>plataforma de
+                                    implementación de sistemas</strong>".</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Ética y IA -->
+            <section>
+                <h2>Ética, Privacidad y Uso Responsable de IA</h2>
+
+                <section>
+                    <h3>La Importancia de la Ética en IA</h3>
+                    <div class="concept-box">
+                        <h4>Exigencia para la Gobernanza</h4>
+                        <p>El estudio de la ética en la informática ha ganado <strong>atención significativa</strong> en
+                            la última década, en particular con la aparición de los nuevos sistemas de inteligencia
+                            artificial.</p>
+
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div
+                                style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 12px; display: inline-block;">
+                                <p style="font-size: 1.3em; margin: 0;">
+                                    <strong>La IA "no es una herramienta neutral"</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="fragment">Sus algoritmos <strong>"reflejan valores e intereses de sus
+                                diseñadores"</strong>, con el riesgo de amplificar desigualdades e impactar derechos
+                            fundamentales.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Gobernanza Ética de la IA</h3>
+                    <div class="concept-box">
+                        <h4>Definición y Marco</h4>
+                        <blockquote style="font-size: 0.9em;">
+                            <p><strong>"Conjunto de políticas, procesos, normas y marcos institucionales que garantizan
+                                    el desarrollo y la aplicación ética, legal y socialmente responsable de las
+                                    tecnologías de IA"</strong></p>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Principios de Transparencia y Responsabilidad</h3>
+                    <div class="concept-box">
+                        <h4>Fundamentos de Claridad y Accountability</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-search"></i> Transparencia</h5>
+                                    <p><strong>Claridad en procesos y decisiones</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Algoritmos explicables</li>
+                                        <li>Procesos documentados</li>
+                                        <li>Decisiones auditables</li>
+                                        <li>Comunicación clara</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-clipboard-check"></i> Responsabilidad</h5>
+                                    <p><strong>Accountability en decisiones</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Responsabilidad legal</li>
+                                        <li>Cadena de responsabilidad</li>
+                                        <li>Mecanismos de control</li>
+                                        <li>Rendición de cuentas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Principios de Equidad y Privacidad</h3>
+                    <div class="concept-box">
+                        <h4>No Discriminación y Protección de Datos</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-balance-scale"></i> No Discriminación</h5>
+                                    <p><strong>Equidad y fairness en algoritmos</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Sesgo algorítmico controlado</li>
+                                        <li>Inclusión y diversidad</li>
+                                        <li>Equidad en resultados</li>
+                                        <li>Justicia procesal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-lock"></i> Privacidad</h5>
+                                    <p><strong>Protección de datos personales</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Protección de datos</li>
+                                        <li>Consentimiento informado</li>
+                                        <li>Minimización de datos</li>
+                                        <li>Derecho al olvido</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Principios de Sostenibilidad y Seguridad</h3>
+                    <div class="concept-box">
+                        <h4>Consideraciones Ambientales y Protección</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-leaf"></i> Sostenibilidad</h5>
+                                    <p><strong>Consideraciones ambientales</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Eficiencia energética</li>
+                                        <li>Impacto ambiental</li>
+                                        <li>Recursos sostenibles</li>
+                                        <li>Huella de carbono</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-shield-alt"></i> Seguridad</h5>
+                                    <p><strong>Protección y robustez de sistemas</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Seguridad cibernética</li>
+                                        <li>Robustez del sistema</li>
+                                        <li>Prevención de ataques</li>
+                                        <li>Continuidad del servicio</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Niveles de Riesgo (Ley de IA UE)</h3>
+                    <div class="concept-box">
+                        <h4>Clasificación de Sistemas de IA</h4>
+                        <p>La Ley de IA de la Unión Europea adopta un <strong>enfoque basado en el riesgo</strong>, evaluando los sistemas de manera diferenciada para garantizar que la regulación sea proporcional.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Riesgo Inaceptable - Sistemas Prohibidos</h3>
+                    <div class="concept-box">
+                        <h4>Nivel 1: Prohibición Total</h4>
+                        <div style="background: rgba(220, 53, 69, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-ban"></i> Sistemas Prohibidos</h5>
+                            <p>Los sistemas con <strong>riesgos inaceptables están prohibidos</strong>. Esto incluye:</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <h6>Técnicas Prohibidas:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Técnicas subliminales</li>
+                                        <li>Técnicas engañosas</li>
+                                        <li>Manipulación cognitivo-conductual</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Identificación Biométrica:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Identificación remota en tiempo real</li>
+                                        <li>En espacios públicos</li>
+                                        <li>Excepto circunstancias excepcionales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Alto Riesgo - Evaluaciones Estrictas</h3>
+                    <div class="concept-box">
+                        <h4>Nivel 2: Sectores Críticos</h4>
+                        <div style="background: rgba(255, 193, 7, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Sistemas de Alto Riesgo</h5>
+                            <p>Sistemas utilizados en <strong>sectores críticos</strong> que requieren evaluaciones de conformidad estrictas:</p>
+                            <div class="r-hstack" style="margin-top: 1rem;">
+                                <div class="column">
+                                    <h6>Áreas de Aplicación:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Migración y asilo</li>
+                                        <li>Control fronterizo</li>
+                                        <li>Selección de currículums</li>
+                                        <li>Infraestructura crítica</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Requisitos:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Evaluaciones de conformidad</li>
+                                        <li>Medidas de transparencia</li>
+                                        <li>Supervisión continua</li>
+                                        <li>Documentación detallada</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Riesgo Limitado y Mínimo</h3>
+                    <div class="concept-box">
+                        <h4>Niveles 3 y 4: Transparencia y Normativas Generales</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(108, 117, 125, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-eye"></i> Riesgo Limitado</h5>
+                                    <p><strong>Requisito de Transparencia</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Chatbots</li>
+                                        <li>Sistemas de interacción directa</li>
+                                        <li>Usuarios informados claramente</li>
+                                        <li>Identificación como IA obligatoria</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-check-circle"></i> Riesgo Mínimo</h5>
+                                    <p><strong>Normativas Generales</strong></p>
+                                    <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                        <li>Filtros de spam</li>
+                                        <li>Sistemas de recomendación</li>
+                                        <li>Sujetos a GDPR</li>
+                                        <li>Sin amenaza significativa</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Marco Regulatorio Internacional</h3>
+                    <div class="concept-box">
+                        <h4>Gobernanza Global</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-globe"></i> OCDE (2019)</h5>
+                                    <p><strong>Principios de IA de la OCDE</strong></p>
+                                    <p style="font-size: 0.85em;">IA "robusta, segura, centrada en el ser humano,
+                                        transparente, responsable y que promueva el bienestar inclusivo y sostenible"
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-balance-scale"></i> UNESCO (2021)</h5>
+                                    <p><strong>"Recomendación sobre la Ética de la IA"</strong></p>
+                                    <p style="font-size: 0.85em;">Primer instrumento normativo global: proporcionalidad,
+                                        seguridad, no discriminación, sostenibilidad ambiental, privacidad,
+                                        transparencia, rendición de cuentas y supervisión humana</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fragment"
+                            style="margin-top: 1.5rem; background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                            <h5><i class="fas fa-flag"></i> Ley de IA de la Unión Europea</h5>
+                            <p>Adopta un <strong>enfoque basado en el riesgo</strong>, evaluando los sistemas de manera
+                                diferenciada para garantizar que la regulación sea proporcional.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Evaluación de Madurez y Riesgo</h3>
+                    <div class="concept-box">
+                        <h4>Criterios de Decisión</h4>
+                        <div
+                            style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Cuando el Problema No Está Claro</h5>
+                            <p>Si <strong>"El problema no está claramente identificado y el riesgo es alto"</strong>, se
+                                debe llevar a cabo una fase de discovery avanzada.</p>
+                        </div>
+
+                        <div class="fragment"
+                            style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                            <h5><i class="fas fa-shield-alt"></i> Beneficio de la Inversión</h5>
+                            <p>La inversión en discovery <strong>reduce el riesgo de fracaso</strong>, ya que "el
+                                desarrollo de una solución incorrecta puede ser mucho más costoso que invertir en la
+                                fase de discovery".</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Descubrimiento de Proyectos -->
+            <section>
+                <h2>Descubrimiento Inicial del Proyecto</h2>
+
+                <section>
+                    <h3>Fundamentos del Discovery</h3>
+                    <div class="concept-box">
+                        <h4>Concepción (Inception)</h4>
+                        <p>Todo proyecto de software se inicia con el equipo intentando <strong>comprender el problema a
+                                resolver</strong> y "determinando qué resultados son importantes para los stakeholders".
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Etapa de Concepción</h3>
+                    <div class="concept-box">
+                        <h4>Establecimiento del Entendimiento Básico</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-bullseye"></i> Componentes de la Concepción</h5>
+                            <p>En la etapa de concepción del proyecto, se establece un <strong>entendimiento básico</strong> de los siguientes elementos:</p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <h6>Definición del Contexto:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li><strong>Problema</strong> a resolver</li>
+                                        <li><strong>Personas</strong> que desean una solución</li>
+                                        <li><strong>Naturaleza</strong> de la solución deseada</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Parámetros del Proyecto:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li><strong>Restricciones</strong> del proyecto</li>
+                                        <li><strong>Características principales</strong> para cumplir objetivos</li>
+                                        <li><strong>Alcance</strong> inicial del sistema</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Comunicación Efectiva</h3>
+                    <div class="concept-box">
+                        <h4>Base del Éxito del Proyecto</h4>
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-users"></i> Importancia de la Comunicación</h5>
+                            <p>En esta fase inicial es clave establecer la <strong>comunicación efectiva</strong> entre todos los stakeholders y el equipo de software.</p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <h6>Participantes Clave:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Equipo de desarrollo</li>
+                                        <li>Stakeholders principales</li>
+                                        <li>Usuarios finales</li>
+                                        <li>Clientes y patrocinadores</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Objetivos de Comunicación:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Alineación de expectativas</li>
+                                        <li>Clarificación de requerimientos</li>
+                                        <li>Identificación temprana de riesgos</li>
+                                        <li>Establecimiento de canales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Definición de Alcance</h3>
+                    <div class="concept-box">
+                        <h4>Software Scope - Preguntas Clave</h4>
+                        <div class="r-vstack">
+                            <div class="fragment"
+                                style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-globe"></i> Contexto</h5>
+                                <p>¿Cómo encaja el software en un sistema, producto o contexto empresarial más amplio?
+                                </p>
+                            </div>
+
+                            <div class="fragment"
+                                style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-chart-bar"></i> Objetivos de Información</h5>
+                                <p>¿Qué objetos de datos visibles para el cliente se producen como salida y cuáles se
+                                    requieren como entrada?</p>
+                            </div>
+
+                            <div class="fragment"
+                                style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-cogs"></i> Función y Rendimiento</h5>
+                                <p>¿Qué función realiza el software para transformar los datos de entrada en salida?</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Descubrimiento en Producto Digital</h3>
+                    <div class="concept-box">
+                        <h4>Proceso de Discovery</h4>
+                        <blockquote style="font-size: 0.9em;">
+                            <p><strong>"Comprende una serie de actividades que nos permiten entender el comportamiento
+                                    de los usuarios, identificar sus problemas y necesidades, diseñar las soluciones más
+                                    adecuadas y eficaces y ponerlas a prueba"</strong></p>
+                            <footer>— Sirven (2024)</footer>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Objetivo Doble del Discovery</h3>
+                    <div class="concept-box">
+                        <h4>Dos Enfoques Complementarios</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-bullseye"></i> Dualidad del Discovery</h5>
+                            <p>Este proceso tiene el <strong>objetivo doble</strong> de abordar tanto el problema como la solución:</p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <div style="background: rgba(220, 53, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                        <h6><i class="fas fa-question-circle"></i> Descubrimiento del Problema</h6>
+                                        <p><strong>Entender el problema</strong></p>
+                                        <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                            <li>Investigación de usuarios</li>
+                                            <li>Identificación de pain points</li>
+                                            <li>Análisis de comportamiento</li>
+                                            <li>Validación de necesidades</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px;">
+                                        <h6><i class="fas fa-lightbulb"></i> Descubrimiento de la Solución</h6>
+                                        <p><strong>Diseñar la solución</strong></p>
+                                        <ul style="text-align: left; font-size: 0.9em; margin-top: 1rem;">
+                                            <li>Ideación de soluciones</li>
+                                            <li>Prototipado rápido</li>
+                                            <li>Testing con usuarios</li>
+                                            <li>Iteración y refinamiento</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Herramienta: Lean Canvas</h3>
+                    <div class="concept-box">
+                        <h4>Estructuración de Hipótesis</h4>
+                        <p>Una herramienta eficaz para <strong>estructurar las hipótesis</strong> al iniciar el discovery. Este lienzo se centra en elementos clave orientados al producto o al mercado.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Segmentos de Usuarios</h3>
+                    <div class="concept-box">
+                        <h4>Definición del Público Objetivo</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-users"></i> Identificación de Usuarios</h5>
+                            <p><strong>¿Cuál es el público objetivo de tu producto?</strong></p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <h6>Aspectos a Considerar:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Demografía del usuario</li>
+                                        <li>Comportamientos específicos</li>
+                                        <li>Necesidades particulares</li>
+                                        <li>Contexto de uso</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Técnicas de Identificación:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Personas y arquetipos</li>
+                                        <li>Entrevistas con usuarios</li>
+                                        <li>Análisis de mercado</li>
+                                        <li>Segmentación conductual</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Problema y Alternativas</h3>
+                    <div class="concept-box">
+                        <h4>Identificación de Pain Points</h4>
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Análisis del Problema</h5>
+                            <p><strong>¿Cuáles son los 3 principales problemas que intentas resolver para tus potenciales primeros usuarios?</strong></p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <h6>Identificación de Problemas:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Dolor principal del usuario</li>
+                                        <li>Problemas secundarios</li>
+                                        <li>Frustaciones actuales</li>
+                                        <li>Gaps en el mercado</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Análisis de Alternativas:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Soluciones existentes</li>
+                                        <li>Competencia directa</li>
+                                        <li>Workarounds actuales</li>
+                                        <li>Limitaciones de alternativas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Propuesta de Valor Única</h3>
+                    <div class="concept-box">
+                        <h4>Diferenciación Competitiva</h4>
+                        <div style="background: rgba(40, 167, 69, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-gem"></i> Valor Diferencial</h5>
+                            <p><strong>La razón por la que los clientes potenciales deberían convertirse en usuarios</strong></p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <h6>Elementos del Valor:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Beneficio principal</li>
+                                        <li>Ventaja competitiva</li>
+                                        <li>Diferenciación clave</li>
+                                        <li>Promesa al usuario</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Validación del Valor:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li>Testing de mensajes</li>
+                                        <li>Feedback de usuarios</li>
+                                        <li>Métricas de adopción</li>
+                                        <li>Análisis competitivo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Importancia de los Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4>Definición y Perspectivas</h4>
+                        <blockquote>
+                            <p><strong>"Cualquiera que se beneficie de manera directa o indirecta del sistema que se
+                                    está desarrollando"</strong></p>
+                            <footer>— Sommerville y Sawyer (1997)</footer>
+                        </blockquote>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Definición de Stakeholder</h3>
+                    <div class="concept-box">
+                        <h4>Concepto y Participación</h4>
+                        <div style="background: rgba(35, 53, 110, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-handshake"></i> Participación en el Proyecto</h5>
+                            <p>Un stakeholder es <strong>alguien que tiene una participación en el resultado exitoso del proyecto</strong>.</p>
+                            
+                            <div style="margin-top: 1.5rem;">
+                                <h6>Matriz de Clasificación de Stakeholders</h6>
+                                <table style="width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 1rem;">
+                                    <thead>
+                                        <tr style="background: rgba(35, 53, 110, 0.2);">
+                                            <th style="border: 1px solid #ccc; padding: 0.7rem; text-align: center; font-weight: bold;">Tipo de Beneficio</th>
+                                            <th style="border: 1px solid #ccc; padding: 0.7rem; text-align: center; font-weight: bold;">Alto Poder</th>
+                                            <th style="border: 1px solid #ccc; padding: 0.7rem; text-align: center; font-weight: bold;">Alto Interés</th>
+                                            <th style="border: 1px solid #ccc; padding: 0.7rem; text-align: center; font-weight: bold;">Influenciadores</th>
+                                            <th style="border: 1px solid #ccc; padding: 0.7rem; text-align: center; font-weight: bold;">Afectados</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; background: rgba(233, 171, 33, 0.1); font-weight: bold;">
+                                                Directo
+                                            </td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Dueños de producto</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Usuarios finales</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">User champions</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Operadores del sistema</td>
+                                        </tr>
+                                        <tr style="background: rgba(248, 248, 248, 0.5);">
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; background: rgba(145, 0, 72, 0.1); font-weight: bold;">
+                                                Indirecto
+                                            </td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Ejecutivos senior</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Supervisores</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Líderes de área</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Equipos relacionados</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; background: rgba(40, 167, 69, 0.1); font-weight: bold;">
+                                                Económico
+                                            </td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">CFO/Finanzas</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Gerentes de costo</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Analistas financieros</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Departamentos con presupuesto</td>
+                                        </tr>
+                                        <tr style="background: rgba(248, 248, 248, 0.5);">
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; background: rgba(220, 53, 69, 0.1); font-weight: bold;">
+                                                Operacional
+                                            </td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">CTO/IT</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Gerentes de operaciones</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Arquitectos de sistema</td>
+                                            <td style="border: 1px solid #ccc; padding: 0.7rem; text-align: center;">Personal de soporte</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>La Metáfora de Rob Thomsett</h3>
+                    <div class="concept-box">
+                        <h4>Importancia de Cuidar a los Stakeholders</h4>
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-exclamation-triangle"></i> Advertencia Clave</h5>
+                            <blockquote style="font-size: 1.1em; font-style: italic;">
+                                <p><strong>"Un stakeholder es una persona que sostiene una estaca grande y afilada... Si no cuidas a tus stakeholders, sabes dónde terminará la estaca."</strong></p>
+                                <footer style="text-align: right; font-size: 0.9em;">— Rob Thomsett</footer>
+                            </blockquote>
+                            <div style="margin-top: 1.5rem;">
+                                <h6>Implicaciones Prácticas:</h6>
+                                <div class="r-hstack">
+                                    <div class="column">
+                                        <ul style="text-align: left; font-size: 0.9em;">
+                                            <li>Gestión proactiva de expectativas</li>
+                                            <li>Comunicación constante y clara</li>
+                                        </ul>
+                                    </div>
+                                    <div class="column">
+                                        <ul style="text-align: left; font-size: 0.9em;">
+                                            <li>Involucramiento en decisiones clave</li>
+                                            <li>Resolución temprana de conflictos</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Taxonomía de Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4>Clasificación Completa</h4>
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-users"></i> Lista Completa de Stakeholders</h5>
+                            <p>La lista de stakeholders puede incluir una amplia variedad de roles y funciones:</p>
+                            <div class="r-hstack" style="margin-top: 1.5rem;">
+                                <div class="column">
+                                    <h6>Roles de Gestión:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li><strong>Gerentes de negocios</strong></li>
+                                        <li><strong>Gerentes de producto</strong></li>
+                                        <li><strong>Personal de marketing</strong></li>
+                                        <li>Consultores externos</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h6>Roles Técnicos y Usuarios:</h6>
+                                    <ul style="text-align: left; font-size: 0.9em;">
+                                        <li><strong>Clientes internos y externos</strong></li>
+                                        <li><strong>Usuarios finales</strong></li>
+                                        <li><strong>Ingenieros de software</strong></li>
+                                        <li><strong>Personal de soporte</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Taxonomía de Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4>Roles y Responsabilidades</h4>
+                        <div class="r-hstack">
+                            <div class="column fragment">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-user-tie"></i> Gerentes Senior</h5>
+                                    <p>Dueños de producto, definen cuestiones empresariales</p>
+                                </div>
+                                <div
+                                    style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-bullseye"></i> Gerentes de Proyecto</h5>
+                                    <p>Scrum masters, planifican y organizan</p>
+                                </div>
+                                <div
+                                    style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-cogs"></i> Practicantes</h5>
+                                    <p>Ingenieros de software, habilidades técnicas</p>
+                                </div>
+                            </div>
+                            <div class="column fragment">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-briefcase"></i> Clientes</h5>
+                                    <p>Especifican requerimientos del software</p>
+                                </div>
+                                <div
+                                    style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-user"></i> Usuarios Finales</h5>
+                                    <p>Interactúan con el software en producción</p>
+                                </div>
+                                <div
+                                    style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin-top: 0.5rem;">
+                                    <h5><i class="fas fa-tools"></i> Soporte</h5>
+                                    <p>Marketing, mantenimiento, consultores</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Elicitación de Requerimientos</h3>
+                    <div class="concept-box">
+                        <h4>El Proceso de Recopilación</h4>
+                        <blockquote style="font-size: 0.9em;">
+                            <p><strong>"Ciertamente parece bastante simple: pregunte al cliente, a los usuarios y a
+                                    otros cuáles son los objetivos para el sistema o producto, qué se debe lograr, cómo
+                                    encaja el sistema o producto en las necesidades del negocio y, finalmente, cómo se
+                                    utilizará el sistema o producto en el día a día. Pero no es simple, es muy
+                                    difícil"</strong></p>
+                            <footer>— Sommerville & Sawyer</footer>
+                        </blockquote>
+
+                        <div class="fragment"
+                            style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <h5><i class="fas fa-question-circle"></i> Preguntas "Context Free"</h5>
+                            <p>Las preguntas iniciales formuladas en la concepción deben ser <strong>"context
+                                    free"</strong>. Ejemplos:</p>
+                            <ul style="text-align: left; font-size: 0.9em;">
+                                <li>"¿Quién está detrás de la solicitud de este trabajo?"</li>
+                                <li>"¿Cuál será el beneficio económico de una solución exitosa?"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Conflictos y Resolución</h3>
+                    <div class="concept-box">
+                        <h4>Gestión de Múltiples Perspectivas</h4>
+                        <p>Debido a la existencia de muchos stakeholders diferentes, los requisitos del sistema se
+                            explorarán desde <strong>múltiples puntos de vista</strong>.</p>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-chart-line"></i> Marketing</h5>
+                                    <p>Interesado en características <strong>fáciles de vender</strong></p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h5><i class="fas fa-briefcase"></i> Gerentes de Negocios</h5>
+                                    <p>Buscan características que puedan construirse <strong>"dentro del presupuesto y
+                                            listas para cumplir ventanas de mercado"</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fragment"
+                            style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h5><i class="fas fa-balance-scale"></i> Resolución de Conflictos</h5>
+                            <p>Los conflictos pueden resolverse mediante esquemas de votación, como el uso de
+                                <strong>"Planning Poker"</strong>, en el que los stakeholders gastan puntos de prioridad
+                                para indicar la importancia relativa de cada requisito.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Referencias -->
+            <section>
+                <section data-auto-animate>
+                    <h2>Referencias Bibliográficas</h2>
+                    <div class="concept-box">
+                        <h4>Fuentes Académicas y Técnicas</h4>
+                        <p style="font-size: 0.9em; text-align: center; margin-top: 2rem;">
+                            Compendio de referencias organizadas por categorías temáticas
+                        </p>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Ingeniería de Software y Metodologías</h3>
+                    <div class="concept-box">
+                        <h4>Fundamentos y Metodologías Ágiles</h4>
+                        <div class="references-container" style="font-size: 0.65em; text-align: left; background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p><strong>Naur, P., & Randell, B.</strong> (1969). Ingeniería de software: Reporte de una
+                                conferencia patrocinada por el comité científico de la OTAN, Garmisch, Alemania, 7 a 11 de
+                                octubre de 1968.</p>
+
+                            <p><strong>Schwaber, K., & Beedle, M.</strong> (2001). <em>Agile Software Development with
+                                    Scrum</em>. Prentice Hall.</p>
+
+                            <p><strong>Sommerville, I.</strong> (2011). <em>Ingeniería de Software</em> (9a ed.). Pearson
+                                Educación.</p>
+
+                            <p><strong>Sommerville, I., & Sawyer, P.</strong> (1997). <em>Requirements Engineering: A Good
+                                    Practice Guide</em>. John Wiley & Sons.</p>
+
+                            <p><strong>Fagan, M. E.</strong> (1986). Advances in Software Inspections. <em>IEEE Transactions on
+                                    Software Engineering</em>, 12(6).</p>
+
+                            <p><strong>Gomes, O. S., Braga e Silva, G., & Ferreira de Souza, É.</strong> (2022). Ethics in the
+                                Software Development Process: a Tertiary Literature Review.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Computación en la Nube y Arquitecturas</h3>
+                    <div class="concept-box">
+                        <h4>Cloud Computing y Cloud Native</h4>
+                        <div class="references-container" style="font-size: 0.65em; text-align: left; background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p><strong>Cárdenas, P. A.</strong> (2023). Design of a redundant and self-healing cloud
+                                architecture based on the Cloud Native Maturity Model of the Cloud Native Computing Foundation
+                                for a company in the Banking. (Tesis de maestría, Universidad Peruana de Ciencias Aplicadas).
+                            </p>
+
+                            <p><strong>Deng, S., Zhao, H., Huang, B., Zhang, C., Chen, F., Deng, Y., & Zomaya, A.</strong>
+                                (2023). Cloud-Native Computing: A Survey from the Perspective of Services. <em>Distributed,
+                                    Parallel, and Cluster Computing</em>. https://doi.org/10.48550/arXiv.2306.14402.</p>
+
+                            <p><strong>Gannon, D., Barga, R., & Sundaresan, N.</strong> (2017). Cloud-Native Applications.
+                                <em>IEEE Cloud Computing</em>, 4(5), 16-21.</p>
+
+                            <p><strong>Laszewski, T., Arora, K., & Farr, E.</strong> (2018). <em>Cloud Native Architectures</em>.
+                                Packt.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Inteligencia Artificial y Ética</h3>
+                    <div class="concept-box">
+                        <h4>IA en Desarrollo de Software y Gobernanza Ética</h4>
+                        <div class="references-container" style="font-size: 0.65em; text-align: left; background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p><strong>Lulichac Ramos, G., Pantoja Payajo, F., & Torres Villanueva, M.</strong> (2025). La IA
+                                Generativa en el Desarrollo de Software: Impacto en Diversas Industrias. <em>Revista Innovación
+                                    y Software</em>, 6(1), 76-101.</p>
+
+                            <p><strong>Vakkuri, V., & Abrahamsson, P.</strong> (2018). The Key Concepts of Ethics of Artificial
+                                Intelligence. <em>2018 IEEE International Conference on Engineering, Technology and Innovation
+                                    (ICE/ITMC)</em>.</p>
+
+                            <p><strong>Torres Jarrín, M.</strong> (2023). Artificial Intelligence and Foreign Affairs:
+                                Diplomacy, Geopolitics and Ethics in Latin America-Europe Relations.</p>
+
+                            <p><strong>Velasco Pufleau, M.</strong> (2024). Inteligencia artificial y protección de datos
+                                personales: el caso del RGPD de la Unión Europea y sus implicaciones para América Latina y el
+                                Caribe. (En SELA, <em>La gobernanza ética de la inteligencia artificial</em>).</p>
+
+                            <p><strong>Whittaker, M., Crawford, K., Dobbe, R., Fried, G., Kaziunas, E., Mathur, V., & Schwartz,
+                                    O.</strong> (2018). <em>Informe AI Now 2018</em>. AI Now Institute.</p>
+
+                            <p><strong>Pitoura, E., et al.</strong> (2018). On Measuring Bias in Online Information.
+                                <em>SIGMOD</em>, 46(4).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>Fuentes Industriales y Discovery</h3>
+                    <div class="concept-box">
+                        <h4>Tendencias Industriales y Producto Digital</h4>
+                        <div class="references-container" style="font-size: 0.65em; text-align: left; background: rgba(40, 180, 99, 0.1); padding: 1.5rem; border-radius: 8px;">
+                            <p><strong>Gartner.</strong> (n.d.). Nuevas tendencias en el sector del software empresarial.</p>
+
+                            <p><strong>Google Cloud.</strong> (n.d.). Una IA responsable.</p>
+
+                            <p><strong>Thoughtworks.</strong> (n.d.). Ingeniería de software con enfoque en IA.</p>
+
+                            <p><strong>Sirven, F.</strong> (2024). ¿Qué es el discovery en producto digital y cómo
+                                implementarlo? <em>Thiga Media</em>.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JavaScript with all plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/search/search.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+
+            autoAnimateEasing: 'ease',
+            autoAnimateDuration: 1.0,
+            autoAnimateUnmatched: true,
+
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                config: 'TeX-AMS_HTML-full',
+            },
+
+            zoom: {
+                mouseWheel: false,
+                maxZoom: 3,
+                controls: true
+            },
+
+            search: {
+                caseSensitive: false,
+                showIcon: true
+            },
+
+            keyboard: {
+                70: 'fullscreen', // f
+                83: 'next', // s
+                65: 'prev', // a
+                66: 'pause', // b
+                90: 'zoom', // z
+                191: 'search' // /
+            },
+
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealZoom, RevealSearch]
+        });
+    </script>
+
+</body>
+
+</html>

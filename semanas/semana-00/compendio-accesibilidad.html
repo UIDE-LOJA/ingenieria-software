@@ -1,0 +1,1896 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Recurso: Guía Completa de Accesibilidad Web</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+    <!-- UIDE Theme CSS -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1>Guía Completa de Accesibilidad Web</h1>
+                    <h2>Recurso Educativo</h2>
+
+                    <div class="course-info">
+                        <strong>PP-07-HCI</strong> • Séptimo Nivel<br>
+                        <strong>Human-Computer Interaction</strong><br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em><br>
+                        Universidad Internacional del Ecuador • Octubre 2025
+                    </div>
+
+                    <div
+                        style="background: rgba(35, 53, 110, 0.1); border-radius: 8px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                        <strong>Recurso Permanente:</strong> Estándares Globales y Cumplimiento Normativo<br>
+                        <em>Material de consulta y referencia continua</em>
+                    </div>
+
+                    <div style="margin-top: 2em; font-size: 0.9em; font-style: italic; color: var(--uide-secondary);">
+                        Construyendo un web más inclusivo para todos
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Slide -->
+            <section data-background-color="#f8f8f8">
+                <blockquote style="font-size: 1.2em; text-align: center;">
+                    <p><strong>"El poder de la Web está en su universalidad. El acceso de todos independientemente de la discapacidad es un aspecto esencial."</strong></p>
+                    <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                        — Tim Berners-Lee, Director del W3C e inventor de la World Wide Web
+                    </footer>
+                </blockquote>
+            </section>
+
+            <!-- Table of Contents -->
+            <section data-background-color="#f8f8f8">
+                <h2>Contenido del Recurso</h2>
+                
+                <section>
+                    <h3>Estructura de la Guía</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Fundamentos</h4>
+                                <ul>
+                                    <li>Definición y alcance</li>
+                                    <li>Accesibilidad cognitiva</li>
+                                    <li>Beneficiarios</li>
+                                </ul>
+                            </div>
+                            <div class="concept-box">
+                                <h4>Marcos Normativos</h4>
+                                <ul>
+                                    <li>Regulación en Ecuador</li>
+                                    <li>Unión Europea</li>
+                                    <li>Declaraciones de accesibilidad</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Estándares WCAG</h4>
+                                <ul>
+                                    <li>Principios POUR</li>
+                                    <li>Niveles de conformidad</li>
+                                    <li>WCAG 2.2 (2023)</li>
+                                </ul>
+                            </div>
+                            <div class="concept-box">
+                                <h4>Evaluación Práctica</h4>
+                                <ul>
+                                    <li>Herramientas de evaluación</li>
+                                    <li>Casos de estudio</li>
+                                    <li>Aplicación real</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- I. Fundamentos de la Accesibilidad -->
+            <section>
+                <h2>I. Fundamentos de la Accesibilidad</h2>
+
+                <section>
+                    <h3>Definición y Alcance</h3>
+                    <div class="concept-box">
+                        <p><strong>La accesibilidad web</strong> significa que las personas con cualquier tipo de discapacidad pueden <mark>utilizar la Web en las mismas condiciones</mark> que el resto.</p>
+                        <div class="fragment">
+                            <p>Esto implica un diseño que les permita a las personas <strong>percibir, entender e interactuar</strong> con el sitio que están navegando.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Población Beneficiaria</h3>
+                    <p>La accesibilidad web beneficia a un amplio rango de personas:</p>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Discapacidades Visuales</h4>
+                                <ul>
+                                    <li>Ceguera</li>
+                                    <li>Visión deficiente</li>
+                                    <li>Sensibilidad fotográfica</li>
+                                </ul>
+                            </div>
+                            <div class="concept-box">
+                                <h4>Discapacidades Auditivas</h4>
+                                <ul>
+                                    <li>Sordera</li>
+                                    <li>Pérdida de audición</li>
+                                    <li>Discapacidades del habla</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Discapacidades Cognitivas</h4>
+                                <ul>
+                                    <li>Discapacidades de aprendizaje</li>
+                                    <li>Limitaciones cognitivas</li>
+                                    <li>Personas de edad avanzada</li>
+                                </ul>
+                            </div>
+                            <div class="concept-box">
+                                <h4>Discapacidades Motoras</h4>
+                                <ul>
+                                    <li>Movimientos limitados</li>
+                                    <li>Combinaciones de discapacidades</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="concept-box good fragment">
+                        <p><strong>Objetivo:</strong> Proporcionar <mark>acceso equitativo e igualdad de oportunidades</mark> para todos.</p>
+                    </div>
+                </section>
+
+                <!-- Accesibilidad Cognitiva -->
+                <section>
+                    <h3>Accesibilidad Cognitiva</h3>
+                    
+                    <section>
+                        <h3>¿Qué es la Accesibilidad Cognitiva?</h3>
+                        <div class="concept-box">
+                            <p><strong>Definición:</strong> La propiedad de entornos, procesos, bienes, productos o servicios que resultan <mark>inteligibles o de fácil comprensión</mark>.</p>
+                            <div class="fragment">
+                                <p><em>En esencia, es hacer que el mundo sea más fácil de entender.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="concept-box good fragment">
+                            <h4>Objetivo Principal</h4>
+                            <p>Eliminar <strong>barreras cognitivas</strong> que impiden la comprensión y uso efectivo de información, servicios y entornos.</p>
+                        </div>
+
+                        <div class="fragment">
+                            <h4>Importancia en el Diseño Web</h4>
+                            <p>La accesibilidad cognitiva es fundamental para crear interfaces <strong>verdaderamente inclusivas</strong> que funcionen para usuarios con diferentes capacidades de procesamiento de información.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Herramientas Textuales y de Comunicación</h3>
+                        <p>Métodos basados en <strong>comunicación escrita y verbal</strong> simplificada:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>📝 Lectura Fácil</h4>
+                                    <ul>
+                                        <li><strong>Lenguaje claro y simple</strong></li>
+                                        <li>Frases cortas y directas</li>
+                                        <li>Estructura lógica</li>
+                                        <li>Vocabulario común</li>
+                                        <li>Definición de términos técnicos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🗣️ Comunicación Alternativa</h4>
+                                    <ul>
+                                        <li><strong>Sistemas alternativos y aumentativos</strong> de comunicación (SAAC)</li>
+                                        <li>Comunicación multimodal</li>
+                                        <li>Adaptaciones personalizadas</li>
+                                        <li>Contenido en múltiples formatos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <h4>💡 Principio Clave</h4>
+                            <p>Un texto en <strong>lectura fácil</strong> no es un texto simplificado, sino un texto <mark>adaptado cognitivamente</mark> que mantiene toda la información esencial.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Herramientas Visuales y Tecnológicas</h3>
+                        <p>Métodos basados en <strong>comunicación visual y soporte tecnológico</strong>:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🖼️ Apoyos Visuales</h4>
+                                    <ul>
+                                        <li><strong>Pictogramas</strong> universales</li>
+                                        <li>Iconografía consistente</li>
+                                        <li>Imágenes explicativas</li>
+                                        <li>Diagramas simplificados</li>
+                                        <li>Mapas conceptuales claros</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>💻 Soporte Tecnológico</h4>
+                                    <ul>
+                                        <li><strong>Interfaces adaptativas</strong></li>
+                                        <li>Audio explicativo y narración</li>
+                                        <li>Navegación simplificada</li>
+                                        <li>Feedback claro e inmediato</li>
+                                        <li>Personalización de la experiencia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box good fragment">
+                            <h4>🎯 Estrategia de Implementación</h4>
+                            <p>Combinar <strong>múltiples modalidades</strong> (texto, imagen, audio) para reforzar la comprensión y ofrecer alternativas según las preferencias del usuario.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Poblaciones Beneficiarias</h3>
+                        <p>La accesibilidad cognitiva beneficia a <strong>múltiples grupos</strong> de usuarios:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🧠 Discapacidades Cognitivas</h4>
+                                    <ul>
+                                        <li><strong>Discapacidad intelectual</strong> y del desarrollo</li>
+                                        <li>Trastornos del espectro autista</li>
+                                        <li>Lesiones cerebrales adquiridas</li>
+                                        <li>Demencias y deterioro cognitivo</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="concept-box fragment">
+                                    <h4>⚡ Condiciones Situacionales</h4>
+                                    <ul>
+                                        <li>Fatiga mental y estrés</li>
+                                        <li>Efectos de medicación</li>
+                                        <li>Situaciones de emergencia</li>
+                                        <li>Multitarea e interrupciones</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🌍 Barreras Culturales y Educativas</h4>
+                                    <ul>
+                                        <li>Migrantes y <strong>barreras idiomáticas</strong></li>
+                                        <li>Niveles educativos diversos</li>
+                                        <li>Brecha digital generacional</li>
+                                        <li>Usuarios inexpertos en tecnología</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Beneficio Universal y Mejores Prácticas</h3>
+                        
+                        <div class="concept-box good">
+                            <h4>🌟 Principio de Diseño Universal</h4>
+                            <p><strong>Las mejoras en accesibilidad cognitiva benefician a TODOS los usuarios</strong>, no solo a poblaciones específicas. Un diseño cognitivamente accesible es simplemente un <mark>mejor diseño</mark>.</p>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>✅ Beneficios Universales</h4>
+                                    <ul>
+                                        <li>Mejora la <strong>usabilidad general</strong></li>
+                                        <li>Reduce errores de usuario</li>
+                                        <li>Aumenta la satisfacción</li>
+                                        <li>Acelera tareas complejas</li>
+                                        <li>Mejora la retención de información</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>🎯 Mejores Prácticas</h4>
+                                    <ul>
+                                        <li><strong>Testeo con usuarios reales</strong></li>
+                                        <li>Diseño iterativo y centrado en usuario</li>
+                                        <li>Simplificación sin pérdida de funcionalidad</li>
+                                        <li>Consistencia en patrones de interacción</li>
+                                        <li>Feedback claro en cada acción</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <p><strong>Recordatorio:</strong> La accesibilidad cognitiva debe ser un <mark>eje transversal</mark> en todas las decisiones de diseño, no una característica añadida posteriormente.</p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+            <!-- II. Pautas WCAG -->
+            <section>
+                <h2>II. Pautas de Accesibilidad para el Contenido Web (WCAG)</h2>
+
+                <section>
+                    <h3>Introducción a las WCAG</h3>
+                    <div class="concept-box">
+                        <p>Las <strong>WCAG (Web Content Accessibility Guidelines)</strong> son el <mark>estándar internacional</mark> para garantizar la accesibilidad.</p>
+                        <div class="fragment">
+                            <p>Desarrolladas por la <strong>Iniciativa de Accesibilidad Web (WAI)</strong> del <strong>World Wide Web Consortium (W3C)</strong>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Estructura y Principios POUR -->
+                <section>
+                    <h3>Estructura y Principios POUR</h3>
+                    
+                    <section>
+                        <h3>Introducción a los Principios POUR</h3>
+                        <div class="concept-box">
+                            <p>Las WCAG se organizan en <strong>cuatro principios fundamentales</strong> conocidos como <mark>POUR</mark>:</p>
+                        </div>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment" data-fragment-index="1">
+                                    <h4>P - Perceptible</h4>
+                                    <p>La información debe ser mostrada a los usuarios en formas que puedan entender.</p>
+                                </div>
+                                <div class="concept-box fragment" data-fragment-index="3">
+                                    <h4>U - Comprensible</h4>
+                                    <p>La información y las operaciones deben ser comprensibles.</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment" data-fragment-index="2">
+                                    <h4>O - Operable</h4>
+                                    <p>Los componentes de la interfaz y la navegación deben ser manejables.</p>
+                                </div>
+                                <div class="concept-box fragment" data-fragment-index="4">
+                                    <h4>R - Robusto</h4>
+                                    <p>El contenido debe ser interpretado por una gran variedad de agentes de usuario.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cross-reference fragment">
+                            <p><strong>Jerarquía:</strong> Principios → <strong>Pautas (13 directrices)</strong> → <strong>Criterios de éxito (86 en WCAG 2.2)</strong></p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>P - Principio Perceptible</h3>
+                        <div class="concept-box">
+                            <p><strong>👁️ Objetivo:</strong> La información debe ser mostrada a los usuarios en formas que puedan entender.</p>
+                        </div>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>📋 Pautas Principales (4)</h4>
+                                    <ul>
+                                        <li><strong>1.1 Texto alternativo:</strong> Para contenido no textual</li>
+                                        <li><strong>1.2 Multimedia:</strong> Alternativas para contenido temporal</li>
+                                        <li><strong>1.3 Adaptable:</strong> Sin perder información o estructura</li>
+                                        <li><strong>1.4 Distinguible:</strong> Facilitar ver y escuchar contenido</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🔧 Ejemplos de Implementación</h4>
+                                    <ul>
+                                        <li><strong>Alt text</strong> descriptivo en imágenes</li>
+                                        <li><strong>Subtítulos</strong> y transcripciones en videos</li>
+                                        <li><strong>Contraste 4.5:1</strong> para texto normal</li>
+                                        <li><strong>Texto redimensionable</strong> hasta 200%</li>
+                                        <li>Contenido no dependiente solo del <strong>color</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <p><strong>💡 Clave:</strong> Si un usuario no puede <mark>percibir</mark> el contenido, no puede interactuar con él. Este es el principio más fundamental.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>O - Principio Operable</h3>
+                        <div class="concept-box">
+                            <p><strong>⌨️ Objetivo:</strong> Los componentes de la interfaz de usuario y la navegación deben ser manejables por todos los usuarios.</p>
+                        </div>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>📋 Pautas Principales (5)</h4>
+                                    <ul>
+                                        <li><strong>2.1 Teclado accesible:</strong> Toda funcionalidad vía teclado</li>
+                                        <li><strong>2.2 Tiempo suficiente:</strong> Control sobre límites temporales</li>
+                                        <li><strong>2.3 Convulsiones:</strong> Evitar ataques epilépticos</li>
+                                        <li><strong>2.4 Navegable:</strong> Ayudar a encontrar contenido</li>
+                                        <li><strong>2.5 Modalidades entrada:</strong> Más allá del teclado <span style="color: var(--uide-accent);">(WCAG 2.2)</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🔧 Ejemplos de Implementación</h4>
+                                    <ul>
+                                        <li><strong>Tab navigation</strong> lógico y visible</li>
+                                        <li><strong>Pausar/detener</strong> contenido en movimiento</li>
+                                        <li>Sin <strong>parpadeos</strong> > 3 por segundo</li>
+                                        <li><strong>Breadcrumbs</strong> y navegación consistente</li>
+                                        <li><strong>Gestos táctiles</strong> con alternativas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box good fragment">
+                            <p><strong>⚡ Novedad WCAG 2.2:</strong> Mayor enfoque en modalidades de entrada modernas como <mark>gestos táctiles</mark> y <mark>control por voz</mark>.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>U - Principio Comprensible</h3>
+                        <div class="concept-box">
+                            <p><strong>🧠 Objetivo:</strong> La información y las operaciones de la interfaz deben ser comprensibles para todos los usuarios.</p>
+                        </div>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>📋 Pautas Principales (3)</h4>
+                                    <ul>
+                                        <li><strong>3.1 Legible:</strong> Contenido de texto legible y comprensible</li>
+                                        <li><strong>3.2 Predecible:</strong> Apariencia y funcionamiento previsibles</li>
+                                        <li><strong>3.3 Asistencia entrada:</strong> Ayudar a evitar y corregir errores</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="concept-box fragment">
+                                    <h4>🔧 Ejemplos de Implementación</h4>
+                                    <ul>
+                                        <li><strong>Idioma de página</strong> identificado</li>
+                                        <li><strong>Navegación consistente</strong> entre páginas</li>
+                                        <li><strong>Etiquetas</strong> claras en formularios</li>
+                                        <li><strong>Mensajes de error</strong> específicos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🎯 Enfoque en Cognición</h4>
+                                    <p>Este principio está <strong>estrechamente relacionado</strong> con la accesibilidad cognitiva que revisamos anteriormente.</p>
+                                    <ul>
+                                        <li>Lenguaje claro y simple</li>
+                                        <li>Instrucciones contextuales</li>
+                                        <li>Ayuda preventiva de errores</li>
+                                        <li>Confirmación en acciones críticas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cross-reference fragment">
+                            <p><strong>🔗 Conexión:</strong> Los criterios de <mark>comprensibilidad</mark> son fundamentales para usuarios con discapacidades cognitivas y benefician a todos.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>R - Principio Robusto</h3>
+                        <div class="concept-box">
+                            <p><strong>🔧 Objetivo:</strong> El contenido debe ser lo suficientemente robusto para ser interpretado por una amplia variedad de agentes de usuario, incluidas las tecnologías de asistencia.</p>
+                        </div>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>📋 Pauta Principal (1)</h4>
+                                    <ul>
+                                        <li><strong>4.1 Compatible:</strong> Maximizar compatibilidad con tecnologías actuales y futuras</li>
+                                    </ul>
+                                    
+                                    <h4 style="margin-top: 1.5em;">🎯 Meta Principal</h4>
+                                    <p>Garantizar que el contenido siga siendo <strong>accesible</strong> a medida que las tecnologías <mark>evolucionan</mark>.</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🔧 Tecnologías de Asistencia</h4>
+                                    <ul>
+                                        <li><strong>Lectores de pantalla</strong> (NVDA, JAWS, VoiceOver)</li>
+                                        <li><strong>Magnificadores</strong> de pantalla</li>
+                                        <li><strong>Software de reconocimiento</strong> de voz</li>
+                                        <li><strong>Navegadores alternativos</strong></li>
+                                        <li>Dispositivos de <strong>entrada adaptativa</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <h4>⚠️ Cambio Importante en WCAG 2.2</h4>
+                            <p>Se <strong>eliminó el criterio 4.1.1 Parsing</strong> porque las tecnologías de asistencia modernas ya no dependen del análisis directo de HTML para funcionar correctamente.</p>
+                        </div>
+
+                        <div class="concept-box good fragment">
+                            <p><strong>💡 Enfoque futuro:</strong> La robustez se centra ahora en <mark>semántica correcta</mark> y <mark>APIs de accesibilidad</mark> más que en validación sintáctica.</p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Niveles de Conformidad -->
+            <section>
+                <h2>Niveles de Conformidad WCAG</h2>
+
+                <section>
+                    <h3>Sistema de Tres Niveles</h3>
+                    <p>El W3C distingue <strong>tres niveles de cumplimiento</strong>:</p>
+                </section>
+
+                <section>
+                    <h3>Nivel A - Mínimo</h3>
+                    <div class="concept-box">
+                        <h4>Definición</h4>
+                        <p><strong>Nivel mínimo de conformidad.</strong> La página debe cumplir todos los criterios de éxito del nivel A.</p>
+                    </div>
+                    
+                    <div class="fragment">
+                        <div style="display: flex; align-items: center; gap: 2rem; padding: 1.5rem; border-left: 4px solid var(--uide-accent);">
+                            <div style="flex: 1;">
+                                <p style="margin: 0; font-size: 1.1em;"><strong>WCAG 2.2:</strong> 31 criterios de éxito</p>
+                                <p style="margin: 0.5rem 0; color: var(--uide-secondary);">Incluye el nuevo criterio <em>"Ayuda consistente"</em></p>
+                            </div>
+                            <div style="flex-shrink: 0; background: var(--uide-accent); color: white; padding: 20px; border-radius: 50%; font-size: 2em; font-weight: bold;">
+                                A
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Nivel AA - Estándar</h3>
+                    <div class="concept-box good">
+                        <h4>Definición</h4>
+                        <p><strong>Nivel medio de accesibilidad.</strong> Cumple todos los criterios de nivel A y AA.</p>
+                        <p><mark>Es el nivel habitualmente exigido legalmente.</mark></p>
+                    </div>
+                    
+                    <div class="fragment">
+                        <div style="display: flex; align-items: center; gap: 2rem; padding: 1.5rem; border-left: 4px solid var(--uide-primary);">
+                            <div style="flex: 1;">
+                                <p style="margin: 0; font-size: 1.1em;"><strong>WCAG 2.2:</strong> 24 criterios adicionales</p>
+                                <p style="margin: 0.5rem 0; color: var(--uide-secondary);"><strong>Total:</strong> 55 criterios (A + AA)</p>
+                            </div>
+                            <div style="flex-shrink: 0; background: var(--uide-primary); color: white; padding: 20px; border-radius: 50%; font-size: 2em; font-weight: bold;">
+                                AA
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Nivel AAA - Superior</h3>
+                    <div class="concept-box">
+                        <h4>Definición</h4>
+                        <p><strong>Nivel más alto de accesibilidad.</strong> Cumple todos los criterios de nivel A, AA y AAA.</p>
+                    </div>
+                    
+                    <div class="fragment">
+                        <div style="display: flex; align-items: center; gap: 2rem; padding: 1.5rem; border-left: 4px solid var(--uide-secondary);">
+                            <div style="flex: 1;">
+                                <p style="margin: 0; font-size: 1.1em;"><strong>WCAG 2.2:</strong> 31 criterios adicionales</p>
+                                <p style="margin: 0.5rem 0; color: var(--uide-secondary);"><strong>Total:</strong> 86 criterios (A + AA + AAA)</p>
+                            </div>
+                            <div style="flex-shrink: 0; background: var(--uide-secondary); color: white; padding: 20px; border-radius: 50%; font-size: 1.8em; font-weight: bold;">
+                                AAA
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WCAG 2.2 - Novedades (2023) -->
+                <section>
+                    <h3>WCAG 2.2 - Novedades (2023)</h3>
+                    
+                    <section>
+                        <h3>Introducción a WCAG 2.2</h3>
+                        <div class="concept-box">
+                            <p><strong>🆕 Publicada:</strong> 5 de octubre de 2023 • <strong>Compatible</strong> con versiones anteriores</p>
+                        </div>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box good fragment">
+                                    <h4>✅ Características Generales</h4>
+                                    <ul>
+                                        <li><strong>Compatibilidad total</strong> con WCAG 2.1 y 2.0</li>
+                                        <li><strong>9 nuevos criterios</strong> de éxito</li>
+                                        <li><strong>1 criterio eliminado</strong> (4.1.1 Parsing)</li>
+                                        <li>Enfoque en <strong>accesibilidad cognitiva</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🎯 Enfoque Principal</h4>
+                                    <ul>
+                                        <li>Usuarios con <strong>discapacidades cognitivas</strong></li>
+                                        <li>Personas con <strong>baja visión</strong></li>
+                                        <li>Usuarios en <strong>dispositivos móviles</strong></li>
+                                        <li>Mejoras en <strong>navegación por teclado</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <p><strong>📊 Impacto numérico:</strong> Total de criterios pasa de 78 (WCAG 2.1) a <mark>86 criterios</mark> (WCAG 2.2)</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Nuevos Criterios Nivel A</h3>
+                        <p>Criterios básicos que <strong>todas las páginas web</strong> deben cumplir:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🔗 2.4.11 Enfoque no oscurecido (Mínimo)</h4>
+                                    <p><strong>Problema que resuelve:</strong> Elementos que quedan ocultos por contenido flotante</p>
+                                    <ul>
+                                        <li>El elemento con foco del teclado debe ser <strong>al menos parcialmente visible</strong></li>
+                                        <li>No debe ser completamente oscurecido por contenido creado por el autor</li>
+                                        <li><strong>Excepción:</strong> Si el usuario puede reposicionarlo</li>
+                                    </ul>
+                                    <small><strong>Beneficia:</strong> Usuarios de navegación por teclado y lectores de pantalla</small>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🆘 3.2.6 Ayuda Consistente</h4>
+                                    <p><strong>Problema que resuelve:</strong> Dificultad para encontrar ayuda en sitios complejos</p>
+                                    <ul>
+                                        <li>Los mecanismos de ayuda deben aparecer en <strong>el mismo lugar</strong> en múltiples páginas</li>
+                                        <li>Incluye: contacto, teléfono, formulario, chat, FAQ</li>
+                                        <li>Debe mantener <strong>orden relativo consistente</strong></li>
+                                    </ul>
+                                    <small><strong>Beneficia:</strong> Usuarios con discapacidades cognitivas y memoria limitada</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box fragment">
+                            <h4>📝 3.3.7 Entrada Redundante</h4>
+                            <p><strong>Problema que resuelve:</strong> Reingreso innecesario de información en procesos largos</p>
+                            <ul>
+                                <li>No requerir información que el usuario ya proporcionó <strong>en la misma sesión</strong></li>
+                                <li><strong>Excepciones:</strong> Seguridad, verificación de información, información previa no válida</li>
+                                <li>Debe estar <strong>autocompletada</strong> o disponible para selección</li>
+                            </ul>
+                            <small><strong>Beneficia:</strong> Usuarios con memoria limitada, fatiga cognitiva y discapacidades motoras</small>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Nuevos Criterios Nivel AA</h3>
+                        <p>Criterios del <strong>estándar legal</strong> que deben implementar organismos públicos:</p>
+                        
+                        <div class="concept-box fragment">
+                            <h4>🔒 3.3.8 Autenticación Accesible (Mínimo)</h4>
+                            <p><strong>Problema que resuelve:</strong> Barreras cognitivas en procesos de autenticación</p>
+                            <ul>
+                                <li><strong>No requerir</strong> que el usuario complete una prueba de función cognitiva</li>
+                                <li><strong>Excepciones permitidas:</strong> Método alternativo disponible, mecanismo de asistencia, reconocimiento de objetos, contenido personal identificado por usuario</li>
+                                <li><strong>Ejemplos prohibidos:</strong> Recordar contraseñas, resolver matemáticas simples, transcribir textos</li>
+                            </ul>
+                            <small><strong>Beneficia:</strong> Usuarios con discapacidades cognitivas, demencia, afasia</small>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>🔍 2.4.12 Enfoque no oscurecido (Mejorado)</h4>
+                                    <p><strong>Mejora del criterio A:</strong> El elemento con foco debe estar <strong>completamente visible</strong></p>
+                                    <ul>
+                                        <li>Versión más estricta del 2.4.11</li>
+                                        <li>No debe estar oscurecido <strong>en absoluto</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>↩️ 2.5.7 Movimientos de Arrastre</h4>
+                                    <p><strong>Problema que resuelve:</strong> Dificultades con gestos complejos</p>
+                                    <ul>
+                                        <li>Funcionalidad de arrastre debe tener <strong>alternativa de punto único</strong></li>
+                                        <li>Sin requerir trayectoria específica</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box good fragment">
+                            <h4>📏 2.5.8 Tamaño del Objetivo (Mínimo)</h4>
+                            <p><strong>Problema que resuelve:</strong> Targets muy pequeños en dispositivos móviles</p>
+                            <ul>
+                                <li>Targets deben tener al menos <strong>24×24 píxeles CSS</strong></li>
+                                <li><strong>Excepciones:</strong> Espaciado equivalente, en línea, control del usuario agente, presentación esencial</li>
+                            </ul>
+                            <small><strong>Beneficia:</strong> Usuarios con discapacidades motoras, temblores, usuarios de móviles</small>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Nuevos Criterios Nivel AAA y Cambios Importantes</h3>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>🔒 3.3.9 Autenticación Accesible (Mejorado)</h4>
+                                    <p><strong>Versión más estricta:</strong> Elimina algunas excepciones del criterio AA</p>
+                                    <ul>
+                                        <li>No se permite <strong>reconocimiento de objetos</strong></li>
+                                        <li>No se permite <strong>contenido personal</strong> identificado por usuario</li>
+                                        <li>Solo mantiene: método alternativo y mecanismo de asistencia</li>
+                                    </ul>
+                                </div>
+
+                                <div class="concept-box fragment">
+                                    <h4>📐 2.5.9 Tamaño del Objetivo (Mejorado)</h4>
+                                    <p><strong>Estándar más alto:</strong> Targets de al menos <strong>44×44 píxeles</strong></p>
+                                    <ul>
+                                        <li>Versión más estricta del 2.5.8</li>
+                                        <li>Alineado con mejores prácticas móviles</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box warning fragment">
+                                    <h4>❌ Criterio Eliminado</h4>
+                                    <p><strong>4.1.1 Parsing</strong> se eliminó porque:</p>
+                                    <ul>
+                                        <li>Las tecnologías de asistencia modernas <strong>no dependen</strong> del análisis directo de HTML</li>
+                                        <li>Los navegadores actuales manejan bien el HTML malformado</li>
+                                        <li>Era difícil de evaluar objetivamente</li>
+                                        <li>No agregaba valor práctico real</li>
+                                    </ul>
+                                </div>
+
+                                <div class="concept-box good fragment">
+                                    <h4>🔄 Enfoque Futuro</h4>
+                                    <p>La robustez ahora se centra en:</p>
+                                    <ul>
+                                        <li><strong>Semántica correcta</strong> (roles, propiedades ARIA)</li>
+                                        <li><strong>APIs de accesibilidad</strong> bien implementadas</li>
+                                        <li>Compatibilidad con <strong>tecnologías de asistencia</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Impacto y Consideraciones de Implementación</h3>
+                        
+                        <div class="concept-box">
+                            <h4>📈 Distribución por Principios POUR</h4>
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <ul>
+                                        <li><strong>Perceptible:</strong> 1 nuevo criterio</li>
+                                        <li><strong>Operable:</strong> 5 nuevos criterios</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <ul>
+                                        <li><strong>Comprensible:</strong> 3 nuevos criterios</li>
+                                        <li><strong>Robusto:</strong> 1 criterio eliminado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box good">
+                                    <h4>✅ Beneficios Clave</h4>
+                                    <ul>
+                                        <li>Mejor soporte para <strong>usuarios cognitivos</strong></li>
+                                        <li>Interfaces más <strong>usables en móviles</strong></li>
+                                        <li>Navegación por teclado <strong>más robusta</strong></li>
+                                        <li>Procesos de autenticación <strong>más inclusivos</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>⚠️ Consideraciones</h4>
+                                    <ul>
+                                        <li><strong>Retrocompatibilidad:</strong> Total con versiones anteriores</li>
+                                        <li><strong>Adopción legal:</strong> Los marcos normativos adoptarán gradualmente</li>
+                                        <li><strong>Costos:</strong> Algunos criterios requieren rediseño significativo</li>
+                                        <li><strong>Testing:</strong> Nuevas metodologías de evaluación necesarias</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <p><strong>🏛️ Adopción Regulatoria:</strong> Aunque WCAG 2.2 está disponible, la mayoría de marcos legales (como EN 301 549 en UE) aún requieren <mark>WCAG 2.1 Nivel AA</mark>. Se espera actualización gradual en los próximos años.</p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+            <!-- III. Marcos Normativos -->
+            <section>
+                <h2>III. Marcos Normativos y Obligaciones Legales</h2>
+
+                <section>
+                    <h3>Panorama Global</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Ecuador</h4>
+                                <p>RTE INEN 288<br>WCAG 2.0 Nivel AA</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Unión Europea</h4>
+                                <p>EN 301 549<br>WCAG 2.1 Nivel AA</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>1. Regulación en Ecuador</h3>
+                    <div class="concept-box">
+                        <p>Ecuador ha adoptado la norma internacional <strong>ISO/IEC 40500:2012</strong> (equivalente a WCAG 2.0) a través de la norma <strong>NTE INEN-ISO/IEC 40500</strong>.</p>
+                    </div>
+
+                    <div class="fragment">
+                        <h4>Reglamento Técnico Ecuatoriano RTE INEN 288</h4>
+                        <div class="concept-box good">
+                            <p><strong>"Accesibilidad para el contenido web"</strong></p>
+                            <ul>
+                                <li><strong>Vigencia:</strong> 8 de agosto de 2016</li>
+                                <li><strong>Aplicación:</strong> Sector público y privado que prestan servicios públicos</li>
+                                <li><strong>Nivel requerido:</strong> AA completo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Plazos de Cumplimiento en Ecuador -->
+                <section>
+                    <h3>Plazos de Cumplimiento en Ecuador</h3>
+                    
+                    <section>
+                        <h3>Cronología de Implementación</h3>
+                        <div class="concept-box">
+                            <p>El RTE INEN 288 estableció un <strong>cronograma gradual</strong> para la implementación de accesibilidad web en Ecuador, permitiendo adaptación progresiva del sector público y privado.</p>
+                        </div>
+                        
+                        <div class="concept-box good fragment">
+                            <h4>🎯 Objetivo del Cronograma</h4>
+                            <p>Dar tiempo suficiente para que las organizaciones <strong>se preparen técnicamente</strong> y cumplan con los estándares internacionales de accesibilidad web.</p>
+                        </div>
+
+                        <div class="fragment">
+                            <h4>📋 Aplicabilidad</h4>
+                            <p><strong>Sector público</strong> y <strong>sector privado que presta servicios públicos</strong> en territorio ecuatoriano.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Aplicabilidad del RTE INEN 288</h3>
+                        
+                        <section>
+                            <h3>Sectores Obligados</h3>
+                            <div class="concept-box">
+                                <p>El RTE INEN 288 establece <strong>obligaciones específicas</strong> para diferentes sectores que interactúan con ciudadanos a través de medios digitales.</p>
+                            </div>
+                            
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <div class="concept-box good fragment">
+                                        <h4>🏛️ Sector Público</h4>
+                                        <p><strong>Todas las entidades públicas</strong> sin excepción:</p>
+                                        <ul>
+                                            <li>Ministerios y secretarías</li>
+                                            <li>Gobiernos autónomos descentralizados</li>
+                                            <li>Instituciones educativas públicas</li>
+                                            <li>Empresas públicas</li>
+                                            <li>Organismos de control</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>🏢 Sector Privado Específico</h4>
+                                        <p><strong>Solo empresas privadas que prestan servicios públicos:</strong></p>
+                                        <ul>
+                                            <li>Telecomunicaciones</li>
+                                            <li>Servicios financieros (bancos, cooperativas)</li>
+                                            <li>Salud (hospitales, clínicas con convenios)</li>
+                                            <li>Educación privada con acreditación</li>
+                                            <li>Transporte público concesionado</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="concept-box warning fragment">
+                                <h4>⚠️ Importante</h4>
+                                <p><strong>No todas las empresas privadas</strong> están obligadas. Solo aquellas que <mark>prestan servicios públicos</mark> o tienen <mark>contratos con el Estado</mark> para brindar servicios a ciudadanos.</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3>Tipos de Sitios Web Cubiertos</h3>
+                            
+                            <div class="concept-box">
+                                <p>La regulación aplica a <strong>diferentes tipos de presencia digital</strong> que las organizaciones mantienen:</p>
+                            </div>
+
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>🌐 Sitios Web Institucionales</h4>
+                                        <ul>
+                                            <li><strong>Portales principales</strong> de la organización</li>
+                                            <li><strong>Subdominios</strong> y micrositios</li>
+                                            <li>Sitios de <strong>campañas específicas</strong></li>
+                                            <li>Portales de <strong>transparencia</strong></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="concept-box fragment">
+                                        <h4>📱 Aplicaciones Web</h4>
+                                        <ul>
+                                            <li><strong>Sistemas de tramitación</strong> en línea</li>
+                                            <li>Plataformas de <strong>consulta ciudadana</strong></li>
+                                            <li><strong>Portales de pagos</strong> y servicios</li>
+                                            <li>Sistemas de <strong>citas y reservas</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>📊 Plataformas de Información</h4>
+                                        <ul>
+                                            <li><strong>Portales de datos abiertos</strong></li>
+                                            <li>Sistemas de <strong>información pública</strong></li>
+                                            <li><strong>Bibliotecas digitales</strong></li>
+                                            <li>Archivos y <strong>repositorios</strong></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="concept-box fragment">
+                                        <h4>🎓 Plataformas Educativas</h4>
+                                        <ul>
+                                            <li><strong>Aulas virtuales</strong> (LMS)</li>
+                                            <li>Portales de <strong>inscripciones</strong></li>
+                                            <li>Sistemas de <strong>calificaciones</strong></li>
+                                            <li><strong>MOOCs</strong> y cursos en línea</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="concept-box good fragment">
+                                <h4>💡 Principio Clave</h4>
+                                <p>Si un ciudadano <strong>necesita acceder</strong> al sitio web para <mark>ejercer un derecho</mark> o <mark>cumplir una obligación</mark>, ese sitio debe ser accesible.</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3>Exclusiones y Excepciones</h3>
+                            
+                            <div class="concept-box warning">
+                                <h4>❌ Sitios NO Cubiertos</h4>
+                                <p>Algunas categorías de sitios web <strong>no están obligadas</strong> a cumplir con RTE INEN 288:</p>
+                            </div>
+
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>🏬 Sector Privado Comercial</h4>
+                                        <ul>
+                                            <li><strong>E-commerce privado</strong> sin servicios públicos</li>
+                                            <li>Sitios web <strong>corporativos</strong> informativos</li>
+                                            <li><strong>Blogs y medios</strong> privados</li>
+                                            <li>Redes sociales <strong>corporativas</strong></li>
+                                        </ul>
+                                        <small><em>Nota: Aunque no obligatorio, es buena práctica implementar accesibilidad</em></small>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>🔒 Contenido Restringido</h4>
+                                        <ul>
+                                            <li>Intranets <strong>internas</strong> de organizaciones</li>
+                                            <li>Sistemas de <strong>seguridad nacional</strong></li>
+                                            <li>Archivos <strong>históricos digitalizados</strong> (temporalmente)</li>
+                                            <li>Contenido de <strong>terceros embebido</strong></li>
+                                        </ul>
+                                        <small><em>Nota: Algunas excepciones pueden ser temporales</em></small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="concept-box fragment">
+                                <h4>⚖️ Excepciones por Carga Desproporcionada</h4>
+                                <p>Las organizaciones pueden solicitar <strong>excepciones temporales</strong> si demuestran que el cumplimiento implica:</p>
+                                <div class="r-hstack">
+                                    <div class="column">
+                                        <ul>
+                                            <li><strong>Carga financiera</strong> desproporcionada</li>
+                                            <li><strong>Limitaciones técnicas</strong> insuperables</li>
+                                        </ul>
+                                    </div>
+                                    <div class="column">
+                                        <ul>
+                                            <li><strong>Rediseño fundamental</strong> del sistema</li>
+                                            <li><strong>Cambio de naturaleza</strong> del servicio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p><strong>⚠️ Importante:</strong> Las excepciones deben estar <mark>justificadas técnicamente</mark> y son <mark>revisables periódicamente</mark>.</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h3>Responsabilidades y Implementación</h3>
+                            
+                            <div class="concept-box">
+                                <h4>👥 Cadena de Responsabilidad</h4>
+                                <p>La implementación de accesibilidad requiere <strong>coordinación</strong> entre múltiples actores:</p>
+                            </div>
+
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>🏛️ Responsabilidades Institucionales</h4>
+                                        <ul>
+                                            <li><strong>Directivos:</strong> Asignación de recursos y políticas</li>
+                                            <li><strong>TI:</strong> Implementación técnica y mantenimiento</li>
+                                            <li><strong>Contenido:</strong> Creación accesible de información</li>
+                                            <li><strong>Legal:</strong> Cumplimiento normativo y declaraciones</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="concept-box fragment">
+                                        <h4>🤝 Proveedores Externos</h4>
+                                        <ul>
+                                            <li><strong>Desarrolladores:</strong> Código accesible desde el diseño</li>
+                                            <li><strong>Diseñadores:</strong> Interfaces inclusivas y usables</li>
+                                            <li><strong>Auditores:</strong> Evaluación y certificación</li>
+                                            <li><strong>Consultores:</strong> Capacitación y mejores prácticas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="concept-box good fragment">
+                                <h4>📋 Proceso de Implementación Recomendado</h4>
+                                <ol style="text-align: left;">
+                                    <li><strong>Auditoría inicial:</strong> Evaluación del estado actual</li>
+                                    <li><strong>Plan de acción:</strong> Priorización de correcciones</li>
+                                    <li><strong>Capacitación:</strong> Formación del equipo técnico</li>
+                                    <li><strong>Implementación:</strong> Correcciones y nuevos desarrollos</li>
+                                    <li><strong>Verificación:</strong> Testing y validación</li>
+                                    <li><strong>Mantenimiento:</strong> Monitoreo continuo</li>
+                                </ol>
+                            </div>
+
+                            <div class="concept-box warning fragment">
+                                <p><strong>🔄 Proceso Continuo:</strong> La accesibilidad no es un <mark>proyecto de una sola vez</mark>, sino un <mark>proceso continuo</mark> que debe integrarse en todos los flujos de trabajo de desarrollo y actualización de contenido.</p>
+                            </div>
+                        </section>
+                    </section>
+
+                    <section>
+                        <h3>Fase 1: Nivel A (2016-2018)</h3>
+                        
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 3rem; padding: 1.5rem; border-left: 4px solid var(--uide-accent);">
+                            <div style="flex-shrink: 0; background: var(--uide-accent); color: white; padding: 15px 20px; border-radius: 8px; font-weight: bold;">
+                                2018
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0; color: var(--uide-accent);">WCAG 2.0 Nivel A</h4>
+                                <p style="margin: 0.5rem 0;"><strong>Plazo:</strong> Hasta el 8 de agosto de 2018</p>
+                                <p style="margin: 0.5rem 0;"><strong>Alcance:</strong> Todos los sitios web ecuatorianos que prestan un servicio público</p>
+                            </div>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>📊 Criterios Nivel A</h4>
+                                    <p><strong>31 criterios básicos</strong> que garantizan:</p>
+                                    <ul>
+                                        <li>Texto alternativo en imágenes</li>
+                                        <li>Navegación por teclado básica</li>
+                                        <li>Estructura semántica mínima</li>
+                                        <li>Identificación de idioma</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>🎯 Propósito de esta Fase</h4>
+                                    <ul>
+                                        <li><strong>Familiarización</strong> con conceptos básicos</li>
+                                        <li>Establecimiento de <strong>procesos internos</strong></li>
+                                        <li>Capacitación del <strong>personal técnico</strong></li>
+                                        <li>Implementación de <strong>fundamentos</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <p><strong>📅 Estado actual:</strong> Esta fase <mark>ya venció</mark>. Desde agosto 2018, el cumplimiento del Nivel A es <strong>obligatorio</strong> para todos los sitios web que prestan servicios públicos en Ecuador.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Fase 2: Nivel AA (2018-2020)</h3>
+                        
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 3rem; padding: 1.5rem; border-left: 4px solid var(--uide-primary);">
+                            <div style="flex-shrink: 0; background: var(--uide-primary); color: white; padding: 15px 20px; border-radius: 8px; font-weight: bold;">
+                                2020
+                            </div>
+                            <div style="flex: 1;">
+                                <h4 style="margin: 0; color: var(--uide-primary);">WCAG 2.0 Nivel AA</h4>
+                                <p style="margin: 0.5rem 0;"><strong>Plazo:</strong> Hasta el 8 de agosto de 2020</p>
+                                <p style="margin: 0.5rem 0;"><strong>Alcance:</strong> Mismo sector, nivel de conformidad más alto</p>
+                            </div>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box good">
+                                    <h4>📊 Criterios Nivel AA</h4>
+                                    <p><strong>Nivel A + 24 criterios adicionales</strong> = <strong>55 criterios totales</strong></p>
+                                    <ul>
+                                        <li><strong>Contraste 4.5:1</strong> para texto normal</li>
+                                        <li><strong>Contraste 3:1</strong> para texto grande</li>
+                                        <li>Redimensionamiento hasta <strong>200%</strong></li>
+                                        <li><strong>Foco visible</strong> en navegación por teclado</li>
+                                        <li>Navegación <strong>consistente</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>🌟 Importancia del Nivel AA</h4>
+                                    <ul>
+                                        <li>Es el <strong>estándar internacional</strong> requerido legalmente</li>
+                                        <li>Alineado con <strong>EN 301 549</strong> (UE)</li>
+                                        <li>Garantiza <strong>usabilidad real</strong> para personas con discapacidad</li>
+                                        <li>Cumple <strong>mejores prácticas</strong> internacionales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box good fragment">
+                            <p><strong>✅ Estado actual:</strong> Desde agosto 2020, el <mark>WCAG 2.0 Nivel AA</mark> es el <strong>estándar obligatorio</strong> para sitios web que prestan servicios públicos en Ecuador.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Marco de Sanciones y Cumplimiento</h3>
+                        
+                        <div class="concept-box warning">
+                            <h4>⚖️ Marco Legal de Sanciones</h4>
+                            <p>El <strong>incumplimiento</strong> del RTE INEN 288 está sujeto a sanciones previstas en:</p>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>📜 Leyes Aplicables</h4>
+                                    <ul>
+                                        <li><strong>Ley del Sistema Ecuatoriano de la Calidad</strong></li>
+                                        <li><strong>Ley Orgánica de Comunicación</strong></li>
+                                        <li><strong>Demás leyes vigentes</strong> relacionadas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>🏛️ Autoridades Competentes</h4>
+                                    <ul>
+                                        <li><strong>INEN:</strong> Organismo técnico de normalización</li>
+                                        <li><strong>SUPERCOM:</strong> Superintendencia de Comunicación</li>
+                                        <li><strong>Autoridades sectoriales</strong> específicas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box fragment">
+                            <h4>🔍 Proceso de Verificación</h4>
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <ul>
+                                        <li><strong>Auditorías técnicas</strong> de cumplimiento</li>
+                                        <li><strong>Denuncias ciudadanas</strong> por inaccesibilidad</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <ul>
+                                        <li><strong>Evaluaciones automáticas</strong> y manuales</li>
+                                        <li><strong>Seguimiento periódico</strong> de organismos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <h4>⚠️ Realidad del Cumplimiento</h4>
+                            <p>Estudios académicos han demostrado que <strong>la mayoría de sitios web ecuatorianos</strong> que prestan servicios públicos <mark>aún no cumplen</mark> completamente con WCAG 2.0 Nivel AA, a pesar de que el plazo venció en 2020.</p>
+                            <p><strong>Recomendación:</strong> Las organizaciones deben implementar <mark>auditorías de accesibilidad</mark> y planes de mejora continua.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Perspectivas Futuras</h3>
+                        
+                        <div class="concept-box">
+                            <h4>🔮 Evolución hacia WCAG 2.1/2.2</h4>
+                            <p>Aunque Ecuador actualmente requiere <strong>WCAG 2.0</strong>, se espera una eventual actualización hacia versiones más recientes:</p>
+                        </div>
+
+                        <div class="r-hstack fragment">
+                            <div class="column">
+                                <div class="concept-box good">
+                                    <h4>📈 Tendencias Internacionales</h4>
+                                    <ul>
+                                        <li>UE adopta <strong>WCAG 2.1</strong> (EN 301 549)</li>
+                                        <li>Muchos países migran a <strong>WCAG 2.1/2.2</strong></li>
+                                        <li>Mayor énfasis en <strong>accesibilidad móvil</strong></li>
+                                        <li>Enfoque en <strong>accesibilidad cognitiva</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>🚀 Recomendaciones Proactivas</h4>
+                                    <ul>
+                                        <li><strong>Implementar ya WCAG 2.1</strong> como preparación</li>
+                                        <li>Incluir criterios de <strong>accesibilidad móvil</strong></li>
+                                        <li>Considerar <strong>WCAG 2.2</strong> para nuevos proyectos</li>
+                                        <li>Establecer <strong>procesos de evaluación</strong> continua</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box good fragment">
+                            <p><strong>💡 Consejo profesional:</strong> Las organizaciones que implementen <mark>WCAG 2.1 Nivel AA</mark> hoy estarán mejor preparadas para futuras actualizaciones normativas y ofrecerán mejor experiencia a usuarios con discapacidad.</p>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>2. Regulación en la Unión Europea</h3>
+                    <p>La UE armoniza la accesibilidad mediante <strong>dos cuerpos principales</strong>:</p>
+
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Directiva de Accesibilidad Web (2016)</h4>
+                                <ul>
+                                    <li><strong>Aplicación:</strong> Organismos gubernamentales</li>
+                                    <li><strong>Norma:</strong> EN 301 549</li>
+                                    <li><strong>Estándar:</strong> WCAG 2.1 Nivel AA</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Ley Europea de Accesibilidad (2019)</h4>
+                                <ul>
+                                    <li><strong>Objetivo:</strong> Mejorar el mercado interior</li>
+                                    <li><strong>Aplicación:</strong> Organizaciones públicas y privadas</li>
+                                    <li><strong>Vigencia plena:</strong> 2025</li>
+                                    <li><strong>Excepción:</strong> Microempresas (<20 empleados)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. La Declaración de Accesibilidad -->
+                <section>
+                    <h3>3. La Declaración de Accesibilidad</h3>
+                    
+                    <section>
+                        <h3>¿Qué es la Declaración de Accesibilidad?</h3>
+                        <div class="concept-box">
+                            <p>Es un <strong>documento público obligatorio</strong> que informa sobre el nivel de accesibilidad de un sitio web o aplicación.</p>
+                        </div>
+                        
+                        <div class="concept-box good fragment">
+                            <h4>Marco Legal</h4>
+                            <p>Obligatorio en España por el <strong>Real Decreto 1112/2018</strong> y en la UE por la <strong>Directiva de Accesibilidad Web</strong>.</p>
+                        </div>
+
+                        <div class="fragment">
+                            <h4>Objetivo Principal</h4>
+                            <p>Proporcionar <mark>transparencia</mark> sobre el estado de accesibilidad y facilitar la <strong>comunicación</strong> entre usuarios y organizaciones.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Contenido Obligatorio</h3>
+                        <p>La declaración debe incluir <strong>5 elementos fundamentales</strong>:</p>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>1. Estado de Conformidad</h4>
+                                    <p>Debe indicar si el sitio:</p>
+                                    <ul>
+                                        <li><strong>Cumple totalmente</strong> con los requisitos</li>
+                                        <li><strong>Cumple parcialmente</strong></li>
+                                        <li><strong>No cumple</strong> con los requisitos</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="concept-box fragment">
+                                    <h4>2. Contenido No Accesible</h4>
+                                    <p>Explicar las secciones o elementos con barreras y las <strong>razones específicas</strong>:</p>
+                                    <ul>
+                                        <li>Carga desproporcionada</li>
+                                        <li>Contenido de terceros</li>
+                                        <li>Limitaciones técnicas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box fragment">
+                                    <h4>3. Preparación de la Declaración</h4>
+                                    <p>Detallar <strong>cómo se evaluó</strong>:</p>
+                                    <ul>
+                                        <li>Auditoría interna o externa</li>
+                                        <li>Fecha de evaluación</li>
+                                        <li>Metodología utilizada</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="concept-box fragment">
+                                    <h4>4. Observaciones y Contacto</h4>
+                                    <p>Proporcionar un <strong>medio</strong> para que los usuarios reporten dificultades de acceso:</p>
+                                    <ul>
+                                        <li>Email de contacto</li>
+                                        <li>Formulario web</li>
+                                        <li>Teléfono específico</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Procedimiento de Aplicación y Publicación</h3>
+                        
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box">
+                                    <h4>5. Procedimiento de Aplicación</h4>
+                                    <p>Informar sobre <strong>cómo presentar reclamaciones</strong> si la respuesta no es satisfactoria:</p>
+                                    <ul>
+                                        <li>Dirigirse al Defensor del Pueblo (España)</li>
+                                        <li>Organismos reguladores nacionales</li>
+                                        <li>Procedimientos administrativos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="column">
+                                <div class="concept-box good">
+                                    <h4>Requisitos de Publicación</h4>
+                                    <ul>
+                                        <li>Enlazada desde <strong>todas las páginas</strong> del sitio</li>
+                                        <li>Comúnmente ubicada en el <strong>pie de página</strong></li>
+                                        <li>Debe mantenerse <strong>actualizada</strong></li>
+                                        <li>Evaluaciones <strong>periódicas</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="concept-box warning fragment">
+                            <h4>⚠️ Advertencia Importante</h4>
+                            <p><strong>La declaración es solo un documento informativo.</strong> La web debe ser accesible de forma efectiva y mantenerse actualizada mediante evaluaciones periódicas y corrección de errores.</p>
+                            <p><mark>La declaración por sí sola no evita sanciones.</mark></p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+
+            <!-- IV. Evaluación y Casos Prácticos -->
+            <section>
+                <h2>IV. Evaluación y Casos Prácticos</h2>
+
+                <section>
+                    <h3>1. Herramientas de Evaluación Web</h3>
+                    <div class="concept-box">
+                        <p>Las herramientas de evaluación son programas o servicios en línea que ayudan a verificar si el contenido cumple con las pautas.</p>
+                        <div class="concept-box warning fragment">
+                            <p><strong>Importante:</strong> <mark>Estas herramientas no pueden sustituir la revisión manual</mark> realizada por un experto.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Principales Herramientas</h3>
+                    
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Examinator</h4>
+                                <p>Servicio en línea que evalúa automáticamente la accesibilidad (WCAG 2.0), dando una puntuación de 1 a 10.</p>
+                            </div>
+                            <div class="concept-box">
+                                <h4>TAW</h4>
+                                <p>Herramienta automática en línea para analizar el nivel de accesibilidad de sitios web.</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>W3C Markup Validation</h4>
+                                <p>Servicio que verifica la validez de documentos web escritos en HTML o XHTML.</p>
+                            </div>
+                            <div class="concept-box">
+                                <h4>W3C CSS Validation</h4>
+                                <p>Software que ayuda a validar y corregir Hojas de Estilo en Cascada (CSS).</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>2. Caso de Estudio: Ecuador</h3>
+                    <div class="concept-box">
+                        <h4>Análisis de Instituciones Educativas en Cuenca</h4>
+                        <p><strong>Muestra:</strong> 191 páginas web de instituciones educativas</p>
+                        <p><strong>Resultado:</strong> Era necesario corregir errores en <mark>todos los portales web analizados</mark></p>
+                    </div>
+
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Hallazgos Principales</h4>
+                            <div class="concept-box warning">
+                                <ul>
+                                    <li><strong>Incumplimiento normativo:</strong> Ninguna institución presentaba iconos del W3C (A, AA, AAA)</li>
+                                    <li><strong>Puntaje promedio:</strong> 5.43/10 (Examinator)</li>
+                                    <li><strong>Área más problemática:</strong> Principio de Robustez</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <h4>Recomendaciones</h4>
+                            <div class="concept-box">
+                                <p>Debido a la cantidad de errores:</p>
+                                <ul>
+                                    <li><strong>Rediseño completo</strong> de portales</li>
+                                    <li>O <strong>trabajo arduo</strong> de revisión y corrección del código fuente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>3. Caso de Estudio: Transporte Público (España)</h3>
+                    <div class="concept-box">
+                        <h4>Proyecto "Comunidades Accesibles" (Plena inclusión)</h4>
+                        <p><strong>Enfoque:</strong> Evaluación del transporte público (líneas de autobús)</p>
+                        <p><strong>Metodología:</strong> Participativa con equipos que incluían personas con y sin discapacidad intelectual</p>
+                    </div>
+
+                    <div class="fragment">
+                        <h4>Principales Barreras Identificadas</h4>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div class="concept-box warning">
+                                    <h5>Búsqueda de Información</h5>
+                                    <ul>
+                                        <li>Mapas difíciles de comprender</li>
+                                        <li>Información insuficiente sobre horarios</li>
+                                        <li>Falta de textos en lectura fácil</li>
+                                    </ul>
+                                </div>
+                                <div class="concept-box warning">
+                                    <h5>Espera del Autobús</h5>
+                                    <ul>
+                                        <li>Información dispersa y excesiva</li>
+                                        <li>Cuadros confusos para horarios</li>
+                                        <li>Letra pequeña</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="concept-box warning">
+                                    <h5>Interior del Autobús</h5>
+                                    <ul>
+                                        <li>Información dispersa</li>
+                                        <li>Falta de criterios unificados</li>
+                                        <li>Ausencia de pantallas informativas</li>
+                                    </ul>
+                                </div>
+                                <div class="concept-box warning">
+                                    <h5>Recogida de Quejas</h5>
+                                    <ul>
+                                        <li>Proceso difícil de comprender</li>
+                                        <li>Formularios web inaccesibles</li>
+                                        <li>Falta de atención inclusiva</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-box good fragment">
+                        <p><strong>Conclusión:</strong> La accesibilidad cognitiva debe ser un <mark>eje transversal en las políticas públicas</mark> para garantizar la movilidad y participación plena de todas las personas.</p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Conceptos Clave - Flashcards Interactivas -->
+            <section>
+                <h2>Conceptos Clave - Flashcards Interactivas</h2>
+                <p style="text-align: center; margin-bottom: 2rem;"><em>Haz clic en cada tarjeta para ver la
+                        respuesta</em></p>
+
+                <section>
+                    <div class="flashcards-grid">
+                        <!-- Card 1 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Principios POUR</h4>
+                                    <p>¿Cuáles son los cuatro principios fundamentales de las WCAG?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Perceptible, Operable, Comprensible, Robusto</h4>
+                                    <p><strong>P</strong>erceptible: información mostrable<br>
+                                    <strong>O</strong>perable: componentes manejables<br>
+                                    <strong>U</strong>nderstandable: información comprensible<br>
+                                    <strong>R</strong>obusto: compatible con tecnologías</p>
+                                    <small>Base de toda accesibilidad web</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Niveles de Conformidad</h4>
+                                    <p>¿Cuál es el nivel de WCAG habitualmente exigido legalmente?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Nivel AA</h4>
+                                    <p><strong>Nivel medio de accesibilidad</strong> que cumple todos los criterios A y AA.</p>
+                                    <p>Es el estándar legal en Ecuador (RTE INEN 288) y la UE (EN 301 549).</p>
+                                    <small>55 criterios totales en WCAG 2.2</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="flashcards-grid">
+                        <!-- Card 3 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>WCAG 2.2</h4>
+                                    <p>¿Cuál es la novedad más importante de WCAG 2.2 publicada en 2023?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Enfoque en Discapacidades Cognitivas</h4>
+                                    <p>Introduce <strong>9 nuevos criterios</strong> enfocados en discapacidades cognitivas y baja visión.</p>
+                                    <p><strong>Ejemplos:</strong> Ayuda consistente, Entrada redundante, Autenticación accesible</p>
+                                    <small>Compatible con versiones anteriores</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Accesibilidad Cognitiva</h4>
+                                    <p>¿Qué hace que un entorno sea cognitivamente accesible?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Fácil Comprensión</h4>
+                                    <p>Entornos, procesos y servicios que resultan <strong>inteligibles o de fácil comprensión</strong>.</p>
+                                    <p><strong>Herramientas:</strong> Lectura fácil, pictogramas, sistemas alternativos de comunicación</p>
+                                    <small>Hacer el mundo más fácil de entender</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="flashcards-grid">
+                        <!-- Card 5 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>RTE INEN 288 Ecuador</h4>
+                                    <p>¿Qué establece el Reglamento Técnico Ecuatoriano sobre accesibilidad web?</p>
+                                    <small>Clic para ver respuesta</small>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>WCAG 2.0 Nivel AA Obligatorio</h4>
+                                    <p>Desde <strong>agosto 2020</strong>, todos los sitios web ecuatorianos que presten servicio público deben cumplir <strong>WCAG 2.0 Nivel AA</strong> completo.</p>
+                                    <p><strong>Sanciones:</strong> Ley del Sistema Ecuatoriano de la Calidad</p>
+                                    <small>Vigente desde agosto 2016</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Declaración de Accesibilidad</h4>
+                                    <p>¿Qué información debe contener una declaración de accesibilidad?</p>
+                                    <small>Clic para ver respuesta</small>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>5 Elementos Obligatorios</h4>
+                                    <p><strong>1.</strong> Estado de conformidad<br>
+                                    <strong>2.</strong> Contenido no accesible<br>
+                                    <strong>3.</strong> Preparación de la declaración<br>
+                                    <strong>4.</strong> Datos de contacto<br>
+                                    <strong>5.</strong> Procedimiento de aplicación</p>
+                                    <small>Documento informativo, no evita sanciones</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Referencias -->
+            <section>
+                <h2>Referencias Bibliográficas</h2>
+
+                <div class="references-container" style="font-size: 0.8em;">
+                    <p><strong>Acosta, T., y Luján-Mora, S.</strong> (2017). Análisis de la accesibilidad de los sitios web de las universidades ecuatorianas de excelencia. <em>Enfoque UTE</em>, 8(1), 46-61.</p>
+                    <p><strong>Acosta-Vargas, P., Acosta, T., y Luján-Mora, S.</strong> (2018). Challenges to Assess Accessibility in Higher Education Websites: A Comparative Study of Latin America Universities. <em>IEEE Access</em>, 6, 36500-36508.</p>
+                    <p><strong>Campoverde-Molina, M.</strong> (2016). La accesibilidad web. Un reto en el entorno educativo ecuatoriano. <em>Revista Científica y Tecnológica UPSE</em>, III(3), 90-98.</p>
+                    <p><strong>Instituto Ecuatoriano de Normalización.</strong> (2014). Tecnología de la información - Directrices de accesibilidad para el contenido web del W3C (WCAG) 2.0.</p>
+                    <p><strong>Instituto Ecuatoriano de Normalización.</strong> (2016). Reglamento técnico ecuatoriano RTE INEN 288 "accesibilidad para el contenido web".</p>
+                    <p><strong>International Organization for Standardization.</strong> (2012). Information technology - W3C Web Content Accessibility Guidelines (WCAG) 2.0. ISO/IEC 40500:2012.</p>
+                    <p><strong>Luján-Mora, S.</strong> (2018). Herramientas de revisión automática de la accesibilidad web. Accesibilidad Web DLSI.</p>
+                    <p><strong>Naciones Unidas.</strong> (2006). Convención sobre los derechos de las personas con discapacidad.</p>
+                    <p><strong>World Wide Web Consortium.</strong> (2008). Web Content Accessibility Guidelines (WCAG) 2.0.</p>
+                    <p><strong>World Wide Web Consortium.</strong> (2018). Web Content Accessibility Guidelines (WCAG) 2.1.</p>
+                    <p><strong>World Wide Web Consortium.</strong> (2023). Web Content Accessibility Guidelines (WCAG) 2.2.</p>
+                </div>
+            </section>
+
+            <!-- Recursos Adicionales -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <h2>Recursos y Herramientas Recomendadas</h2>
+                <section>
+                    <h3>Para Estudiantes y Profesionales</h3>
+                    <p style="text-align: center; font-style: italic; color: var(--uide-secondary);">
+                        Herramientas esenciales para implementar y evaluar accesibilidad
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Herramientas de Evaluación</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Evaluación Automática</h4>
+                                <ul style="text-align: left;">
+                                    <li><strong>Examinator:</strong> Puntuación 1-10</li>
+                                    <li><strong>TAW:</strong> Análisis completo</li>
+                                    <li><strong>axe DevTools:</strong> Extensión de navegador</li>
+                                    <li><strong>WAVE:</strong> Web Accessibility Evaluation Tool</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Validación de Código</h4>
+                                <ul style="text-align: left;">
+                                    <li><strong>W3C Markup Validator:</strong> HTML/XHTML</li>
+                                    <li><strong>W3C CSS Validator:</strong> Hojas de estilo</li>
+                                    <li><strong>Nu Html Checker:</strong> HTML5</li>
+                                    <li><strong>Lighthouse:</strong> Auditoría integral</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Recursos de Aprendizaje</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Documentación Oficial</h4>
+                                <ul style="text-align: left;">
+                                    <li><strong>W3C WAI:</strong> Web Accessibility Initiative</li>
+                                    <li><strong>WCAG 2.2:</strong> Guías actualizadas</li>
+                                    <li><strong>WebAIM:</strong> Recursos prácticos</li>
+                                    <li><strong>A11y Project:</strong> Checklist comunitario</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Testing con Usuarios</h4>
+                                <ul style="text-align: left;">
+                                    <li><strong>Lectores de pantalla:</strong> NVDA, JAWS</li>
+                                    <li><strong>Navegación por teclado:</strong> Tab, Enter, Escape</li>
+                                    <li><strong>Magnificadores:</strong> ZoomText, MAGic</li>
+                                    <li><strong>Contraste:</strong> Colour Contrast Analyser</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.1); padding: 1em; border-radius: 8px; margin: 1em 0; text-align: center;">
+                        <strong>Recuerda:</strong> Las herramientas automáticas son un punto de partida.<br>
+                        <em>La evaluación manual y el testing con usuarios reales son fundamentales.</em>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Thank You Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1 style="color: var(--uide-primary);">¡Gracias!</h1>
+                    <h3>Construyamos un Web Más Inclusivo</h3>
+
+                    <div style="margin-top: 2em; font-size: 0.9em;">
+                        <strong>Universidad Internacional del Ecuador</strong><br>
+                        <em>Recurso: Guía Completa de Accesibilidad Web</em>
+                    </div>
+
+                    <div style="margin-top: 2em; font-size: 0.8em; color: var(--uide-secondary);">
+                        <p><em>"La accesibilidad no es una característica opcional, es un derecho fundamental"</em></p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JavaScript with all plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/zoom/zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/search/search.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            // Advanced transitions and animations
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+
+            // Auto-animate support
+            autoAnimateEasing: 'ease',
+            autoAnimateDuration: 1.0,
+            autoAnimateUnmatched: true,
+
+            // Math rendering
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                config: 'TeX-AMS_HTML-full',
+            },
+
+            // Zoom functionality
+            zoom: {
+                mouseWheel: false,
+                maxZoom: 3,
+                controls: true
+            },
+
+            // Search functionality
+            search: {
+                caseSensitive: false,
+                showIcon: true
+            },
+
+            // Keyboard shortcuts
+            keyboard: {
+                70: 'fullscreen', // f
+                83: 'next', // s
+                65: 'prev', // a
+                66: 'pause', // b
+                90: 'zoom', // z
+                191: 'search' // /
+            },
+
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealZoom, RevealSearch]
+        });
+
+        // Simple Flashcard System
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+
+</body>
+
+</html>
