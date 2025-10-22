@@ -1920,7 +1920,282 @@
 
             plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealZoom, RevealSearch]
         });
+
+        // Simple Flashcard System
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
     </script>
+
+            <!-- Conceptos Clave - Flashcards Interactivas -->
+            <section>
+                <h2>Conceptos Clave - Flashcards Interactivas</h2>
+                <section>
+                    <div class="flashcards-grid">
+                        <!-- Card 1 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Ingeniería de Software Moderna</h4>
+                                    <p>¿Cuáles son los pilares de la IS moderna?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Cloud, IA y Producto</h4>
+                                    <p><strong>Cloud:</strong> arquitecturas nativas, <strong>IA:</strong> integración inteligente, <strong>Producto:</strong> enfoque en valor del usuario.</p>
+                                    <small>Transformación digital actual</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Ética en IA</h4>
+                                    <p>¿Cuáles son los principios éticos fundamentales para IA?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Transparencia, Equidad, Privacidad</h4>
+                                    <p><strong>Transparencia:</strong> explicabilidad, <strong>Equidad:</strong> no discriminación, <strong>Privacidad:</strong> protección de datos personales.</p>
+                                    <small>Desarrollo responsable de IA</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="flashcards-grid">
+                        <!-- Card 3 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Stakeholders</h4>
+                                    <p>¿Qué es un stakeholder según Rob Thomsett?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Persona con Estaca Afilada</h4>
+                                    <p><strong>"Una persona que sostiene una estaca grande y afilada"</strong> - Si no cuidas a tus stakeholders, sabes dónde terminará la estaca.</p>
+                                    <small>Importancia de la gestión de stakeholders</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Descubrimiento de Proyectos</h4>
+                                    <p>¿Cuál es el objetivo de la fase de concepción?</p>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Comprender el Problema</h4>
+                                    <p><strong>Comprender el problema a resolver</strong> y determinar qué resultados son importantes para los stakeholders del proyecto.</p>
+                                    <small>Base para el éxito del proyecto</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="flashcards-grid">
+                        <!-- Card 5 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Arquitecturas Cloud Native</h4>
+                                    <p>¿Qué características tienen las arquitecturas nativas en la nube?</p>
+                                    <small>Clic para ver respuesta</small>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Microservicios, Contenedores, DevOps</h4>
+                                    <p><strong>Microservicios:</strong> servicios independientes, <strong>Contenedores:</strong> portabilidad, <strong>DevOps:</strong> integración continua.</p>
+                                    <small>Escalabilidad y flexibilidad</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="flashcard" onclick="flipCard(this)">
+                            <div class="flashcard-inner">
+                                <div class="flashcard-front">
+                                    <h4>Comunicación con Stakeholders</h4>
+                                    <p>¿Por qué es crucial la comunicación efectiva en proyectos?</p>
+                                    <small>Clic para ver respuesta</small>
+                                </div>
+                                <div class="flashcard-back">
+                                    <h4>Alineación y Éxito</h4>
+                                    <p>Establece <strong>expectativas claras</strong>, reduce malentendidos y asegura que todos trabajen hacia los <strong>mismos objetivos</strong>.</p>
+                                    <small>Clave para el éxito del proyecto</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Actividades Calificadas -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <h2>Actividades Calificadas - Semana 1</h2>
+                <section>
+                    <h3>Ingeniería de Software Moderna</h3>
+                    <p style="text-align: center; font-style: italic; color: var(--uide-secondary);">
+                        Aplicación práctica de conceptos modernos y gestión de proyectos
+                    </p>
+                </section>
+
+                <section>
+                    <h3>GA-1.1: Módulo ASC-5</h3>
+                    <div class="concept-box">
+                        <h4 style="color: var(--uide-accent);">Gestión Académica 1.1</h4>
+                        <p><strong>Actividad:</strong> Completar módulo 1 de ASC-5</p>
+                        <p><strong>Enfoque:</strong> Fundamentos académicos y conceptuales</p>
+                        <ul style="text-align: left;">
+                            <li>Revisión de contenidos teóricos</li>
+                            <li>Comprensión de conceptos fundamentales</li>
+                            <li>Evaluación de conocimientos base</li>
+                        </ul>
+                        <div
+                            style="background: rgba(233, 171, 33, 0.1); padding: 1em; border-radius: 8px; margin: 1em 0;">
+                            <strong>Puntaje:</strong> 1 punto<br>
+                            <strong>Modalidad:</strong> Plataforma académica ASC-5
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>PE-1.1: Dinámica de Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4 style="color: var(--uide-primary);">Práctico Experimental 1.1</h4>
+                        <p><strong>Actividad:</strong> Dinámica de stakeholders y contexto del proyecto</p>
+                        <p><strong>Enfoque:</strong> Identificación y análisis de partes interesadas</p>
+                        <ul style="text-align: left;">
+                            <li>Identificación de stakeholders clave</li>
+                            <li>Análisis de contexto del proyecto</li>
+                            <li>Mapeo de influencia e interés</li>
+                            <li>Estrategias de comunicación</li>
+                        </ul>
+                        <div
+                            style="background: rgba(233, 171, 33, 0.1); padding: 1em; border-radius: 8px; margin: 1em 0;">
+                            <strong>Puntaje:</strong> 2 puntos<br>
+                            <strong>Modalidad:</strong> Taller práctico con dinámica grupal
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>TA-1.1: Visión de Producto y Mapa de Stakeholders</h3>
+                    <div class="concept-box">
+                        <h4 style="color: var(--uide-secondary);">Trabajo Autónomo 1.1</h4>
+                        <p><strong>Actividad:</strong> Visión de producto (1 página) + mapa de stakeholders</p>
+                        <p><strong>Enfoque:</strong> Documentación estratégica del proyecto</p>
+                        <ul style="text-align: left;">
+                            <li>Definición clara de la visión del producto</li>
+                            <li>Elaboración de mapa visual de stakeholders</li>
+                            <li>Clasificación por influencia e interés</li>
+                            <li>Estrategias de gestión por categoría</li>
+                            <li>Documentación profesional</li>
+                        </ul>
+                        <div
+                            style="background: rgba(145, 0, 72, 0.1); padding: 1em; border-radius: 8px; margin: 1em 0;">
+                            <strong>Puntaje:</strong> 2 puntos<br>
+                            <strong>Formato:</strong> 1 página + diagrama visual<br>
+                            <strong>Herramienta:</strong> Herramientas de diagramación (Miro, Lucidchart, etc.)
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Metodología de Trabajo</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Herramientas de Gestión</h4>
+                                <ul style="text-align: left; font-size: 0.9em;">
+                                    <li>Plataforma ASC-5</li>
+                                    <li>Miro / Lucidchart para mapas</li>
+                                    <li>Técnicas de facilitación</li>
+                                    <li>Matrices de stakeholders</li>
+                                    <li>Canvas de visión de producto</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4>Criterios de Evaluación</h4>
+                                <ul style="text-align: left; font-size: 0.9em;">
+                                    <li>Completitud del análisis</li>
+                                    <li>Claridad en la identificación</li>
+                                    <li>Calidad de la documentación</li>
+                                    <li>Viabilidad de estrategias</li>
+                                    <li>Presentación profesional</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-background-color="#f8f8f8">
+                    <div class="title-slide">
+                        <h1 style="color: var(--uide-primary);">¡A Gestionar!</h1>
+                        <h3>Stakeholders y visión en acción</h3>
+
+                        <div style="margin-top: 2em; font-size: 0.9em;">
+                            <strong>Universidad Internacional del Ecuador</strong><br>
+                            <em>Semana 1 - Ingeniería de Software Moderna</em><br>
+                            <strong>Total de puntos:</strong> 5/30 - Evaluación Diagnóstica
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Conclusiones -->
+            <section data-transition="convex">
+                <h2>Conclusiones</h2>
+                
+                <section>
+                    <div class="concept-box">
+                        <h4>Conceptos Clave Aprendidos</h4>
+                        <ul style="text-align: left;">
+                            <li>La <mark>ingeniería de software moderna</mark> se enfoca en cloud, IA y productos</li>
+                            <li>La <mark>ética en IA</mark> es fundamental para el desarrollo responsable</li>
+                            <li>El <mark>descubrimiento de proyectos</mark> requiere gestión efectiva de stakeholders</li>
+                            <li>La <mark>comunicación</mark> es clave para el éxito de cualquier proyecto de software</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="concept-box info">
+                        <h4>Preparación para la Próxima Semana</h4>
+                        <p>En la <strong>Semana 2</strong> profundizaremos en:</p>
+                        <ul style="text-align: left;">
+                            <li>Ingeniería de requerimientos</li>
+                            <li>Técnicas de elicitación</li>
+                            <li>Documentación de requerimientos</li>
+                            <li>Validación y verificación</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Final Slide -->
+            <section data-background-color="#f8f8f8">
+                <h2>Conclusión</h2>
+                <div class="concept-box">
+                    <p>La Ingeniería de Software Moderna es fundamental para el desarrollo de sistemas que permiten:</p>
+                    <ul style="text-align: left;">
+                        <li>Aprovechar las tecnologías emergentes (cloud, IA)</li>
+                        <li>Desarrollar productos éticos y responsables</li>
+                        <li>Gestionar efectivamente los stakeholders del proyecto</li>
+                        <li>Crear soluciones que generen valor real para los usuarios</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
 
 </body>
 
