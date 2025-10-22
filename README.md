@@ -34,7 +34,7 @@ Los cursos indicados con el logotipo de ASU indican cursos que se complementan c
 
 **Nivel al que pertenece la asignatura:** 5
 
-**Periodo académico ordinario:** mayo – agosto 2025
+**Periodo académico ordinario:** octubre 2025 – febrero 2026
 
 **Estructura curricular:**
 
@@ -46,11 +46,11 @@ Los cursos indicados con el logotipo de ASU indican cursos que se complementan c
 
 **Correquisito(s):** Ninguno
 
-**Número de sesiones:** 48 horas
+**Número de sesiones:** 32 horas / 16 semanas
 
 **Horario de clases:** jueves, 16h00 a 18h00
 
-**Horario de tutorías:** viernes, 11h00 a 12h00
+**Horario de tutorías:** lunes, 11h00 a 12h00
 
 ---
 
@@ -71,12 +71,6 @@ Al finalizar la asignatura, el estudiante estará en capacidad de:
 4. Desarrollar estrategias de pruebas y mantenimiento que garanticen la calidad del software a lo largo de su ciclo de vida.
 
 5. Gestionar proyectos de software aplicando técnicas de estimación, análisis de riesgos y trabajo en equipo.
-
----
-
-## DESCRIPCIÓN Y COMO APORTA AL PERFIL PROFESIONAL
-
-La asignatura "Sistemas de Gestión de Base de Datos" está diseñada para formar a los estudiantes en técnicas avanzadas y complejas de administración de sistemas de bases de datos, incluyendo el control de concurrencia, la recuperación ante fallos, la optimización de consultas y estrategias sofisticadas de particionamiento. Los estudiantes desarrollarán habilidades rigurosas para el uso de herramientas especializadas en monitoreo y análisis de rendimiento, la formulación de políticas de respaldo efectivas, y la evaluación crítica de los planes de ejecución de consultas, con énfasis en la eficiencia y la escalabilidad.
 
 ---
 
