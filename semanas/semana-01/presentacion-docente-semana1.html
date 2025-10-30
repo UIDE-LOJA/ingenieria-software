@@ -1,0 +1,2579 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 1 - Ingeniería de Software Moderna</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UIDE Theme CSS -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- Diagram Fullscreen CSS -->
+    <link rel="stylesheet" href="css/diagram-fullscreen.css">
+
+    <!-- Mermaid for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Timeline.js -->
+    <link title="timeline-styles" rel="stylesheet"
+        href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Responsive typography and layout */
+        .reveal .slides section {
+            text-align: left;
+            font-size: clamp(0.7rem, 2.5vw, 1rem);
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+            color: var(--uide-primary);
+            text-align: center;
+        }
+
+        .reveal h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            line-height: 1.2;
+        }
+
+        .reveal h2 {
+            font-size: clamp(1.2rem, 3.5vw, 2rem);
+            line-height: 1.3;
+        }
+
+        .reveal h3 {
+            font-size: clamp(1rem, 3vw, 1.6rem);
+            line-height: 1.3;
+        }
+
+        .reveal h4 {
+            font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+            line-height: 1.4;
+        }
+
+        .reveal p {
+            font-size: clamp(0.75rem, 2.2vw, 1rem);
+            line-height: 1.5;
+            margin-bottom: 0.8em;
+        }
+
+        .reveal ul li {
+            font-size: clamp(0.7rem, 2vw, 0.95rem);
+            line-height: 1.4;
+            margin-bottom: 0.4em;
+        }
+
+        .reveal strong {
+            font-weight: 600;
+        }
+
+        .reveal mark {
+            background-color: rgba(233, 171, 33, 0.3);
+            padding: 0.1em 0.2em;
+            border-radius: 3px;
+        }
+
+        /* Enhanced concept-box styling */
+        .concept-box {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 0.8rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .concept-box h3 {
+            font-size: clamp(0.95rem, 2.8vw, 1.4rem);
+            margin-bottom: 0.5em;
+            line-height: 1.3;
+        }
+
+        .concept-box h4 {
+            font-size: clamp(0.85rem, 2.3vw, 1.2rem);
+            margin-bottom: 0.4em;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--uide-primary);
+        }
+
+        .concept-box p {
+            font-size: clamp(0.75rem, 2.1vw, 0.95rem);
+        }
+
+        .concept-box.warning {
+            border-left: 4px solid #ffc107;
+            background: rgba(255, 193, 7, 0.05);
+        }
+
+        .concept-box.info {
+            border-left: 4px solid var(--uide-secondary);
+            background: rgba(35, 53, 110, 0.05);
+        }
+
+        .concept-box.success {
+            border-left: 4px solid #28a745;
+            background: rgba(40, 167, 69, 0.05);
+        }
+
+        .concept-box.danger {
+            border-left: 4px solid #dc3545;
+            background: rgba(220, 53, 69, 0.05);
+        }
+
+        /* Timeline and image styles */
+        .timeline-image {
+            text-align: center;
+        }
+
+        .timeline-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enhanced list styling */
+        .concept-box ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .concept-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Highlight styling */
+        mark {
+            background: rgba(233, 171, 33, 0.3);
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+        }
+
+        /* D3 SVG Icon styling */
+        .d3-tooltip {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            max-width: 200px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Asegurar que FontAwesome funcione en foreignObject */
+        svg foreignObject div {
+            font-family: inherit;
+        }
+
+        svg foreignObject i {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+            font-weight: 900 !important;
+        }
+
+        /* Mermaid diagram styling */
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            width: 100%;
+        }
+
+        /* AI Adoption Chart Styling */
+        #ai-adoption-chart {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-bar {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chart-bar:hover {
+            opacity: 0.8;
+            stroke: #333;
+            stroke-width: 2;
+        }
+
+        .chart-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .chart-axis text {
+            font-size: 12px;
+            fill: #666;
+        }
+
+        .chart-axis path,
+        .chart-axis line {
+            fill: none;
+            stroke: #666;
+            shape-rendering: crispEdges;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: bold;
+            fill: var(--uide-primary);
+            text-anchor: middle;
+        }
+
+        .chart-label {
+            font-size: 11px;
+            fill: #333;
+            text-anchor: middle;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .timeline-image img {
+                margin-bottom: 1rem;
+            }
+
+            .r-hstack .column {
+                margin-bottom: 1rem;
+            }
+
+            .r-hstack {
+                flex-direction: column;
+            }
+
+            .concept-box {
+                padding: 1rem;
+                font-size: 0.9em;
+            }
+
+            .concept-box h4 {
+                font-size: 1.1em;
+            }
+
+            .cloud-architecture {
+                grid-template-columns: 1fr;
+            }
+
+            .ethics-framework {
+                grid-template-columns: 1fr;
+            }
+
+            .stakeholder-map {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-integration {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .ai-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        .highlight-box {
+            background: rgba(35, 53, 110, 0.1);
+            border-left: 4px solid var(--uide-primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .definition-box {
+            background: rgba(233, 171, 33, 0.1);
+            border: 2px solid var(--uide-accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .warning-box {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .success-box {
+            background: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .r-hstack {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        /* Enhanced SDLC D3.js Diagram Styles */
+        .sdlc-circular-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 650px;
+            position: relative;
+            margin: 2rem auto;
+            width: 100%;
+            background: radial-gradient(ellipse at center, rgba(35, 53, 110, 0.05) 0%, transparent 70%);
+            border-radius: 20px;
+        }
+
+        #sdlc-d3-diagram {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(248, 249, 250, 0.05));
+            border-radius: 16px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sdlc-node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sdlc-node:hover {
+            filter: brightness(1.1);
+        }
+
+        .sdlc-node-circle {
+            fill: white;
+            stroke: var(--uide-primary);
+            stroke-width: 3;
+            transition: all 0.3s ease;
+        }
+
+        .sdlc-node:hover .sdlc-node-circle {
+            fill: var(--uide-primary);
+            stroke-width: 4;
+            r: 60;
+        }
+
+        .sdlc-node-text {
+            fill: var(--uide-primary);
+            font-size: 12px;
+            font-weight: bold;
+            text-anchor: middle;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            dominant-baseline: middle;
+        }
+
+        .sdlc-node:hover .sdlc-node-text {
+            fill: white;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .sdlc-node-icon {
+            fill: var(--uide-primary);
+            font-size: 20px;
+            text-anchor: middle;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .sdlc-node:hover .sdlc-node-icon {
+            fill: white;
+            font-size: 22px;
+        }
+
+        .sdlc-center-circle {
+            fill: linear-gradient(135deg, var(--uide-primary), var(--uide-secondary));
+            stroke: var(--uide-accent);
+            stroke-width: 3;
+        }
+
+        .sdlc-center-text {
+            fill: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+
+        .sdlc-connection-line {
+            stroke: var(--uide-accent);
+            stroke-width: 2;
+            fill: none;
+            opacity: 0.6;
+        }
+
+        .sdlc-flow-path {
+            stroke: var(--uide-accent);
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 5, 5;
+            opacity: 0.4;
+        }
+
+        .sdlc-tooltip-d3 {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9em;
+            max-width: 280px;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sdlc-tooltip-d3.show {
+            opacity: 1;
+        }
+
+        .sdlc-tooltip-d3 h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--uide-accent);
+            font-size: 1.1em;
+        }
+
+        .sdlc-tooltip-d3 p {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .sdlc-tooltip-d3 ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .sdlc-tooltip-d3 li {
+            margin-bottom: 0.3rem;
+            font-size: 0.85em;
+        }
+
+        /* Cloud Architecture Diagram */
+        .cloud-architecture {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cloud-service {
+            background: rgba(233, 171, 33, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            border: 2px solid var(--uide-accent);
+        }
+
+        .cloud-service i {
+            font-size: 2rem;
+            color: var(--uide-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* AI Integration Diagram */
+        .ai-integration {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 12px;
+        }
+
+        .ai-component {
+            text-align: center;
+            flex: 1;
+        }
+
+        .ai-component i {
+            font-size: 2rem;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+
+        .ai-arrow {
+            font-size: 1.5rem;
+            color: #28a745;
+            margin: 0 1rem;
+        }
+
+        /* Responsive Transformation Diagram Styles */
+        .transformation-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            margin: 1rem 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #methodology-transformation {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 100%;
+            min-height: 450px;
+        }
+
+        #methodology-transformation svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .transformation-controls {
+            display: none;
+            /* Hide controls since no animation */
+        }
+
+        .transformation-btn {
+            display: none;
+            /* Hide buttons since no animation */
+        }
+
+        /* Responsive adjustments for methodology diagram */
+        @media (max-width: 768px) {
+            .transformation-container {
+                padding: 1rem;
+                margin: 0.5rem 0;
+            }
+
+            #methodology-transformation {
+                padding: 0.5rem;
+                min-height: 800px;
+                /* Taller for mobile stacked layout */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .transformation-container {
+                padding: 0.8rem;
+            }
+
+            #methodology-transformation {
+                min-height: 700px;
+            }
+        }
+
+        /* FontAwesome icon styling in SVG */
+        .methodology-diagram foreignObject {
+            overflow: visible;
+        }
+
+        .methodology-diagram foreignObject div {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+            font-weight: 900 !important;
+        }
+
+
+
+        /* Methodology Comparison Styles */
+        .methodology-comparison {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .methodology-comparison.traditional {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+        }
+
+        .methodology-comparison.agile {
+            background: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+        }
+
+        .methodology-comparison h4 {
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .methodology-comparison.traditional h4 {
+            color: #dc3545;
+        }
+
+        .methodology-comparison.agile h4 {
+            color: #28a745;
+        }
+
+        .methodology-comparison ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .methodology-comparison li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .methodology-comparison li:hover {
+            transform: translateX(5px);
+        }
+
+        .methodology-comparison.traditional li i {
+            color: #dc3545;
+            width: 16px;
+        }
+
+        .methodology-comparison.agile li i {
+            color: #28a745;
+            width: 16px;
+        }
+
+        /* Enhanced Metrics Styles */
+        .metrics-summary {
+            margin: 1rem 0;
+        }
+
+        .metric-highlight {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin: 0.5rem 0;
+        }
+
+        /* Compact metrics for 2x2 layout */
+        .metric-highlight.metric-compact {
+            padding: 1rem;
+            margin: 0;
+        }
+
+        .metric-highlight.metric-compact i {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-highlight.metric-compact h4 {
+            margin: 0.3rem 0;
+            font-size: 1rem;
+        }
+
+        .metric-highlight.metric-compact .metric-value {
+            font-size: 1.8rem;
+            margin: 0.3rem 0;
+        }
+
+        .metric-highlight.metric-compact p {
+            margin: 0;
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .metric-highlight:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .metric-highlight.velocity {
+            border-top: 4px solid #007bff;
+        }
+
+        .metric-highlight.quality {
+            border-top: 4px solid #28a745;
+        }
+
+        .metric-highlight.satisfaction {
+            border-top: 4px solid #ffc107;
+        }
+
+        .metric-highlight i {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .metric-highlight.velocity i {
+            color: #007bff;
+        }
+
+        .metric-highlight.quality i {
+            color: #28a745;
+        }
+
+        .metric-highlight.satisfaction i {
+            color: #ffc107;
+        }
+
+        .metric-highlight h4 {
+            margin: 0.5rem 0;
+            color: var(--uide-primary);
+            font-size: 1.1rem;
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .metric-highlight.velocity .metric-value {
+            color: #007bff;
+        }
+
+        .metric-highlight.quality .metric-value {
+            color: #28a745;
+        }
+
+        .metric-highlight.satisfaction .metric-value {
+            color: #ffc107;
+        }
+
+        .metric-highlight p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        /* Responsive adjustments for metrics layout */
+        @media (max-width: 768px) {
+            .metrics-summary .r-hstack {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .metrics-summary .metric-highlight {
+                padding: 1rem;
+                margin: 0.5rem 0;
+            }
+
+            .metric-highlight.metric-compact {
+                padding: 0.8rem;
+            }
+
+            .metric-highlight.metric-compact i {
+                font-size: 1.5rem;
+            }
+
+            .metric-highlight.metric-compact .metric-value {
+                font-size: 1.5rem;
+            }
+
+            .metric-highlight.metric-compact h4 {
+                font-size: 0.9rem;
+            }
+
+            .metric-highlight.metric-compact p {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Ethics Framework */
+        .ethics-framework {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .ethics-principle {
+            background: rgba(220, 53, 69, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #dc3545;
+        }
+
+        .ethics-principle h4 {
+            color: #dc3545;
+            margin: 0 0 0.5rem 0;
+        }
+
+        /* Stakeholder Map */
+        .stakeholder-map {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stakeholder-group {
+            background: rgba(35, 53, 110, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stakeholder-group i {
+            font-size: 2rem;
+            color: var(--uide-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--uide-primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: 50%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--uide-accent);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .r-hstack {
+                flex-direction: column;
+            }
+
+            .cloud-architecture {
+                grid-template-columns: 1fr;
+            }
+
+            .ethics-framework {
+                grid-template-columns: 1fr;
+            }
+
+            .stakeholder-map {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-integration {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .ai-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1>Ingeniería de Software Moderna</h1>
+                    <h2>Semana 1</h2>
+
+                    <div class="course-info">
+                        <strong>LTI_05A_INS</strong> • Quinto Nivel<br>
+                        <strong>Ingeniería del Software</strong><br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em><br>
+                        Universidad Internacional del Ecuador • Octubre 2025
+                    </div>
+
+                    <div
+                        style="background: rgba(233, 171, 33, 0.1); border-radius: 8px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                        <strong>Unidad 1: Fundamentos de la Ingeniería de Software</strong><br>
+                        <em>Semana 1 de 16 • Ingeniería de software moderna, ética de IA y descubrimiento de
+                            proyectos</em>
+                    </div>
+
+                    <div style="margin-top: 2em; font-size: 0.9em; font-style: italic; color: var(--uide-secondary);">
+                        Transformación digital, inteligencia artificial y gestión de proyectos
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote Slide -->
+            <section data-background-color="#f8f8f8">
+                <blockquote style="font-size: 1.2em; text-align: center;">
+                    <p><strong>"El software sofisticado ahora está incrustado dentro de todo, desde la electrónica de
+                            consumo hasta los dispositivos médicos y los vehículos autónomos."</strong></p>
+                    <footer style="margin-top: 1em; color: var(--uide-secondary);">
+                        — Tendencias modernas en Ingeniería de Software
+                    </footer>
+                </blockquote>
+            </section>
+
+            <!-- Learning Objectives -->
+            <section data-background-color="#f8f8f8">
+                <h2><i class="fas fa-bullseye"></i> Objetivos de Aprendizaje</h2>
+
+                <div class="concept-box"
+                    style="background: rgba(40, 167, 69, 0.1); border-left: 4px solid var(--uide-primary);">
+                    <h3 style="color: var(--uide-primary); text-align: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-graduation-cap"></i> Al finalizar esta guía didáctica, podrás:
+                    </h3>
+
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4><i class="fas fa-brain"></i> Conocimiento Conceptual</h4>
+                            <ul style="font-size: 0.9em; line-height: 1.6;">
+                                <li><strong>Explicar</strong> la evolución de la ingeniería de software desde la crisis
+                                    de 1968</li>
+                                <li><strong>Definir</strong> los principios de las metodologías ágiles y su impacto</li>
+                                <li><strong>Identificar</strong> las características de la arquitectura cloud native
+                                </li>
+                                <li><strong>Distinguir</strong> entre diferentes aplicaciones de IA en desarrollo de
+                                    software</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h4><i class="fas fa-cogs"></i> Aplicación Práctica</h4>
+                            <ul style="font-size: 0.9em; line-height: 1.6;">
+                                <li><strong>Aplicar</strong> principios éticos en el uso de IA para desarrollo</li>
+                                <li><strong>Implementar</strong> técnicas de descubrimiento de proyectos</li>
+                                <li><strong>Evaluar</strong> riesgos y beneficios de tecnologías emergentes</li>
+                                <li><strong>Conectar</strong> conceptos teóricos con casos de uso reales</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1.5rem; text-align: center;">
+                        <p><i class="fas fa-clock"></i> <strong>Tiempo estimado de estudio:</strong> 90-120 minutos</p>
+                        <p><i class="fas fa-book-open"></i> <strong>Modalidad:</strong> Estudio independiente previo a
+                            clase presencial</p>
+                        <p><i class="fas fa-file-alt"></i> <strong>Material complementario:</strong> Compendio Semana 1
+                            - Descubrimiento del proyecto y gestión de stakeholders</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Caso de Uso Transversal -->
+            <section data-background-color="#f8f8f8">
+                <h2><i class="fas fa-calendar-alt"></i> Caso de Estudio: Sistema de Reservas UIDE</h2>
+
+                <div class="definition-box">
+                    <h3>Proyecto: Sistema Integral de Reservas Académicas</h3>
+                    <p>La <strong>Universidad Internacional del Ecuador</strong> necesita modernizar su sistema de
+                        reservas para optimizar el uso de espacios académicos, laboratorios y recursos, reducir
+                        conflictos de horarios y mejorar la experiencia de toda la comunidad universitaria.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="concept-box"
+                            style="background: rgba(220, 53, 69, 0.1); border-left: 4px solid #dc3545;">
+                            <h4><i class="fas fa-bullseye"></i> Objetivos del Proyecto</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>Sistema web de reservas en tiempo real</li>
+                                <li>Gestión automática de conflictos de horarios</li>
+                                <li>Reserva de aulas, laboratorios y espacios especiales</li>
+                                <li>Integración con sistema académico existente</li>
+                                <li>Notificaciones automáticas y recordatorios</li>
+                                <li>Dashboard de ocupación y estadísticas</li>
+                                <li>Módulo de aprobaciones por autoridades</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="concept-box"
+                            style="background: rgba(40, 167, 69, 0.1); border-left: 4px solid #28a745;">
+                            <h4><i class="fas fa-chart-line"></i> Contexto Actual</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Problema:</strong> Reservas manuales, dobles asignaciones frecuentes</li>
+                                <li><strong>Impacto:</strong> Clases canceladas, tiempo perdido, frustración</li>
+                                <li><strong>Presupuesto:</strong> $120K en 12 meses</li>
+                                <li><strong>Urgencia:</strong> Crecimiento estudiantil del 25%</li>
+                                <li><strong>Alcance:</strong> Todas las escuelas y campus</li>
+                                <li><strong>Recursos:</strong> 45 aulas, 12 laboratorios, 8 espacios especiales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4><i class="fas fa-lightbulb"></i> ¿Por qué este caso?</h4>
+                    <p>A lo largo de la presentación usaremos el <strong>Sistema de Reservas UIDE</strong> para ilustrar
+                        cada concepto: desde la identificación de stakeholders hasta las preguntas context-free y
+                        técnicas de elicitación. ¡Es un problema que vives cada día!</p>
+                </div>
+            </section>
+
+            <!-- Curriculum Context -->
+            <section data-background-color="#f8f8f8">
+                <h2>Contexto en la Unidad 1</h2>
+
+                <section>
+                    <h3>Progresión Temática</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Semana 1 (Actual)</h4>
+                            <div
+                                style="background: rgba(233, 171, 33, 0.2); padding: 1em; border-radius: 8px; border: 2px solid var(--uide-accent);">
+                                <strong>Fundamentos de IS</strong><br>
+                                <small>Ingeniería moderna, ética IA, descubrimiento</small>
+                            </div>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Próximamente</h4>
+                            <div style="background: rgba(145, 0, 72, 0.1); padding: 1em; border-radius: 8px;">
+                                <strong>Semana 2</strong><br>
+                                <small>Ingeniería de requerimientos</small>
+                            </div>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Futuro</h4>
+                            <div style="background: rgba(35, 53, 110, 0.1); padding: 1em; border-radius: 8px;">
+                                <strong>Unidad 2</strong><br>
+                                <small>Metodologías ágiles y DevOps</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Temas de la Semana 1</h3>
+                    <div class="r-hstack">
+                        <div class="column">
+                            <h4>Secuencia de Contenidos</h4>
+                            <ol>
+                                <li><mark>1. Ingeniería de software hoy (nube, IA, producto)</mark></li>
+                                <li><mark>2. Ética, privacidad y uso responsable de IA</mark></li>
+                                <li><mark>3. Descubrimiento inicial del proyecto</mark></li>
+                                <li><mark>4. Contexto y stakeholders</mark></li>
+                            </ol>
+                            <small style="color: var(--uide-secondary); font-style: italic;">
+                                Progresión: Fundamentos → Ética → Práctica
+                            </small>
+                        </div>
+                        <div class="column fragment">
+                            <h4>Objetivos de Aprendizaje</h4>
+                            <ul>
+                                <li><strong>Explicar:</strong> Evolución y crisis del software</li>
+                                <li><strong>Analizar:</strong> Implicaciones éticas de IA</li>
+                                <li><strong>Evaluar:</strong> Paradigmas de programación</li>
+                                <li><strong>Investigar:</strong> Tendencias en lenguajes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 2: Contexto de la Problemática -->
+            <section>
+                <h2><i class="fas fa-exclamation-triangle"></i> La Crisis del Software (1968-Presente)</h2>
+
+                <div class="concept-box">
+                    <h3>Problemática Histórica</h3>
+                    <p>En 1968, la conferencia de la OTAN acuñó el término <mark>"crisis del software"</mark> para
+                        describir los problemas recurrentes en el desarrollo de sistemas:</p>
+                    <ul>
+                        <li><strong>Retrasos constantes:</strong> Proyectos que excedían cronogramas planificados</li>
+                        <li><strong>Sobrecostos:</strong> Presupuestos que se duplicaban o triplicaban</li>
+                        <li><strong>Funcionalidad incompleta:</strong> Sistemas que no cumplían requerimientos</li>
+                        <li><strong>Baja confiabilidad:</strong> Software propenso a errores y fallas</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-chart-line"></i> Situación Actual</h4>
+                    <p>A pesar de décadas de evolución, <strong>el 70% de los proyectos de software aún fallan</strong>
+                        en tiempo, presupuesto o alcance. La complejidad moderna (cloud, IA, microservicios) ha
+                        amplificado estos desafíos.</p>
+                </div>
+            </section>
+
+            <!-- Slide 3: Definición de Ingeniería de Software -->
+            <section>
+                <section>
+                    <<h2><i class="fas fa-cogs"></i> ¿Qué es la Ingeniería de Software?</h2>
+
+                        <div class="definition-box">
+                            <h3 style="color: var(--uide-primary); margin-bottom: 1rem;">Definición Formal</h3>
+                            <blockquote style="font-size: 1.1em; font-style: italic; margin: 0;">
+                                "La ingeniería de software es una <mark>disciplina de ingeniería</mark> que se ocupa de
+                                todos los aspectos de la producción de software, desde las etapas iniciales de
+                                especificación del sistema hasta el mantenimiento de éste después de que se utiliza."
+                            </blockquote>
+                            <p style="text-align: right; margin-top: 1rem; font-size: 0.9em;">— Ian Sommerville</p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-lightbulb"></i> Características Clave</h4>
+                            <ul>
+                                <li><strong>Enfoque sistemático:</strong> Metodologías estructuradas y repetibles</li>
+                                <li><strong>Orientada a productos:</strong> No solo proyectos, sino sistemas sostenibles
+                                </li>
+                                <li><strong>Multidisciplinaria:</strong> Combina técnica, gestión y aspectos humanos
+                                </li>
+                                <li><strong>Evolución continua:</strong> Adaptación a nuevas tecnologías y paradigmas
+                                </li>
+                            </ul>
+                        </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-layer-group"></i> Ciclo de Vida del Software</h2>
+
+                    <div class="r-hstack" style="align-items: center; gap: 3rem;">
+                        <!-- Columna izquierda: Diagrama -->
+                        <div class="column" style="flex: 0.6;">
+                            <div class="sdlc-circular-container">
+                                <div id="sdlc-d3-diagram" style="width: 100%; height: 500px;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Columna derecha: Información -->
+                        <div class="column" style="flex: 0.4;">
+                            <div class="concept-box" style="margin-bottom: 1.5rem;">
+                                <h4><i class="fas fa-info-circle"></i> Metodología Iterativa</h4>
+                                <p>En el desarrollo moderno, estas fases se ejecutan de manera <mark>iterativa y
+                                        continua</mark>, permitiendo retroalimentación constante y adaptación a cambios.
+                                </p>
+                            </div>
+
+
+
+                            <div class="concept-box">
+                                <h4><i class="fas fa-sync-alt"></i> Características Clave</h4>
+                                <ul style="font-size: 0.9em; margin: 0.5rem 0;">
+                                    <li><strong>Iterativo:</strong> Ciclos repetitivos de mejora</li>
+                                    <li><strong>Incremental:</strong> Entrega de valor progresiva</li>
+                                    <li><strong>Adaptativo:</strong> Respuesta al cambio</li>
+                                    <li><strong>Colaborativo:</strong> Trabajo en equipo continuo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 4: Evolución hacia la Agilidad -->
+            <section>
+                <section>
+                    <h2><i class="fas fa-sync-alt"></i> Evolución hacia Metodologías Ágiles</h2>
+
+                    <div class="concept-box">
+                        <h3>Transformación del Desarrollo de Software</h3>
+                        <p>La industria ha evolucionado desde enfoques rígidos y secuenciales hacia metodologías
+                            adaptativas. Observa la transformación visual:</p>
+                    </div>
+                    <!-- Comparación Lado a Lado -->
+                    <div class="r-hstack" style="margin-top: 2rem;">
+                        <div class="column">
+                            <div class="methodology-comparison traditional">
+                                <h4><i class="fas fa-waterfall"></i> Enfoque Tradicional</h4>
+                                <ul>
+                                    <li><i class="fas fa-arrow-down"></i> Fases secuenciales</li>
+                                    <li><i class="fas fa-file-alt"></i> Documentación extensa</li>
+                                    <li><i class="fas fa-exclamation-triangle"></i> Cambios costosos</li>
+                                    <li><i class="fas fa-clock"></i> Entrega al final</li>
+                                    <li><i class="fas fa-cogs"></i> Procesos sobre personas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="methodology-comparison agile">
+                                <h4><i class="fas fa-rocket"></i> Enfoque Ágil</h4>
+                                <ul>
+                                    <li><i class="fas fa-sync"></i> Iteraciones cortas</li>
+                                    <li><i class="fas fa-code"></i> Software funcionando</li>
+                                    <li><i class="fas fa-exchange-alt"></i> Adaptación al cambio</li>
+                                    <li><i class="fas fa-shipping-fast"></i> Entrega continua</li>
+                                    <li><i class="fas fa-users"></i> Colaboración efectiva</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-chart-line"></i> Impacto Medible de la Agilidad</h2>
+
+                    <!-- Layout de dos columnas: Gráfico a la izquierda, Métricas a la derecha -->
+                    <div class="r-hstack" style="align-items: flex-start; gap: 2rem; margin-top: 2rem;">
+                        <!-- Columna izquierda: Gráfico de métricas -->
+                        <div class="column" style="flex: 0.6;">
+                            <div class="concept-box">
+                                <h3>Métricas de Transformación</h3>
+                                <p>Los datos reales muestran el impacto significativo de adoptar metodologías ágiles:
+                                </p>
+                            </div>
+
+                            <!-- Gráfico de métricas animadas -->
+                            <div id="agile-metrics-chart"
+                                style="width: 100%; height: 450px; margin: 1rem 0; min-height: 300px; overflow: hidden;">
+                            </div>
+                        </div>
+
+                        <!-- Columna derecha: Resumen de métricas en 2x2 -->
+                        <div class="column" style="flex: 0.4;">
+                            <div class="metrics-summary">
+                                <div class="r-hstack" style="gap: 1rem; margin-bottom: 1rem;">
+                                    <div class="column">
+                                        <div class="metric-highlight velocity metric-compact">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                            <h4>Velocidad</h4>
+                                            <div class="metric-value">+64%</div>
+                                            <p>Time-to-market</p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="metric-highlight quality metric-compact">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <h4>Calidad</h4>
+                                            <div class="metric-value">+47%</div>
+                                            <p>Menos defectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="r-hstack" style="gap: 1rem;">
+                                    <div class="column">
+                                        <div class="metric-highlight satisfaction metric-compact">
+                                            <i class="fas fa-smile"></i>
+                                            <h4>Satisfacción</h4>
+                                            <div class="metric-value">+71%</div>
+                                            <p>Equipo feliz</p>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div class="metric-highlight metric-compact"
+                                            style="background: rgba(23, 162, 184, 0.1); border-top: 4px solid #17a2b8;">
+                                            <i class="fas fa-chart-line" style="color: #17a2b8;"></i>
+                                            <h4>Adaptabilidad</h4>
+                                            <div class="metric-value" style="color: #17a2b8;">+58%</div>
+                                            <p>Respuesta ágil</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.8em; opacity: 0.9; margin-top: 1rem; text-align: center;">
+                        <strong>Fuentes:</strong> State of Agile Report 2023, DORA State of DevOps 2023, Scrum Alliance
+                        Survey 2023
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-users"></i> Principios del Manifiesto Ágil</h2>
+
+                    <div class="concept-box">
+                        <h3>Valores Fundamentales</h3>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <h4 style="color: var(--uide-primary);">Valoramos más:</h4>
+                                <ul>
+                                    <li><strong>Individuos e interacciones</strong></li>
+                                    <li><strong>Software funcionando</strong></li>
+                                    <li><strong>Colaboración con el cliente</strong></li>
+                                    <li><strong>Respuesta ante el cambio</strong></li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4 style="color: #6c757d;">Que:</h4>
+                                <ul>
+                                    <li>Procesos y herramientas</li>
+                                    <li>Documentación extensiva</li>
+                                    <li>Negociación contractual</li>
+                                    <li>Seguir un plan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> Impacto en la Industria</h4>
+                        <p>Las metodologías ágiles han transformado la industria del software, con <mark>87% de las
+                                organizaciones</mark> adoptando prácticas ágiles según el State of Agile Report 2023.
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 5: Era del Cloud y Arquitectura Nativa -->
+            <section>
+                <section>
+                    <h2><i class="fas fa-cloud"></i> La Era del Cloud Computing</h2>
+
+                    <div class="concept-box">
+                        <h3>Transformación Digital</h3>
+                        <p>La computación en nube ha revolucionado cómo desarrollamos, desplegamos y escalamos
+                            aplicaciones, ofreciendo:</p>
+                        <ul>
+                            <li><strong>Escalabilidad elástica:</strong> Recursos que se adaptan a la demanda</li>
+                            <li><strong>Disponibilidad global:</strong> Despliegue en múltiples regiones</li>
+                            <li><strong>Modelo de pago por uso:</strong> Optimización de costos operativos</li>
+                            <li><strong>Servicios gestionados:</strong> Reducción de complejidad operativa</li>
+                        </ul>
+                    </div>
+
+                    <div class="cloud-architecture">
+                        <div class="cloud-service">
+                            <i class="fas fa-server"></i>
+                            <h4>IaaS</h4>
+                            <p><strong>Infrastructure as a Service</strong></p>
+                            <small>Servidores virtuales, almacenamiento, redes</small>
+                        </div>
+                        <div class="cloud-service">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>PaaS</h4>
+                            <p><strong>Platform as a Service</strong></p>
+                            <small>Entornos de desarrollo, bases de datos, middleware</small>
+                        </div>
+                        <div class="cloud-service">
+                            <i class="fas fa-desktop"></i>
+                            <h4>SaaS</h4>
+                            <p><strong>Software as a Service</strong></p>
+                            <small>Aplicaciones completas accesibles vía web</small>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cubes"></i> Arquitectura Cloud Native</h2>
+
+                    <div class="definition-box">
+                        <h3>Cloud Native Computing Foundation (CNCF)</h3>
+                        <blockquote style="font-size: 1em; font-style: italic;">
+                            "Tecnologías que descomponen las aplicaciones en <mark>microservicios</mark> y los
+                            empaquetan en <mark>contenedores ligeros</mark> para desplegarlos y orquestarlos a través de
+                            una variedad de servidores"
+                        </blockquote>
+                    </div>
+
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4><i class="fas fa-cube"></i> Contenedores</h4>
+                                <ul>
+                                    <li>Docker para empaquetado</li>
+                                    <li>Kubernetes para orquestación</li>
+                                    <li>Portabilidad entre entornos</li>
+                                    <li>Aislamiento de dependencias</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="concept-box">
+                                <h4><i class="fas fa-project-diagram"></i> Microservicios</h4>
+                                <ul>
+                                    <li>Servicios independientes</li>
+                                    <li>Escalabilidad granular</li>
+                                    <li>Tecnologías heterogéneas</li>
+                                    <li>Despliegue independiente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <h4><i class="fas fa-chart-line"></i> Beneficios Empresariales</h4>
+                        <p>Las organizaciones que adoptan arquitecturas cloud native reportan <strong>23% más
+                                rapidez</strong> en time-to-market y <strong>30% reducción</strong> en costos
+                            operativos.</p>
+                    </div>
+                </section>
+            </section>
+
+
+
+            <!-- Slide 6: Inteligencia Artificial en Ingeniería de Software -->
+            <section>
+                <section>
+                    <h2><i class="fas fa-robot"></i> IA en Ingeniería de Software</h2>
+
+                    <div class="concept-box">
+                        <h3>Revolución de la IA Generativa</h3>
+                        <p>La IA está transformando el ciclo de vida completo del software: <em>code assistants</em>,
+                            revisión automática, pruebas asistidas y operaciones inteligentes.</p>
+                    </div>
+
+                    <div class="ai-integration">
+                        <div class="ai-component">
+                            <i class="fas fa-brain"></i>
+                            <h4>IA Generativa</h4>
+                            <p>LLMs, GitHub Copilot, Claude Code, Gemini Code Assist, Amazon Q</p>
+                        </div>
+                        <div class="ai-arrow">→</div>
+                        <div class="ai-component">
+                            <i class="fas fa-code"></i>
+                            <h4>Desarrollo</h4>
+                            <p>Generación, refactorización, pruebas asistidas</p>
+                        </div>
+                        <div class="ai-arrow">→</div>
+                        <div class="ai-component">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Impacto Real</h4>
+                            <p><strong>2024:</strong> 62% ya usa IA<br><strong>Proyección:</strong> 75% usará asistentes
+                                (2028)</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-chart-bar"></i> Estadísticas de Adopción de IA</h2>
+
+                    <div class="r-hstack" style="align-items: flex-start; gap: 3rem;">
+                        <!-- Columna izquierda: Gráfico -->
+                        <div class="column" style="flex: 0.6;">
+                            <div id="ai-adoption-chart" style="width: 100%; height: 400px; margin: 0;"></div>
+                            <div
+                                style="text-align: center; margin-top: 0.5rem; font-size: 0.8em; color: var(--uide-secondary);">
+                                <i class="fas fa-mouse-pointer"></i> Pasa el cursor o toca las barras para ver
+                                valores
+                            </div>
+                        </div>
+
+                        <!-- Columna derecha: Información -->
+                        <div class="column" style="flex: 0.4;">
+                            <div
+                                style="background: rgba(35, 53, 110, 0.08); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <h5 style="color: var(--uide-primary); margin: 0 0 0.5rem 0;"><i
+                                        class="fas fa-users"></i> Adopción</h5>
+                                <p style="margin: 0; font-size: 0.85em;"><strong>2019:</strong> ~2% (early
+                                    adopters)<br>
+                                    <strong>2024:</strong> 62% usan / 76% usan o planean
+                                </p>
+                            </div>
+
+                            <div
+                                style="background: rgba(40, 167, 69, 0.08); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <h5 style="color: #28a745; margin: 0 0 0.5rem 0;"><i class="fas fa-rocket"></i>
+                                    Productividad</h5>
+                                <p style="margin: 0; font-size: 0.85em;"><strong>+55%</strong> más rápido en tarea
+                                    controlada<br>
+                                    Hasta <strong>50%</strong> menos <em>time-to-merge</em></p>
+                            </div>
+
+                            <div
+                                style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <h5 style="color: var(--uide-accent); margin: 0 0 0.5rem 0;"><i
+                                        class="fas fa-shield-alt"></i> Calidad</h5>
+                                <p style="margin: 0; font-size: 0.85em;">Evidencia <strong>mixta</strong>: mejoras
+                                    percibidas, pero señales de menor throughput (-1.5%) y estabilidad (-7.2%)</p>
+                            </div>
+
+                            <div style="background: rgba(220, 53, 69, 0.08); padding: 1rem; border-radius: 8px;">
+                                <h5 style="color: #dc3545; margin: 0 0 0.5rem 0;"><i class="fas fa-info-circle"></i>
+                                    Proyección 2028</h5>
+                                <p style="margin: 0; font-size: 0.85em;"><strong>75%</strong> de ingenieros
+                                    empresariales usarán asistentes de código</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="font-size: 0.8em; opacity: 0.9; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+                        <strong>Fuentes:</strong> Stack Overflow Dev Survey 2024, Gartner 2024, DORA 2024. Datos
+                        basados en encuestas a desarrolladores y estudios controlados.
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-exclamation-triangle"></i> Desafíos y Riesgos de la IA</h2>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-shield-alt"></i> Riesgos Identificados</h4>
+                        <ul>
+                            <li><strong>Propagación de errores:</strong> pequeñas imprecisiones acumuladas en código y
+                                documentación</li>
+                            <li><strong>Dependencia:</strong> devaluación de habilidades núcleo si no hay práctica
+                                deliberada</li>
+                            <li><strong>Sesgos:</strong> outputs alineados a datos/valores de entrenamiento</li>
+                            <li><strong>Seguridad:</strong> riesgo de introducir fallas; requiere revisiones y
+                                auditorías seguras</li>
+                            <li><strong>PI y licencias:</strong> obligaciones de atribución y uso responsable de código
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-box">
+                        <h3>Cambio de Rol del Desarrollador</h3>
+                        <div class="r-hstack">
+                            <div class="column">
+                                <h4 style="color: #dc3545;">Menos énfasis en:</h4>
+                                <ul>
+                                    <li>Implementación repetitiva</li>
+                                    <li>Memoria de APIs/Sintaxis</li>
+                                    <li>Debugging mecánico</li>
+                                    <li>Tareas de codificación rutinarias</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4 style="color: #28a745;">Más énfasis en:</h4>
+                                <ul>
+                                    <li>Diseño y orquestación de sistemas</li>
+                                    <li>Validación, pruebas y observabilidad</li>
+                                    <li>Seguridad, cumplimiento y revisión por pares</li>
+                                    <li>Pensamiento crítico y prompt/agent engineering</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 7: Ética y Uso Responsable de IA -->
+            <section>
+                <section>
+                    <h2><i class="fas fa-balance-scale"></i> Ética y Uso Responsable de IA</h2>
+
+                    <div class="concept-box">
+                        <h3>Gobernanza Ética</h3>
+                        <p>La IA no es neutral: incorpora supuestos de diseño y datos. Se requiere <mark>transparencia,
+                                rendición de cuentas y supervisión humana efectiva</mark> a lo largo del ciclo de vida.
+                        </p>
+                    </div>
+
+                    <div class="ethics-framework">
+                        <div class="ethics-principle">
+                            <h4><i class="fas fa-eye"></i> Transparencia</h4>
+                            <p>Explicabilidad, trazabilidad y auditoría</p>
+                        </div>
+                        <div class="ethics-principle">
+                            <h4><i class="fas fa-user-shield"></i> Responsabilidad</h4>
+                            <p>Responsables identificables a lo largo del ciclo de vida</p>
+                        </div>
+                        <div class="ethics-principle">
+                            <h4><i class="fas fa-equals"></i> No Discriminación</h4>
+                            <p>Evaluaciones de sesgo y mitigación</p>
+                        </div>
+                        <div class="ethics-principle">
+                            <h4><i class="fas fa-lock"></i> Privacidad</h4>
+                            <p>Datos mínimos, consentimiento y seguridad</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-gavel"></i> Marco Regulatorio Internacional</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="concept-box">
+                                <h4><i class="fas fa-globe"></i> OCDE (2019)</h4>
+                                <p><strong>Principios de IA:</strong> centrada en el ser humano, robusta, segura,
+                                    transparente y responsable</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="concept-box">
+                                <h4><i class="fas fa-university"></i> UNESCO (2021)</h4>
+                                <p><strong>Recomendación sobre Ética de la IA:</strong> primer estándar global de ética
+                                    de IA (194 Estados Miembros)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="concept-box">
+                                <h4><i class="fas fa-flag"></i> Unión Europea – Ley de IA (2024–2025)</h4>
+                                <p><strong>Enfoque basado en riesgo:</strong> reglas diferenciadas por nivel de riesgo;
+                                    implementación progresiva</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-shield-alt"></i> Niveles de Riesgo (Ley de IA – UE)</h2>
+
+                    <div class="concept-box">
+                        <h3>Clasificación por Nivel de Riesgo</h3>
+                        <p>La Ley de IA de la Unión Europea adopta un <mark>enfoque basado en riesgo</mark>,
+                            estableciendo diferentes niveles de regulación según el impacto potencial de los sistemas de
+                            IA.</p>
+                    </div>
+
+                    <div class="r-hstack" style="gap: 2rem;">
+                        <div class="column">
+                            <div
+                                style="background: rgba(220, 53, 69, 0.1); border-left: 4px solid #dc3545; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <h4 style="color: #dc3545; margin: 0 0 1rem 0;"><i class="fas fa-ban"></i> Riesgo
+                                    Inaceptable</h4>
+                                <p style="margin: 0; font-size: 0.9em;"><strong>Estado:</strong> Prohibidos</p>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 0.85em;">Manipulación subliminal, sistemas de
+                                    puntuación social, identificación biométrica masiva</p>
+                            </div>
+
+                            <div
+                                style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1.5rem; border-radius: 8px;">
+                                <h4 style="color: #e9ab21; margin: 0 0 1rem 0;"><i
+                                        class="fas fa-exclamation-triangle"></i> Riesgo Alto</h4>
+                                <p style="margin: 0; font-size: 0.9em;"><strong>Sectores:</strong> Salud, educación,
+                                    justicia, infraestructuras críticas</p>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 0.85em;">Evaluaciones de conformidad,
+                                    transparencia estricta, supervisión humana</p>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div
+                                style="background: rgba(35, 53, 110, 0.1); border-left: 4px solid var(--uide-primary); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem;">
+                                <h4 style="color: var(--uide-primary); margin: 0 0 1rem 0;"><i
+                                        class="fas fa-info-circle"></i> Riesgo Limitado</h4>
+                                <p style="margin: 0; font-size: 0.9em;"><strong>Sistemas:</strong> Chatbots, sistemas
+                                    interactivos</p>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 0.85em;">Requisitos de transparencia -
+                                    usuarios deben saber que interactúan con IA</p>
+                            </div>
+
+                            <div
+                                style="background: rgba(40, 167, 69, 0.1); border-left: 4px solid #28a745; padding: 1.5rem; border-radius: 8px;">
+                                <h4 style="color: #28a745; margin: 0 0 1rem 0;"><i class="fas fa-check-circle"></i>
+                                    Riesgo Mínimo</h4>
+                                <p style="margin: 0; font-size: 0.9em;"><strong>Aplicaciones:</strong> Filtros de spam,
+                                    sistemas de recomendación básicos</p>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 0.85em;">Regulación general (GDPR), sin
+                                    restricciones específicas adicionales</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                        <h4 style="color: var(--uide-accent); margin: 0 0 1rem 0;"><i class="fas fa-calendar-alt"></i>
+                            Implementación Progresiva</h4>
+                        <div class="r-hstack" style="gap: 1rem;">
+                            <div class="column">
+                                <p style="margin: 0; font-size: 0.9em;"><strong>2024:</strong> Prohibiciones (riesgo
+                                    inaceptable)</p>
+                                <p style="margin: 0; font-size: 0.9em;"><strong>2025:</strong> Sistemas de alto riesgo
+                                </p>
+                            </div>
+                            <div class="column">
+                                <p style="margin: 0; font-size: 0.9em;"><strong>2026:</strong> Modelos de IA general</p>
+                                <p style="margin: 0; font-size: 0.9em;"><strong>2027:</strong> Implementación completa
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="font-size: 0.8em; opacity: 0.9; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+                        <strong>Fuente:</strong> Resumen conforme a comunicaciones oficiales de la UE y compendios
+                        técnicos sobre la implementación de la Ley de IA (2024-2025).
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 8: Descubrimiento Inicial del Proyecto -->
+            <section>
+                <section>
+                    <h2><i class="fas fa-search"></i> Descubrimiento Inicial del Proyecto</h2>
+
+                    <div class="definition-box">
+                        <h3>Inception (Concepción)</h3>
+                        <p>Proceso de <mark>establecer un entendimiento básico</mark> del problema, las personas que
+                            desean una solución y la naturaleza de la solución deseada.</p>
+                    </div>
+
+                    <div class="concept-box">
+                        <h3>Objetivos del Descubrimiento</h3>
+                        <ul>
+                            <li><strong>Identificar stakeholders:</strong> ¿Quiénes están involucrados?</li>
+                            <li><strong>Definir el problema:</strong> ¿Qué necesidad se debe resolver?</li>
+                            <li><strong>Establecer restricciones:</strong> ¿Cuáles son las limitaciones?</li>
+                            <li><strong>Determinar el valor:</strong> ¿Cuál es el beneficio esperado?</li>
+                            <li><strong>Evaluar viabilidad:</strong> ¿Es técnica y económicamente factible?</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4><i class="fas fa-quote-left"></i> Complejidad del Proceso</h4>
+                        <p><em>"Ciertamente parece bastante simple: pregunte al cliente [...] Pero no es simple, es muy
+                                difícil"</em> - Sommerville & Sawyer</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-users"></i> Identificación de Stakeholders</h2>
+
+                    <div class="concept-box">
+                        <h3>Definición de Stakeholder</h3>
+                        <p>Un stakeholder es <mark>"cualquiera que se beneficie de manera directa o indirecta del
+                                sistema que se está desarrollando"</mark> y tiene una participación en el resultado
+                            exitoso del proyecto.</p>
+                    </div>
+
+                    <div class="stakeholder-map">
+                        <div class="stakeholder-group">
+                            <i class="fas fa-user-tie"></i>
+                            <h4>Autoridades Ejecutivas</h4>
+                            <ul style="text-align: left; font-size: 0.8em;">
+                                <li><strong>Mg. Pablo Ruiz Aguirre</strong> - Prorrector</li>
+                                <li><strong>Dr. Franklin Chacón Pineda, Ph.D.</strong> - Director Business School</li>
+                                <li><strong>Mg. Lorena Conde</strong> - Directora Escuela Ingeniería TI</li>
+                                <li><strong>Arq. MSc. Tatiana Trokhimtchouk</strong> - Directora Escuela Arquitectura
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="stakeholder-group">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Coordinadores Académicos</h4>
+                            <ul style="text-align: left; font-size: 0.8em;">
+                                <li><strong>Mg. Mercy Namicela</strong> - Coord. Negocios Internacionales</li>
+                                <li><strong>Mg. Alex Cárdenas Rodríguez</strong> - Coord. Marketing</li>
+                                <li><strong>Mg. María del Carmen Monteros</strong> - Coord. Derecho</li>
+                                <li><strong>Arq. Fredy Salazar</strong> - Coord. Arquitectura</li>
+                                <li><strong>Mg. Viviana Torres Díaz</strong> - Coord. Administración de Empresas</li>
+                            </ul>
+                        </div>
+                        <div class="stakeholder-group">
+                            <i class="fas fa-users"></i>
+                            <h4>Usuarios del Sistema</h4>
+                            <ul style="text-align: left; font-size: 0.8em;">
+                                <li><strong>Estudiantes</strong> - Usuarios principales del sistema</li>
+                                <li><strong>Docentes</strong> - Reservan espacios para clases</li>
+                                <li><strong>Personal Administrativo</strong> - Gestión operativa</li>
+                                <li><strong>Personal de TI</strong> - Soporte técnico</li>
+                                <li><strong>Personal de Mantenimiento</strong> - Cuidado de espacios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-exclamation-circle"></i> Gestión de Conflictos</h4>
+                        <p>Los requerimientos pueden entrar en conflicto. La colaboración es necesaria, pero las
+                            decisiones finales requieren un <strong>"campeón del proyecto"</strong> con autoridad para
+                            resolver disputas.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-th"></i> Matriz de Influencia vs Interés</h2>
+
+                    <div class="concept-box">
+                        <h3>Aplicando la Matriz al Sistema de Reservas UIDE</h3>
+                        <p>Clasificaremos a los stakeholders del sistema de reservas según su <mark>nivel de influencia
+                                e
+                                interés</mark> para desarrollar estrategias específicas de comunicación y gestión.</p>
+                    </div>
+
+                    <!-- Matriz Visual de Influencia vs Interés -->
+                    <div
+                        style="margin: 2rem 0; background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.8em;">
+                            <thead>
+                                <tr>
+                                    <th
+                                        style="border: 2px solid #333; padding: 0.8rem; background: #f8f9fa; width: 20%;">
+                                    </th>
+                                    <th
+                                        style="border: 2px solid #333; padding: 0.8rem; background: #28a745; color: white; text-align: center; width: 40%;">
+                                        <strong>ALTO INTERÉS</strong><br>
+                                        <small>Muy interesados en el proyecto</small>
+                                    </th>
+                                    <th
+                                        style="border: 2px solid #333; padding: 0.8rem; background: #6c757d; color: white; text-align: center; width: 40%;">
+                                        <strong>BAJO INTERÉS</strong><br>
+                                        <small>Poco interesados en el proyecto</small>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        style="border: 2px solid #333; padding: 0.8rem; background: #dc3545; color: white; text-align: center; writing-mode: vertical-rl; text-orientation: mixed;">
+                                        <strong>ALTA INFLUENCIA</strong><br>
+                                        <small>Mucho poder de decisión</small>
+                                    </td>
+                                    <td
+                                        style="border: 2px solid #333; padding: 1rem; background: rgba(220, 53, 69, 0.1); vertical-align: top;">
+                                        <div style="text-align: center; margin-bottom: 0.5rem;">
+                                            <strong style="color: #dc3545;"><i class="fas fa-crown"></i> GESTIONAR DE
+                                                CERCA</strong>
+                                        </div>
+                                        <div
+                                            style="background: rgba(220, 53, 69, 0.2); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem;">
+                                            <strong>• Mg. Pablo Ruiz Aguirre</strong> (Prorrector)<br>
+                                            <strong>• Mg. Lorena Conde</strong> (Directora Ing. TI - Sponsor técnico)
+                                        </div>
+                                        <ul style="margin: 0; padding-left: 1rem; font-size: 0.75em;">
+                                            <li>Reuniones semanales</li>
+                                            <li>Decisiones clave</li>
+                                            <li>Aprobación de presupuesto</li>
+                                        </ul>
+                                    </td>
+                                    <td
+                                        style="border: 2px solid #333; padding: 1rem; background: rgba(255, 193, 7, 0.1); vertical-align: top;">
+                                        <div style="text-align: center; margin-bottom: 0.5rem;">
+                                            <strong style="color: #ffc107;"><i class="fas fa-handshake"></i> MANTENER
+                                                SATISFECHO</strong>
+                                        </div>
+                                        <div
+                                            style="background: rgba(255, 193, 7, 0.2); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem;">
+                                            <strong>• Dr. Franklin Chacón Pineda</strong> (Dir. Business School)<br>
+                                            <strong>• Arq. MSc. Tatiana Trokhimtchouk</strong> (Dir. Arquitectura)<br>
+                                            <strong>• Mg. Doménica Burneo</strong> (Dir. Psicología)<br>
+                                            <strong>• Mg. Raquel Veintimilla</strong> (Dir. Derecho)
+                                        </div>
+                                        <ul style="margin: 0; padding-left: 1rem; font-size: 0.75em;">
+                                            <li>Reportes mensuales</li>
+                                            <li>Comunicación formal</li>
+                                            <li>Evitar sorpresas</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="border: 2px solid #333; padding: 0.8rem; background: #28a745; color: white; text-align: center; writing-mode: vertical-rl; text-orientation: mixed;">
+                                        <strong>BAJA INFLUENCIA</strong><br>
+                                        <small>Poco poder de decisión</small>
+                                    </td>
+                                    <td
+                                        style="border: 2px solid #333; padding: 1rem; background: rgba(40, 167, 69, 0.1); vertical-align: top;">
+                                        <div style="text-align: center; margin-bottom: 0.5rem;">
+                                            <strong style="color: #28a745;"><i class="fas fa-info-circle"></i> MANTENER
+                                                INFORMADO</strong>
+                                        </div>
+                                        <div
+                                            style="background: rgba(40, 167, 69, 0.2); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem;">
+                                            <strong>• Coordinadores Académicos</strong><br>
+                                            <strong>• Docentes</strong><br>
+                                            <strong>• Estudiantes</strong>
+                                        </div>
+                                        <ul style="margin: 0; padding-left: 1rem; font-size: 0.75em;">
+                                            <li>Newsletter semanal</li>
+                                            <li>Talleres de capacitación</li>
+                                            <li>Canal de feedback</li>
+                                        </ul>
+                                    </td>
+                                    <td
+                                        style="border: 2px solid #333; padding: 1rem; background: rgba(108, 117, 125, 0.1); vertical-align: top;">
+                                        <div style="text-align: center; margin-bottom: 0.5rem;">
+                                            <strong style="color: #6c757d;"><i class="fas fa-eye"></i>
+                                                MONITOREAR</strong>
+                                        </div>
+                                        <div
+                                            style="background: rgba(108, 117, 125, 0.2); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem;">
+                                            <strong>• Personal de mantenimiento</strong><br>
+                                            <strong>• Proveedores de equipos</strong><br>
+                                            <strong>• Personal de limpieza</strong>
+                                        </div>
+                                        <ul style="margin: 0; padding-left: 1rem; font-size: 0.75em;">
+                                            <li>Comunicación mínima</li>
+                                            <li>Solo cambios críticos</li>
+                                            <li>Revisión semestral</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-lightbulb"></i> Discovery en Producto Digital</h2>
+
+                    <div class="concept-box">
+                        <h3>Proceso de Discovery</h3>
+                        <p>Serie de actividades que permiten <mark>entender el comportamiento de los usuarios,
+                                identificar problemas y necesidades, diseñar soluciones adecuadas</mark> y ponerlas a
+                            prueba.</p>
+                    </div>
+
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div class="success-box">
+                                <h4><i class="fas fa-search"></i> Descubrimiento del Problema</h4>
+                                <ul>
+                                    <li>Investigación de usuarios</li>
+                                    <li>Análisis de mercado</li>
+                                    <li>Identificación de pain points</li>
+                                    <li>Validación de hipótesis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="success-box">
+                                <h4><i class="fas fa-drafting-compass"></i> Descubrimiento de la Solución</h4>
+                                <ul>
+                                    <li>Ideación y conceptualización</li>
+                                    <li>Prototipado rápido</li>
+                                    <li>Testing con usuarios</li>
+                                    <li>Iteración basada en feedback</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="definition-box">
+                        <h4><i class="fas fa-canvas"></i> Lean Canvas</h4>
+                        <p>Herramienta para estructurar hipótesis iniciales: <strong>segmentos de usuarios, problemas
+                                clave, propuesta de valor única, alternativas existentes</strong></p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 9: Preguntas Context-Free -->
+            <section>
+                <h2><i class="fas fa-question-circle"></i> Preguntas Context-Free para Inception</h2>
+
+                <div class="concept-box">
+                    <h3>Aplicando Preguntas Context-Free al Sistema de Reservas UIDE</h3>
+                    <p>Veamos cómo estas preguntas nos ayudan a <mark>entender el contexto real</mark> del proyecto
+                        de reservas sin influir en las respuestas.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-bullseye"></i> Propósito y Objetivos</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>¿Quién está detrás de la solicitud de este trabajo?</li>
+                                <li>¿Cuál será el beneficio económico de una solución exitosa?</li>
+                                <li>¿Existe otra fuente de financiamiento para este proyecto?</li>
+                                <li>¿Quién más quiere esta solución?</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-users"></i> Stakeholders y Usuarios</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>¿Quién utilizará esta solución?</li>
+                                <li>¿Cómo se utiliza actualmente este proceso?</li>
+                                <li>¿Qué personas no están disponibles para nosotros?</li>
+                                <li>¿Quién define las reglas de negocio?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="warning-box">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Restricciones y Riesgos</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>¿Qué problemas harán que esta solución fracase?</li>
+                                <li>¿Cuáles son las restricciones de tiempo?</li>
+                                <li>¿Existen restricciones presupuestarias?</li>
+                                <li>¿Hay estándares o regulaciones que cumplir?</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-chart-line"></i> Éxito y Métricas</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>¿Cómo definirá el éxito?</li>
+                                <li>¿Cómo sabrá que la solución funciona?</li>
+                                <li>¿Qué métricas son importantes?</li>
+                                <li>¿Cuándo necesita estar lista la solución?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9b: Respuestas del Sistema de Reservas -->
+            <section>
+                <h2><i class="fas fa-calendar-check"></i> Respuestas del Sistema de Reservas UIDE</h2>
+
+                <div class="concept-box">
+                    <h3>Aplicación Práctica de las Preguntas Context-Free</h3>
+                    <p>Veamos las <mark>respuestas reales</mark> que obtuvimos de las autoridades UIDE durante la fase
+                        de
+                        inception del sistema de reservas.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-bullseye"></i> Propósito y Objetivos</h4>
+                            <ul style="font-size: 0.85em;">
+                                <li><strong>¿Quién está detrás?</strong><br><em>"Mg. Pablo Ruiz Aguirre (Prorrector) y
+                                        directores de escuela por optimización de recursos"</em></li>
+                                <li><strong>¿Beneficio económico?</strong><br><em>"Optimizar uso de espacios, reducir
+                                        conflictos de horarios y mejorar eficiencia operativa en 30%"</em></li>
+                                <li><strong>¿Otras fuentes de financiamiento?</strong><br><em>"Presupuesto de
+                                        modernización tecnológica UIDE de $120K"</em></li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Restricciones y Riesgos</h4>
+                            <ul style="font-size: 0.85em;">
+                                <li><strong>¿Qué haría fracasar el proyecto?</strong><br><em>"Resistencia al cambio de
+                                        coordinadores académicos y baja adopción por parte de docentes"</em></li>
+                                <li><strong>¿Restricciones de tiempo?</strong><br><em>"Implementación antes del nuevo
+                                        período académico en 12 meses"</em></li>
+                                <li><strong>¿Estándares a cumplir?</strong><br><em>"Estándares SENESCYT, políticas
+                                        internas UIDE, normativas de seguridad"</em></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-users"></i> Stakeholders y Usuarios</h4>
+                            <ul style="font-size: 0.85em;">
+                                <li><strong>¿Quién utilizará la solución?</strong><br><em>"Coordinadores académicos,
+                                        docentes, estudiantes, personal administrativo"</em></li>
+                                <li><strong>¿Proceso actual?</strong><br><em>"Reservas manuales por email, planillas
+                                        Excel, confirmaciones telefónicas"</em></li>
+                                <li><strong>¿Quién no está disponible?</strong><br><em>"Docentes de modalidad virtual y
+                                        personal de otras sedes"</em></li>
+                            </ul>
+                        </div>
+
+                        <div class="concept-box">
+                            <h4><i class="fas fa-chart-line"></i> Éxito y Métricas</h4>
+                            <ul style="font-size: 0.85em;">
+                                <li><strong>¿Cómo medir el éxito?</strong><br><em>"Reducir conflictos de horarios de 15%
+                                        a 2%, aumentar ocupación de aulas al 85%"</em></li>
+                                <li><strong>¿Métricas importantes?</strong><br><em>"Tiempo de reserva, satisfacción de
+                                        usuarios, utilización de espacios"</em></li>
+                                <li><strong>¿Cuándo debe estar listo?</strong><br><em>"Piloto en 6 meses, implementación
+                                        completa en 12"</em></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Técnicas de Facilitación -->
+            <section>
+                <h2><i class="fas fa-users-cog"></i> Técnicas de Facilitación para Stakeholders</h2>
+
+                <div class="concept-box">
+                    <h3>Aplicando Técnicas de Facilitación en el Sistema de Reservas</h3>
+                    <p>Veamos cómo aplicamos estas técnicas en el <mark>workshop de stakeholders</mark> del Sistema de
+                        Reservas
+                        UIDE.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-lightbulb"></i> Brainstorming Estructurado</h4>
+                            <div
+                                style="background: rgba(40, 167, 69, 0.05); padding: 0.8rem; border-radius: 6px; margin: 0.5rem 0; font-size: 0.85em;">
+                                <strong>Resultado Sistema de Reservas:</strong> Identificamos 22 stakeholders en 12
+                                minutos
+                            </div>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Participantes:</strong> Mg. Lorena Conde, Mg. Alex Cárdenas, Mg. Mercy
+                                    Namicela
+                                </li>
+                                <li><strong>Resultado:</strong> Desde "estudiantes" hasta "personal de mantenimiento"
+                                </li>
+                                <li><strong>Sorpresa:</strong> Mencionaron "personal de limpieza" y "proveedores de
+                                    equipos"</li>
+                                <li><strong>Facilitación:</strong> Post-its en pizarra, ambiente colaborativo</li>
+                            </ul>
+                        </div>
+
+                        <div class="concept-box">
+                            <h4><i class="fas fa-layer-group"></i> Categorización por Afinidad</h4>
+                            <div
+                                style="background: rgba(35, 53, 110, 0.05); padding: 0.8rem; border-radius: 6px; margin: 0.5rem 0; font-size: 0.85em;">
+                                <strong>Resultado Sistema de Reservas:</strong> 4 grupos: Autoridades, Coordinadores,
+                                Usuarios, Soporte
+                            </div>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Criterio principal:</strong> Relación con gestión de espacios académicos
+                                </li>
+                                <li><strong>Post-its rojos:</strong> Autoridades ejecutivas (directores, prorrector)
+                                </li>
+                                <li><strong>Post-its azules:</strong> Coordinadores académicos</li>
+                                <li><strong>Post-its verdes:</strong> Usuarios directos (estudiantes, docentes)</li>
+                                <li><strong>Post-its amarillos:</strong> Personal de soporte y mantenimiento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-dot-circle"></i> Dot Voting</h4>
+                            <div
+                                style="background: rgba(233, 171, 33, 0.05); padding: 0.8rem; border-radius: 6px; margin: 0.5rem 0; font-size: 0.85em;">
+                                <strong>Resultado Sistema de Reservas:</strong> Mg. Pablo Ruiz (18 puntos),
+                                Coordinadores Académicos (15
+                                puntos), Docentes (12 puntos)
+                            </div>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Participantes:</strong> 6 personas, 3 puntos cada uno</li>
+                                <li><strong>Sorpresa:</strong> "Personal de TI" recibió 10 puntos (más de lo esperado)
+                                </li>
+                                <li><strong>Consenso:</strong> Autoridades y coordinadores = stakeholders críticos</li>
+                                <li><strong>Tiempo:</strong> 7 minutos de votación silenciosa</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><i class="fas fa-cards-blank"></i> Planning Poker</h4>
+                            <div
+                                style="background: rgba(220, 53, 69, 0.05); padding: 0.8rem; border-radius: 6px; margin: 0.5rem 0; font-size: 0.85em;">
+                                <strong>Ejemplo Sistema de Reservas:</strong> Mg. Pablo Ruiz = Influencia 5, Interés 5
+                                (consenso
+                                inmediato)
+                            </div>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Debate:</strong> Estudiantes - ¿Influencia 2 o 3?</li>
+                                <li><strong>Consenso:</strong> Mg. Lorena Conde = Influencia 4, Interés 5</li>
+                                <li><strong>Sorpresa:</strong> Personal de TI = Influencia 3, Interés 4</li>
+                                <li><strong>Resultado:</strong> Matriz clara para estrategias</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <section>
+                    <h2><i class="fas fa-clipboard-check"></i> Secuencia del Proceso</h2>
+
+                    <div class="definition-box">
+                        <h4><i class="fas fa-clipboard-check"></i> Secuencia Aplicada en el Sistema de Reservas</h4>
+                        <p><strong>1. Brainstorming</strong> (22 stakeholders) → <strong>2. Categorización</strong> (4
+                            grupos) → <strong>3. Dot Voting</strong> (priorización) → <strong>4. Planning Poker</strong>
+                            (matriz) → <strong>5. Estrategias</strong> (plan de gestión)</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-rocket"></i> Conexión con PE1.1</h4>
+                        <p>En el PE1.1 aplicarás <strong>exactamente estas mismas técnicas</strong> con tu caso
+                            asignado. El
+                            Sistema de Reservas UIDE te sirve como referencia de cómo debe verse el proceso completo.
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Slide 11: Caso de Proyecto PE1.1 -->
+            <section>
+                <h2><i class="fas fa-seedling"></i> Caso de Proyecto para PE1.1</h2>
+
+                <div class="definition-box">
+                    <h3><i class="fas fa-store"></i> Marketplace Agrícola</h3>
+                    <p>Plataforma digital para conectar pequeños productores agrícolas con compradores, eliminando
+                        intermediarios y promoviendo comercio justo en el sector agropecuario ecuatoriano.</p>
+                </div>
+
+                <div class="concept-box" style="background: rgba(220, 53, 69, 0.05); border-left: 4px solid #dc3545;">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Problemática Identificada</h4>
+                    <div class="r-hstack" style="gap: 2rem;">
+                        <div class="column">
+                            <h5 style="color: #dc3545; margin-bottom: 0.5rem;">Datos FAO Ecuador & MAG:</h5>
+                            <ul style="font-size: 0.9em; margin: 0;">
+                                <li><strong>84.5%</strong> de UPAs son agricultura familiar</li>
+                                <li>Controlan solo <strong>20%</strong> de tierra agrícola</li>
+                                <li><strong>75.6%</strong> son pequeños productores (&lt;10 ha)</li>
+                                <li><strong>636,375</strong> unidades productivas pequeñas</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <h5 style="color: #dc3545; margin-bottom: 0.5rem;">Brechas de Acceso:</h5>
+                            <ul style="font-size: 0.9em; margin: 0;">
+                                <li>Solo <strong>7.4%</strong> accede a crédito agropecuario</li>
+                                <li>Solo <strong>6.8%</strong> recibe asistencia técnica</li>
+                                <li>Pobreza rural: <strong>43.3%</strong> vs urbana: <strong>20.9%</strong></li>
+                                <li>Concentración comercial en pocos privilegiados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r-hstack" style="margin-top: 1.5rem;">
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-bullseye"></i> Objetivos del Marketplace</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li>Conectar directamente productores con compradores</li>
+                                <li>Eliminar intermediarios que reducen márgenes</li>
+                                <li>Facilitar acceso a mercados para pequeños productores</li>
+                                <li>Promover precios justos y transparentes</li>
+                                <li>Incluir sistema de pagos y logística</li>
+                                <li>Ofrecer información de mercado en tiempo real</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-users"></i> Stakeholders Potenciales</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Pequeños productores</strong> - Usuarios principales</li>
+                                <li><strong>Compradores</strong> - Restaurantes, mercados, consumidores</li>
+                                <li><strong>MAG</strong> - Ministerio de Agricultura y Ganadería</li>
+                                <li><strong>Cooperativas agrícolas</strong> - Organizaciones de productores</li>
+                                <li><strong>Instituciones financieras</strong> - Crédito y pagos</li>
+                                <li><strong>Empresas de logística</strong> - Transporte y distribución</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top: 1.5rem;">
+                    <h4><i class="fas fa-tasks"></i> Actividad en PE1.1</h4>
+                    <p><strong>Todos los grupos trabajarán con el mismo caso:</strong> Marketplace Agrícola. Cada grupo
+                        deberá identificar stakeholders, crear la matriz de influencia vs interés, y generar sus propias
+                        preguntas context-free para entender mejor el proyecto.</p>
+                </div>
+            </section>
+
+            <!-- Slide 12: Herramientas de Elicitación -->
+            <section>
+                <h2><i class="fas fa-tools"></i> Técnicas de Elicitación de Requerimientos</h2>
+
+                <div class="concept-box">
+                    <h3>Métodos de Recopilación de Información</h3>
+                    <p>Diversas técnicas para extraer, analizar y documentar los requerimientos del sistema.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="concept-box">
+                            <h4><i class="fas fa-comments"></i> Técnicas Directas</h4>
+                            <ul>
+                                <li><strong>Entrevistas:</strong> Conversaciones estructuradas con stakeholders</li>
+                                <li><strong>Workshops:</strong> Sesiones colaborativas de trabajo</li>
+                                <li><strong>Focus Groups:</strong> Discusiones grupales dirigidas</li>
+                                <li><strong>Cuestionarios:</strong> Recopilación masiva de información</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="concept-box">
+                            <h4><i class="fas fa-eye"></i> Técnicas de Observación</h4>
+                            <ul>
+                                <li><strong>Shadowing:</strong> Observación de usuarios en su entorno</li>
+                                <li><strong>Etnografía:</strong> Inmersión en el contexto de uso</li>
+                                <li><strong>Análisis de documentos:</strong> Revisión de procesos existentes</li>
+                                <li><strong>Benchmarking:</strong> Comparación con soluciones similares</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-drafting-compass"></i> Técnicas de Prototipado</h4>
+                            <ul>
+                                <li><strong>Wireframes:</strong> Esquemas de interfaz básicos</li>
+                                <li><strong>Mockups:</strong> Representaciones visuales detalladas</li>
+                                <li><strong>Prototipos interactivos:</strong> Simulaciones funcionales</li>
+                                <li><strong>Storyboards:</strong> Narrativas visuales de uso</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-users-cog"></i> Técnicas Colaborativas</h4>
+                            <ul>
+                                <li><strong>Design Thinking:</strong> Proceso centrado en el usuario</li>
+                                <li><strong>User Story Mapping:</strong> Mapeo de historias de usuario</li>
+                                <li><strong>Planning Poker:</strong> Estimación colaborativa</li>
+                                <li><strong>Brainstorming:</strong> Generación de ideas creativas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: Preparación para PE1.1 -->
+            <section>
+                <h2><i class="fas fa-clipboard-list"></i> Preparación para PE1.1</h2>
+
+                <div class="concept-box">
+                    <h3>Análisis de Stakeholders - Marketplace Agrícola</h3>
+                    <p>Actividad práctica grupal donde aplicarás <mark>técnicas de identificación de stakeholders y
+                            preguntas context-free</mark> al caso del Marketplace Agrícola.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-book-open"></i> Material de Estudio Previo</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Compendio Semana 1:</strong> Descubrimiento del proyecto y gestión de
+                                    stakeholders</li>
+                                <li><strong>Teoría clave:</strong> Metáfora de Rob Thomsett</li>
+                                <li><strong>Taxonomía:</strong> Clasificación completa de stakeholders</li>
+                                <li><strong>Caso único:</strong> Marketplace Agrícola (datos FAO y MAG)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-tasks"></i> Actividades a Realizar</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Identificar stakeholders</strong> del Marketplace Agrícola</li>
+                                <li><strong>Crear matriz</strong> de Influencia vs Interés</li>
+                                <li><strong>Generar preguntas</strong> context-free propias</li>
+                                <li><strong>Justificar decisiones</strong> de clasificación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="definition-box">
+                    <h4><i class="fas fa-file-alt"></i> Entregables Específicos</h4>
+                    <div class="r-hstack" style="margin-top: 1rem;">
+                        <div class="column">
+                            <div
+                                style="background: rgba(220, 53, 69, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #dc3545;">
+                                <h5 style="color: #dc3545; margin: 0 0 0.5rem 0;"><i class="fas fa-th"></i> Entregable
+                                    1: Matriz de Influencia vs Interés</h5>
+                                <ul style="font-size: 0.85em; margin: 0;">
+                                    <li>Matriz visual en pizarra/papel</li>
+                                    <li>Mínimo 15 stakeholders identificados</li>
+                                    <li>Clasificación justificada por cuadrante</li>
+                                    <li>Fotografía de la matriz final</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div
+                                style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #28a745;">
+                                <h5 style="color: #28a745; margin: 0 0 0.5rem 0;"><i class="fas fa-question-circle"></i>
+                                    Entregable 2: Preguntas Context-Free</h5>
+                                <ul style="font-size: 0.85em; margin: 0;">
+                                    <li>Mínimo 10 preguntas generadas por el grupo</li>
+                                    <li>Cubrir las 4 categorías: Propósito, Stakeholders, Restricciones, Éxito</li>
+                                    <li>Preguntas específicas para el contexto agrícola</li>
+                                    <li>Documento con las preguntas formuladas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-clock"></i> Información Práctica</h4>
+                    <div class="r-hstack" style="margin-top: 1rem;">
+                        <div class="column">
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Duración:</strong> 90 minutos</li>
+                                <li><strong>Modalidad:</strong> Grupos de 4-5 estudiantes</li>
+                                <li><strong>Puntuación:</strong> 2 puntos</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Materiales:</strong> Pizarras, post-its, marcadores</li>
+                                <li><strong>Apoyo:</strong> Docente disponible para consultas</li>
+                                <li><strong>Entrega:</strong> Al final de la clase</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4><i class="fas fa-lightbulb"></i> Conexión con TA1.1</h4>
+                    <p>La experiencia del PE1.1 te preparará para el <strong>Trabajo Autónomo 1.1</strong>: crear tu
+                        propia visión de producto y mapa de stakeholders individual.</p>
+                </div>
+            </section>
+
+            <!-- Slide 12: Actividades Prácticas de la Semana -->
+            <section>
+                <h2><i class="fas fa-tasks"></i> Actividades Calificadas - Semana 1</h2>
+
+                <div class="concept-box">
+                    <h3>Cronograma de Entregas</h3>
+                    <p>Actividades diseñadas para aplicar los conceptos de ingeniería de software moderna, ética de IA y
+                        descubrimiento de proyectos.</p>
+                </div>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="success-box">
+                            <h4><i class="fas fa-home"></i> Trabajo Autónomo (TA)</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>TA-1.1:</strong> Visión de producto (1 pág) + mapa de stakeholders (2 pts)
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-flask"></i> Práctico Experimental (PE)</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>PE-1.1:</strong> Dinámica de stakeholders y contexto del proyecto (2 pts)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="definition-box">
+                            <h4><i class="fas fa-graduation-cap"></i> Gestión de Aprendizaje (GA)</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>GA-1.1:</strong> Completar módulo 1 de ASC-5 (1 pt)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4><i class="fas fa-calendar-alt"></i> Fechas Importantes</h4>
+                    <ul>
+                        <li><strong>Entrega TA-1.1:</strong> Domingo 23:59 hrs</li>
+                        <li><strong>PE-1.1:</strong> Durante la clase (jueves)</li>
+                        <li><strong>GA-1.1:</strong> Plataforma ASU disponible 24/7</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 12: Recursos y Referencias -->
+            <section>
+                <h2><i class="fas fa-book"></i> Recursos y Referencias</h2>
+
+                <div class="r-hstack">
+                    <div class="column">
+                        <div class="concept-box">
+                            <h4><i class="fas fa-book-open"></i> Bibliografía Principal</h4>
+                            <ul style="font-size: 0.8em;">
+                                <li>Sommerville, I. (2021). <em>Engineering Software Products</em></li>
+                                <li>Pressman, R. S. (2021). <em>Ingeniería de Software: Un Enfoque Práctico</em></li>
+                                <li>Jiménez de Parga, C. (2021). <em>UML: Arquitectura de Aplicaciones</em></li>
+                            </ul>
+                        </div>
+                        <div class="concept-box">
+                            <h4><i class="fas fa-globe"></i> Recursos Online</h4>
+                            <ul style="font-size: 0.8em;">
+                                <li>Cloud Native Computing Foundation (CNCF)</li>
+                                <li>Google Cloud - IA Responsable</li>
+                                <li>UNESCO - Ética de IA</li>
+                                <li>GitHub Copilot Documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h4><i class="fas fa-tools"></i> Herramientas Recomendadas</h4>
+                            <ul style="font-size: 0.8em;">
+                                <li><strong>Prototipado:</strong> Figma, Adobe XD</li>
+                                <li><strong>Mapeo de stakeholders:</strong> Miro, Lucidchart</li>
+                                <li><strong>Documentación:</strong> Notion, Confluence</li>
+                                <li><strong>IA Asistente:</strong> GitHub Copilot, ChatGPT</li>
+                            </ul>
+                        </div>
+                        <div class="success-box">
+                            <h4><i class="fas fa-users"></i> Comunidades</h4>
+                            <ul style="font-size: 0.8em;">
+                                <li>Agile Alliance Ecuador</li>
+                                <li>DevOps Ecuador</li>
+                                <li>Women in Tech Ecuador</li>
+                                <li>Cloud Native Ecuador</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Conclusiones -->
+            <section>
+                <h2><i class="fas fa-flag-checkered"></i> Conclusiones</h2>
+
+                <div class="concept-box">
+                    <h3>Puntos Clave de la Semana 1</h3>
+                    <ul>
+                        <li><strong>Evolución continua:</strong> La ingeniería de software ha evolucionado desde la
+                            crisis de 1968 hasta la era cloud-native e IA</li>
+                        <li><strong>Metodologías ágiles:</strong> Representan un cambio fundamental hacia la
+                            adaptabilidad y entrega de valor continua</li>
+                        <li><strong>Transformación cloud:</strong> Ha redefinido cómo desarrollamos, desplegamos y
+                            escalamos aplicaciones</li>
+                        <li><strong>IA como catalizador:</strong> Está revolucionando la productividad pero requiere uso
+                            ético y responsable</li>
+                        <li><strong>Descubrimiento efectivo:</strong> La base del éxito de cualquier proyecto de
+                            software</li>
+                    </ul>
+                </div>
+
+                <div class="definition-box">
+                    <h3><i class="fas fa-lightbulb"></i> Reflexión Final</h3>
+                    <p>La ingeniería de software moderna requiere <mark>equilibrio entre innovación tecnológica y
+                            responsabilidad ética</mark>, manteniendo siempre el foco en la entrega de valor real a los
+                        usuarios y la sociedad.</p>
+                </div>
+
+                <div class="success-box">
+                    <h4><i class="fas fa-arrow-right"></i> Próxima Semana</h4>
+                    <p><strong>Semana 2:</strong> Profundizaremos en ingeniería de requerimientos, técnicas de
+                        elicitación avanzadas y creación del SRS (Software Requirements Specification).</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reveal.js JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/presentation.js"></script>
+</body>
+
+</html>
