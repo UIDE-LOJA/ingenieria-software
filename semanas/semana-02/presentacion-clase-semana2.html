@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Semana 2 - Requerimientos y Elicitación de Software</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+
+    <!-- UIDE Theme CSS -->
+    <link rel="stylesheet" href="../../assets/css/uide-theme.css">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/aipti-diagrams.css">
+    <link rel="stylesheet" href="presentacion-clase-semana2.css">
+
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+
+    <!-- D3.js for advanced visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Floating Help Icon -->
+    <div class="floating-help-emoji" onclick="showRequirementsReference()" title="Guía Rápida de Ingeniería de Software">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h1><i class="fas fa-cogs"></i> Presentación Semana 2</h1>
+                    <h2>Requerimientos y Elicitación de Software</h2>
+
+                    <div class="course-info">
+                        <strong>06 LTI_05A_INS-IS-ASC</strong> • Quinto Nivel<br>
+                        <strong>Ingeniería de Software</strong><br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em><br>
+                        Universidad Internacional del Ecuador • Noviembre 2025
+                    </div>
+
+                    <div
+                        style="background: rgba(233, 171, 33, 0.1); border-radius: 8px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                        <strong>Requerimientos Funcionales, No Funcionales y Técnicas de Documentación</strong><br>
+                        <em>Semana 2 • Elicitación • SRS vs. Backlog • Calidad de Software</em>
+                    </div>
+
+                    <div style="margin-top: 2em; font-size: 0.9em; font-style: italic; color: var(--uide-secondary);">
+                        Fundamentos de ingeniería de requerimientos y documentación de software
+                    </div>
+                </div>
+            </section>
+
+            <!-- Objetivos de la Presentación -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-bullseye"></i> Objetivos de la Presentación</h2>
+
+                <div class="concept-box">
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-tasks"></i> Comprender</h5>
+                                <p style="font-size: 0.9em;">Los <strong>requerimientos funcionales y no funcionales</strong> en desarrollo de software</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-comments"></i> Analizar</h5>
+                                <p style="font-size: 0.9em;">Técnicas de <strong>elicitación de requerimientos</strong> efectivas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="r-hstack" style="margin-top: 1rem;">
+                        <div class="column">
+                            <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-file-alt"></i> Explorar</h5>
+                                <p style="font-size: 0.9em;">Estrategias de <strong>documentación inicial</strong> (SRS vs. Backlog)</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-chart-line"></i> Identificar</h5>
+                                <p style="font-size: 0.9em;"><strong>Métricas de calidad</strong> para requerimientos no funcionales</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agenda -->
+            <section>
+                <h3><i class="fas fa-list-ul"></i> Agenda</h3>
+                <div class="concept-box">
+                    <div class="r-hstack">
+                        <div class="column">
+                            <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-tasks"></i> 1. Requerimientos Funcionales y No Funcionales</h5>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-comments"></i> 2. Técnicas de Elicitación</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="r-hstack" style="margin-top: 1rem;">
+                        <div class="column">
+                            <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-file-alt"></i> 3. Documentación de Requerimientos</h5>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                <h5><i class="fas fa-balance-scale"></i> 4. Enfoques Ágiles vs. Tradicionales</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;">
+                        <h5><i class="fas fa-industry"></i> 5. Aplicaciones Prácticas</h5>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conceptos Fundamentales -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-cogs"></i> Conceptos Fundamentales de Requerimientos</h2>
+
+                <section>
+                    <h3>Definición Central</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Los requerimientos de software son descripciones de lo que el sistema debe hacer: los servicios que ofrece y las restricciones en su operación"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-key"></i> Características Clave</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Reflejan necesidades del cliente</strong> para que el sistema atienda un propósito específico</li>
+                                    <li><strong>Clasificación principal</strong>: Funcionales y No Funcionales</li>
+                                    <li><strong>Contexto</strong>: Fundamentales en ingeniería de software</li>
+                                    <li><strong>Impacto</strong>: Determinan el éxito o fracaso del proyecto</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Requerimientos Funcionales -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-tasks"></i> Requerimientos Funcionales (RF)</h2>
+
+                <section>
+                    <h3>Concepto Central</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Enunciados acerca de servicios que el sistema debe proveer, de cómo debería reaccionar el sistema a entradas particulares y de cómo debería comportarse el sistema en situaciones específicas"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-cog"></i> Características Principales</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Servicios específicos</strong> que el sistema debe proporcionar</li>
+                                    <li><strong>Comportamiento del sistema</strong> ante entradas particulares</li>
+                                    <li><strong>Reacciones esperadas</strong> en situaciones específicas</li>
+                                    <li><strong>Especificaciones</strong> de lo que el sistema NO debe hacer</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-layer-group"></i> Niveles de Especificación</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Generales</strong>: Funcionalidad principal del sistema</li>
+                                    <li><strong>Específicos</strong>: Formas de trabajo locales o sistemas preexistentes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Ejemplo: Marketplace Agrícola - Descomposición de Requerimientos</h3>
+                    <div class="concept-box">
+                        <h4><i class="fas fa-user"></i> Requerimiento del Usuario</h4>
+                        <blockquote style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 0.9em;">
+                            "El Marketplace conectará productores agrícolas familiares con compradores directos para comercializar productos a precios justos, eliminando intermediarios y proporcionando herramientas de gestión financiera y técnica"
+                        </blockquote>
+
+                        <h4 style="margin-top: 1.5rem;"><i class="fas fa-list"></i> Especificación Funcional del Sistema</h4>
+                        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85em;">
+                            <thead>
+                                <tr style="background: rgba(35, 53, 110, 0.1);">
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">ID</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>RF1</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">El sistema permitirá registro de productores con ubicación GPS, tipos de cultivos y capacidad productiva mensual</td>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>RF2</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Catálogo dinámico con precios basados en oferta/demanda regional y calidad certificada por agrónomos</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>RF3</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Sistema de cotizaciones directas con notificaciones push y confirmación automática de disponibilidad</td>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>RF4</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Módulo de microcréditos con evaluación automática basada en historial productivo y garantías sociales</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-seedling"></i> Beneficios del Enfoque Contextualizado</h4>
+                            <ul style="font-size: 0.9em; margin: 0;">
+                                <li><strong>Relevancia social</strong>: Aborda problemática real del 84.5% de productores ecuatorianos</li>
+                                <li><strong>Impacto medible</strong>: Métricas específicas para 636,375 UPAs pequeñas</li>
+                                <li><strong>Sostenibilidad</strong>: Modelo que beneficia directamente a productores familiares</li>
+                                <li><strong>Escalabilidad</strong>: Diseño adaptable para diferentes regiones agrícolas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Requerimientos No Funcionales -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-shield-alt"></i> Requerimientos No Funcionales (RNF)</h2>
+
+                <section>
+                    <h3>Definición Fundamental</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Limitaciones sobre servicios o funciones que ofrece el sistema, a menudo descritos como atributos de calidad, atributos de rendimiento, atributos de seguridad o restricciones generales"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Importancia Crítica</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Más significativos</strong> que requerimientos funcionales individuales</li>
+                                    <li><strong>Fracaso catastrófico</strong>: Su incumplimiento hace el sistema inútil</li>
+                                    <li><strong>Ejemplo</strong>: Sistema de aeronave sin fiabilidad no se certifica como seguro</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-question-circle"></i> Dificultades Comunes</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Articulación compleja</strong> para los interesados</li>
+                                    <li><strong>Medición objetiva</strong> requiere métricas específicas</li>
+                                    <li><strong>Interdependencias</strong> con múltiples componentes del sistema</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Clasificación de RNF</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-box"></i> 1. Requerimientos del Producto</h4>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Rendimiento</strong>: Rapidez, throughput, tiempo de respuesta</li>
+                                        <li><strong>Fiabilidad</strong>: Tolerancia a fallos, disponibilidad</li>
+                                        <li><strong>Seguridad</strong>: Protección contra intrusiones</li>
+                                        <li><strong>Usabilidad</strong>: Facilidad de uso y aprendizaje</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-building"></i> 2. Requerimientos de la Organización</h4>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Operacionales</strong>: Entorno de funcionamiento</li>
+                                        <li><strong>Proceso de desarrollo</strong>: Estándares, metodologías</li>
+                                        <li><strong>Políticas corporativas</strong>: Procedimientos internos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-external-link-alt"></i> 3. Requerimientos Externos</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Regulaciones de seguridad</strong>: Cumplimiento normativo</li>
+                                <li><strong>Legislación de privacidad</strong>: Protección de datos</li>
+                                <li><strong>Estándares de interoperabilidad</strong>: Compatibilidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-mobile-alt"></i> Rendimiento para Conectividad Rural</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "El sistema debe optimizarse para redes 2G/3G rurales con ancho de banda limitado, priorizando funcionalidad esencial sobre elementos gráficos pesados"
+                        </blockquote>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4><i class="fas fa-signal"></i> Principio de Optimización Rural</h4>
+                            <p style="margin: 0; font-size: 0.9em;"><strong>Prioridad: Funcionalidad sobre estética, con métricas específicas para limitaciones de conectividad rural</strong></p>
+                        </div>
+
+                        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                            <thead>
+                                <tr style="background: rgba(46, 204, 113, 0.2);">
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Métrica Marketplace</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Objetivo Rural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Carga inicial (2G)</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">< 15 segundos para funciones básicas</td>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Sincronización offline</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">< 3 segundos al recuperar conectividad</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Tamaño de app</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">< 10 MB total para dispositivos básicos</td>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Disponibilidad</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">95% uptime horario agrícola (5AM-7PM)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Consumo de datos</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">< 1 MB por sesión promedio de uso</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-wifi"></i> Estrategias de Optimización</h4>
+                            <ul style="font-size: 0.9em; margin: 0;">
+                                <li><strong>Compresión de datos</strong>: Algoritmos específicos para JSON y imágenes</li>
+                                <li><strong>Cache inteligente</strong>: Almacenamiento local de precios y catálogos</li>
+                                <li><strong>Sincronización diferida</strong>: Cola de transacciones para conexión intermitente</li>
+                                <li><strong>Progressive Web App</strong>: Funcionalidad nativa sin instalación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-lock"></i> Seguridad del Sistema</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Capacidad del sistema para protegerse contra intrusión accidental o deliberada y habilidad de un sistema para protegerse a sí mismo contra ataques externos"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Consecuencias de Fallas</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Pérdida de disponibilidad</strong> del sistema</li>
+                                    <li><strong>Daño al sistema</strong> o a sus datos</li>
+                                    <li><strong>Fuga de información</strong> a personas no autorizadas</li>
+                                    <li><strong>Compromiso de integridad</strong> de los datos</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-ban"></i> Tipos de Requerimientos</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Requerimientos "no debe"</strong>: Comportamiento inaceptable</li>
+                                    <li><strong>Ejemplo</strong>: "El sistema no debe permitir que los usuarios modifiquen los permisos de acceso sobre algún archivo que no hayan creado"</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(46, 204, 113, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-seedling"></i> Ejemplo: Marketplace Agrícola - Análisis de Seguridad</h4>
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.8em;">
+                                <thead>
+                                    <tr style="background: rgba(35, 53, 110, 0.1);">
+                                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Activo</th>
+                                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Amenaza</th>
+                                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Control</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Datos financieros de productores</td>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Fraude en transacciones</td>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Encriptación end-to-end y verificación biométrica</td>
+                                    </tr>
+                                    <tr style="background: #f8f9fa;">
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Información de ubicación GPS</td>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Robo de datos de localización</td>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Anonimización y acceso restringido por roles</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Base de datos de precios</td>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Manipulación de precios</td>
+                                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Auditoría completa y blockchain para transparencia</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-seedling"></i> Usabilidad para Productores Rurales</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Para productores agrícolas familiares, la usabilidad debe considerar el nivel educativo promedio (primaria incompleta) y la limitada experiencia con tecnología digital"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-mobile-alt"></i> Características Específicas Rurales</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Interfaz visual</strong> con iconografía comprensible sin texto</li>
+                                    <li><strong>Navegación simple</strong> máximo 3 niveles de profundidad</li>
+                                    <li><strong>Compatibilidad móvil</strong> para dispositivos básicos 2G/3G</li>
+                                    <li><strong>Entrada por voz</strong> para productores con limitaciones de lectoescritura</li>
+                                    <li><strong>Modo offline</strong> para areas con conectividad intermitente</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <table style="width: 100%; border-collapse: collapse; font-size: 0.8em;">
+                                    <thead>
+                                        <tr style="background: rgba(46, 204, 113, 0.2);">
+                                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Métrica Marketplace</th>
+                                            <th style="padding: 0.5rem; border: 1px solid #ddd;">Objetivo Rural</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Tiempo de aprendizaje</strong></td>
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;">< 30 minutos para registrar producto</td>
+                                        </tr>
+                                        <tr style="background: #f8f9fa;">
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Tasa de error</strong></td>
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;">< 3% en proceso de cotización</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Satisfacción</strong></td>
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;">> 85% recomendarían la plataforma</td>
+                                        </tr>
+                                        <tr style="background: #f8f9fa;">
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Compatibilidad</strong></td>
+                                            <td style="padding: 0.5rem; border: 1px solid #ddd;">95% dispositivos rurales soportados</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-chart-bar"></i> Contexto Sociotécnico</h4>
+                            <ul style="font-size: 0.9em; margin: 0;">
+                                <li><strong>67% usa telefonía básica</strong>: Optimización para redes 2G/3G prioritaria</li>
+                                <li><strong>Nivel educativo limitado</strong>: Interfaz basada en íconos y colores</li>
+                                <li><strong>Conectividad intermitente</strong>: Funcionalidad offline esencial</li>
+                                <li><strong>Brecha digital</strong>: Capacitación y soporte técnico incluidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Técnicas de Elicitación -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-comments"></i> Técnicas de Elicitación de Requerimientos</h2>
+
+                <section>
+                    <h3>Concepto Central</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "La actividad donde los ingenieros de software trabajan con clientes y usuarios finales para descubrir el dominio de aplicación, qué servicios debe proporcionar el sistema, el desempeño requerido, las restricciones de hardware, etcétera"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-target"></i> Objetivos de la Elicitación</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Descubrir el dominio</strong> de aplicación</li>
+                                    <li><strong>Identificar servicios</strong> del sistema</li>
+                                    <li><strong>Determinar restricciones</strong> técnicas y operativas</li>
+                                    <li><strong>Comprender necesidades</strong> de los stakeholders</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-search"></i> Proceso de Descubrimiento</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Interacción</strong> con participantes del sistema</li>
+                                    <li><strong>Análisis de documentación</strong> existente</li>
+                                    <li><strong>Exploración de requerimientos</strong> de dominio</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-microphone"></i> Entrevistas como Técnica Principal</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "El equipo formula preguntas a los participantes sobre el sistema actual y el sistema a desarrollar, y los requerimientos se derivan de las respuestas"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-list"></i> 1. Entrevistas Cerradas</h4>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Características</strong>: Conjunto de preguntas preestablecidas</li>
+                                        <li><strong>Ventajas</strong>: Estructura clara, comparabilidad de respuestas</li>
+                                        <li><strong>Desventajas</strong>: Limitación en exploración de temas emergentes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-comments"></i> 2. Entrevistas Abiertas</h4>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Características</strong>: Sin agenda predefinida</li>
+                                        <li><strong>Objetivo</strong>: Explorar conflictos y desarrollar comprensión</li>
+                                        <li><strong>Flexibilidad</strong>: Adaptación según respuestas del entrevistado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-balance-scale"></i> Fortalezas y Limitaciones</h4>
+                            <div class="r-hstack">
+                                <div class="column">
+                                    <p style="font-size: 0.9em; margin: 0;"><strong>Fortalezas:</strong> Comprensión global, interacción directa, exploración profunda</p>
+                                </div>
+                                <div class="column">
+                                    <p style="font-size: 0.9em; margin: 0;"><strong>Limitaciones:</strong> Conocimiento técnico limitado, conflictos políticos, restricciones organizacionales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-users"></i> Enfoques Colaborativos (Workshops)</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(233, 171, 33, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "La elicitación de requerimientos es inherentemente una actividad colaborativa que implica discusiones grupales y el trabajo conjunto con los participantes (stakeholders)"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-tasks"></i> Actividades Clave</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Priorización</strong> de requerimientos</li>
+                                    <li><strong>Negociación</strong> entre stakeholders</li>
+                                    <li><strong>Resolución de conflictos</strong> inevitables</li>
+                                    <li><strong>Compromiso</strong> en requerimientos finales</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-tools"></i> Técnicas Empleadas</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Escenarios de uso</strong> para contextualización</li>
+                                    <li><strong>Prototipos interactivos</strong> para validación</li>
+                                    <li><strong>Diagramas colaborativos</strong> para visualización</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-cube"></i> Prototipos y Escenarios</h3>
+                    <div class="concept-box">
+                        <h4><i class="fas fa-hammer"></i> Creación de Prototipos</h4>
+                        <blockquote style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 0.9em;">
+                            "Modelo ejecutable del sistema en cuestión [que se] muestra a los usuarios finales y clientes para que experimenten con este modelo y constaten si cubre sus necesidades reales"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-check"></i> Ventajas</h4>
+                                <ul style="font-size: 0.8em;">
+                                    <li><strong>Validación temprana</strong> de requerimientos</li>
+                                    <li><strong>Retroalimentación directa</strong> de usuarios</li>
+                                    <li><strong>Desarrollo rápido</strong> de interfaces gráficas</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-times"></i> Desventajas</h4>
+                                <ul style="font-size: 0.8em;">
+                                    <li><strong>Falta de documentación</strong> por desarrollo rápido</li>
+                                    <li><strong>Degradación estructural</strong> del sistema</li>
+                                    <li><strong>Dificultad</strong> para cubrir requerimientos no funcionales</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 1.5rem;"><i class="fas fa-book"></i> Escenarios (Historias de Usuario)</h4>
+                        <blockquote style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 0.9em;">
+                            "Descripciones de sesiones de interacción que son más fáciles de comprender y criticar para las personas que las descripciones abstractas de requerimientos"
+                        </blockquote>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Documentación de Requerimientos -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-file-alt"></i> Documentación de Requerimientos</h2>
+
+                <section>
+                    <h3>Documento de Requerimientos de Software (SRS)</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(35, 53, 110, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "El comunicado oficial de lo que deben implementar los desarrolladores. Incluye los requerimientos del usuario y una especificación detallada de los requerimientos del sistema"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-star"></i> Importancia Estratégica</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Esencial</strong> especialmente con contratistas externos</li>
+                                    <li><strong>Base contractual</strong> para desarrollo</li>
+                                    <li><strong>Referencia</strong> para validación y pruebas</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-users"></i> Usuarios del Documento</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Clientes</strong>: Comprensión de funcionalidades</li>
+                                    <li><strong>Administradores</strong>: Gestión de proyecto</li>
+                                    <li><strong>Ingenieros</strong>: Especificaciones técnicas</li>
+                                    <li><strong>Examinadores</strong>: Criterios de verificación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Estructura del SRS (IEEE 1998)</h3>
+                    <div class="concept-box">
+                        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                            <thead>
+                                <tr style="background: rgba(35, 53, 110, 0.1);">
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Capítulo</th>
+                                    <th style="padding: 0.5rem; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Prefacio</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Define los lectores, la historia de versiones y el resumen de cambios</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Introducción</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Describe la necesidad del sistema, sus funciones y cómo se ajusta a los objetivos empresariales</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Glosario</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Define los términos técnicos usados en el documento</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Definición de requerimientos del usuario</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Presenta los servicios ofrecidos al usuario, usando lenguaje natural, diagramas comprensibles</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Especificación de requerimientos del sistema</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Detalla los requerimientos funcionales y no funcionales</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;"><strong>Apéndices</strong></td>
+                                    <td style="padding: 0.5rem; border: 1px solid #ddd;">Información específica detallada (hardware, bases de datos)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Enfoque Ágil -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-rocket"></i> Backlog Inicial (Enfoque Ágil)</h2>
+
+                <section>
+                    <h3>Filosofía Ágil</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(145, 0, 72, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Los métodos de desarrollo ágil argumentan que el documento de requerimientos formal se vuelve obsoleto rápidamente"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-lightbulb"></i> Alternativa Propuesta</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Enfoques incrementales</strong> como Programación Extrema (XP)</li>
+                                    <li><strong>Historias de usuario</strong> en lugar de documentos formales</li>
+                                    <li><strong>Adaptabilidad</strong> a cambios frecuentes</li>
+                                    <li><strong>Colaboración continua</strong> con stakeholders</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-thumbs-up"></i> Ventajas del Enfoque Ágil</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Flexibilidad</strong> ante cambios de requerimientos</li>
+                                    <li><strong>Retroalimentación rápida</strong> de usuarios</li>
+                                    <li><strong>Desarrollo iterativo</strong> con valor temprano</li>
+                                    <li><strong>Menor documentación</strong> formal requerida</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-sticky-note"></i> Historias de Usuario (User Stories)</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Los requerimientos se recopilan de manera incremental y se escriben en tarjetas como historias de usuario. El usuario las prioriza para su implementación en el siguiente incremento del sistema"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-list"></i> Características</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Expresión narrativa</strong> de requerimientos</li>
+                                    <li><strong>Priorización por usuario</strong> para desarrollo</li>
+                                    <li><strong>Descomposición en tareas</strong> por equipo técnico</li>
+                                    <li><strong>Base para estimación</strong> de esfuerzo</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-cogs"></i> Proceso de Desarrollo</h4>
+                                <ol style="font-size: 0.9em;">
+                                    <li><strong>Escritura</strong> de historias de usuario</li>
+                                    <li><strong>Priorización</strong> por valor de negocio</li>
+                                    <li><strong>Estimación</strong> de esfuerzo técnico</li>
+                                    <li><strong>Descomposición</strong> en tareas específicas</li>
+                                    <li><strong>Implementación</strong> incremental</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3><i class="fas fa-clipboard-list"></i> Backlog del Producto (Scrum)</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <h4><i class="fas fa-project-diagram"></i> Marco de Trabajo Scrum</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Product Backlog</strong>: Registro de requerimientos establecido por Product Owner</li>
+                                    <li><strong>Sprint Backlog</strong>: Documentación de requisitos del sprint actual</li>
+                                    <li><strong>Desarrollo iterativo</strong>: Sprints de 2 a 4 semanas</li>
+                                    <li><strong>Entrega incremental</strong>: Valor en cada iteración</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-chart-line"></i> Características del Proceso</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Planificación incremental</strong> basada en prioridades</li>
+                                    <li><strong>Desarrollo oportuno</strong> de características críticas</li>
+                                    <li><strong>Adaptabilidad</strong> a cambios de requerimientos</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;">
+                            <h4><i class="fas fa-sitemap"></i> Estructura de Proyecto</h4>
+                            <code style="background: rgba(255, 255, 255, 0.8); padding: 0.5rem; border-radius: 4px; font-size: 0.8em;">
+                                Inception → Sprint 1 (Historias 1-5) → Sprint 2 (Historias 6-9) → Sprint 3 (Historias 10-15)
+                            </code>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Comparación de Enfoques -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-balance-scale"></i> Comparación: Enfoque Tradicional vs. Ágil</h2>
+
+                <section>
+                    <h3>Análisis Comparativo</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-file-alt"></i> Enfoque Tradicional (SRS)</h4>
+                                    <h5 style="color: green;"><i class="fas fa-plus"></i> Ventajas</h5>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Documentación completa</strong> y detallada</li>
+                                        <li><strong>Claridad contractual</strong> para proyectos externos</li>
+                                        <li><strong>Trazabilidad formal</strong> de requerimientos</li>
+                                        <li><strong>Base sólida</strong> para proyectos complejos</li>
+                                    </ul>
+                                    <h5 style="color: red;"><i class="fas fa-minus"></i> Desventajas</h5>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Obsolescencia rápida</strong> de documentos</li>
+                                        <li><strong>Rigidez</strong> ante cambios</li>
+                                        <li><strong>Overhead</strong> de documentación</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-rocket"></i> Enfoque Ágil (Backlog)</h4>
+                                    <h5 style="color: green;"><i class="fas fa-plus"></i> Ventajas</h5>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Flexibilidad</strong> ante cambios frecuentes</li>
+                                        <li><strong>Desarrollo incremental</strong> con valor temprano</li>
+                                        <li><strong>Colaboración continua</strong> con stakeholders</li>
+                                        <li><strong>Adaptación rápida</strong> a feedback</li>
+                                    </ul>
+                                    <h5 style="color: red;"><i class="fas fa-minus"></i> Desventajas</h5>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Menor documentación</strong> formal</li>
+                                        <li><strong>Dificultad</strong> en proyectos muy complejos</li>
+                                        <li><strong>Dependencia</strong> de disponibilidad</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Aplicaciones Prácticas -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-industry"></i> Aplicaciones en el Mundo Real</h2>
+
+                <section>
+                    <h3>Casos de Uso por Industria</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-shield-alt"></i> Sistemas Críticos</h4>
+                                    <ul style="font-size: 0.9em;">
+                                        <li><strong>Aeroespacial</strong>: Requerimientos de seguridad estrictos</li>
+                                        <li><strong>Médicos</strong>: Regulaciones y certificaciones</li>
+                                        <li><strong>Financiero</strong>: Auditoría y cumplimiento</li>
+                                        <li><strong>Enfoque</strong>: Documentación formal (SRS)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-shopping-cart"></i> Aplicaciones Comerciales</h4>
+                                    <ul style="font-size: 0.9em;">
+                                        <li><strong>Software empresarial</strong>: Cambios frecuentes de negocio</li>
+                                        <li><strong>E-commerce</strong>: Evolución rápida de funcionalidades</li>
+                                        <li><strong>Startups</strong>: Validación temprana de mercado</li>
+                                        <li><strong>Enfoque</strong>: Metodologías ágiles (Backlog)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-puzzle-piece"></i> Proyectos Híbridos</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Sistemas distribuidos</strong>: Combinación de enfoques</li>
+                                <li><strong>Modernización legacy</strong>: Migración gradual</li>
+                                <li><strong>Integraciones complejas</strong>: Documentación selectiva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Herramientas y Tecnologías</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-file-alt"></i> Herramientas para SRS</h4>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Requisite Pro</strong>: Gestión de requerimientos IBM</li>
+                                        <li><strong>DOORS</strong>: Dynamic Object-Oriented Requirements</li>
+                                        <li><strong>Visure Requirements</strong>: Plataforma ALM completa</li>
+                                        <li><strong>Enterprise Architect</strong>: Modelado y documentación</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-rocket"></i> Herramientas Ágiles</h4>
+                                    <ul style="font-size: 0.8em;">
+                                        <li><strong>Jira</strong>: Gestión de user stories y sprints</li>
+                                        <li><strong>Azure DevOps</strong>: Backlog management integrado</li>
+                                        <li><strong>Confluence</strong>: Documentación colaborativa</li>
+                                        <li><strong>Trello</strong>: Gestión visual de requerimientos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-tools"></i> Herramientas de Elicitación</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Miro/Mural</strong>: Workshops virtuales colaborativos</li>
+                                <li><strong>Figma</strong>: Prototipado rápido de interfaces</li>
+                                <li><strong>Balsamiq</strong>: Mockups y wireframes</li>
+                                <li><strong>InVision</strong>: Prototipos interactivos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Mejores Prácticas -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-star"></i> Mejores Prácticas y Tendencias</h2>
+
+                <section>
+                    <h3>Principios de Excelencia</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-lightbulb"></i> Elicitación Efectiva</h4>
+                                    <ol style="font-size: 0.9em;">
+                                        <li><strong>Involucra stakeholders</strong> diversos desde el inicio</li>
+                                        <li><strong>Usa múltiples técnicas</strong> de elicitación</li>
+                                        <li><strong>Documenta contexto</strong> y rationale de decisiones</li>
+                                        <li><strong>Valida temprano</strong> con prototipos</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(35, 53, 110, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-file-alt"></i> Documentación de Calidad</h4>
+                                    <ol style="font-size: 0.9em;">
+                                        <li><strong>Escritura clara</strong> y sin ambigüedades</li>
+                                        <li><strong>Criterios de aceptación</strong> específicos y medibles</li>
+                                        <li><strong>Priorización explícita</strong> de requerimientos</li>
+                                        <li><strong>Versionado y trazabilidad</strong> completos</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-sync-alt"></i> Gestión de Cambios</h4>
+                            <ol style="font-size: 0.9em;">
+                                <li><strong>Proceso formal</strong> para cambios de requerimientos</li>
+                                <li><strong>Análisis de impacto</strong> antes de modificaciones</li>
+                                <li><strong>Comunicación proactiva</strong> a stakeholders</li>
+                                <li><strong>Documentación</strong> de rationale de cambios</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Tendencias Emergentes</h3>
+                    <div class="concept-box">
+                        <div class="r-hstack">
+                            <div class="column">
+                                <div style="background: rgba(145, 0, 72, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-chart-line"></i> Requerimientos Basados en Datos</h4>
+                                    <ul style="font-size: 0.9em;">
+                                        <li><strong>Analytics de usuario</strong> para identificar necesidades</li>
+                                        <li><strong>A/B testing</strong> para validar funcionalidades</li>
+                                        <li><strong>Machine learning</strong> para predicción de requerimientos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div style="background: rgba(40, 167, 69, 0.1); padding: 1rem; border-radius: 8px;">
+                                    <h4><i class="fas fa-infinity"></i> Requerimientos Continuos</h4>
+                                    <ul style="font-size: 0.9em;">
+                                        <li><strong>DevOps integration</strong> para feedback rápido</li>
+                                        <li><strong>Feature flags</strong> para experimentación</li>
+                                        <li><strong>Telemetría</strong> en tiempo real</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(233, 171, 33, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                            <h4><i class="fas fa-users"></i> Requerimientos Colaborativos</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Design thinking</strong> para centrar en usuario</li>
+                                <li><strong>Co-creation</strong> con stakeholders</li>
+                                <li><strong>Crowdsourcing</strong> de ideas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Lecciones Clave -->
+            <section data-transition="convex">
+                <h2><i class="fas fa-key"></i> Lecciones Clave y Reflexiones</h2>
+
+                <section>
+                    <h3>Principios Fundamentales</h3>
+                    <div class="concept-box">
+                        <blockquote style="background: rgba(40, 167, 69, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--uide-primary); font-style: italic; font-size: 1.0em;">
+                            "Los requerimientos evolucionarán hacia modelos más colaborativos, basados en datos y adaptativos, integrando feedback continuo y tecnologías emergentes para mejor alineación con necesidades de negocio"
+                        </blockquote>
+
+                        <div class="r-hstack" style="margin-top: 1.5rem;">
+                            <div class="column">
+                                <h4><i class="fas fa-compass"></i> Principios Esenciales</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li><strong>Los requerimientos son la base</strong> del éxito del proyecto</li>
+                                    <li><strong>Elicitación efectiva</strong> requiere múltiples técnicas</li>
+                                    <li><strong>Documentación debe balancear</strong> detalle y flexibilidad</li>
+                                    <li><strong>Stakeholders deben participar</strong> activamente</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4><i class="fas fa-question-circle"></i> Preguntas para Considerar</h4>
+                                <ul style="font-size: 0.9em;">
+                                    <li>¿Cómo balancear <strong>documentación formal</strong> vs. <strong>agilidad</strong>?</li>
+                                    <li>¿Qué <strong>técnicas de elicitación</strong> son más efectivas?</li>
+                                    <li>¿Cómo <strong>medir objetivamente</strong> requerimientos no funcionales?</li>
+                                    <li>¿Cuándo es apropiado <strong>cambiar de enfoque</strong>?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Final slide with attribution -->
+            <section data-background-color="#f8f8f8" data-transition="convex">
+                <div class="title-slide">
+                    <h2>¡Gracias por su atención!</h2>
+                    <div style="margin-top: 2em; font-size: 0.8em; font-style: italic; color: var(--uide-secondary);">
+                        <em>Presentación basada en el compendio de Semana 2 - Ingeniería de Software:<br>
+                        Requerimientos, Elicitación y Documentación Inicial de Software</em>
+                    </div>
+                    
+                    <div style="margin-top: 2em; font-size: 0.9em;">
+                        <strong>06 LTI_05A_INS-IS-ASC</strong> • Universidad Internacional del Ecuador<br>
+                        <em>Prof. Charlie Cárdenas Toledo, M.Sc.</em>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <!-- Reveal.js JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="presentacion-clase-semana2.js"></script>
+
+    <!-- Responsive handling script -->
+    <script>
+        // Responsive handling for presentation
+        function handleResize() {
+            // Trigger Reveal.js layout recalculation
+            if (typeof Reveal !== 'undefined') {
+                Reveal.layout();
+            }
+
+            // Re-render Mermaid diagrams if needed
+            if (typeof mermaid !== 'undefined') {
+                try {
+                    mermaid.init();
+                } catch (e) {
+                    console.log('Mermaid re-initialization skipped');
+                }
+            }
+        }
+
+        // Debounced resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(handleResize, 250);
+        });
+
+        // Orientation change handler for mobile
+        window.addEventListener('orientationchange', function () {
+            setTimeout(handleResize, 500);
+        });
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM loaded, initializing presentation...');
+            handleResize();
+        });
+
+        // Performance optimization for mobile
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Reduce animations on mobile for better performance
+            document.documentElement.style.setProperty('--reveal-transition-speed', '0.3s');
+        }
+    </script>
+
+    <script>
+        // Initialize Reveal.js with responsive settings
+        console.log('Initializing Reveal.js...');
+
+        Reveal.initialize({
+            hash: true,
+            transition: 'convex',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+
+            // Responsive settings
+            width: '100%',
+            height: '100%',
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+
+            // Display controls
+            controls: true,
+            progress: true,
+            center: true,
+            touch: true,
+            loop: false,
+
+            // Keyboard navigation
+            keyboard: true,
+
+            // Overview mode
+            overview: true,
+
+            // Vertical centering of slides
+            center: true,
+
+            // Enables touch navigation on devices with touch input
+            touch: true,
+
+            // Loop the presentation
+            loop: false,
+
+            // Change the presentation direction to be RTL
+            rtl: false,
+
+            // Randomizes the order of slides each time the presentation loads
+            shuffle: false,
+
+            // Turns fragments on and off globally
+            fragments: true,
+
+            // Flags whether to include the current fragment in the URL,
+            // so that reloading brings you to the same fragment position
+            fragmentInURL: true,
+
+            // Flags if the presentation is running in an embedded mode,
+            // i.e. contained within a limited portion of the screen
+            embedded: false,
+
+            // Flags if we should show a help overlay when the questionmark
+            // key is pressed
+            help: true,
+
+            // Flags if it should be possible to pause the presentation (blackout)
+            pause: true,
+
+            // Flags if speaker notes should be visible to all viewers
+            showNotes: false,
+
+            // Global override for autoplaying embedded media (null/true/false)
+            autoPlayMedia: null,
+
+            // Global override for preloading lazy-loaded iframes (null/true/false)
+            preloadIframes: null,
+
+            // Number of milliseconds between automatically proceeding to the
+            // next slide, disabled when set to 0, this value can be overwritten
+            // by using a data-autoslide attribute on your slides
+            autoSlide: 0,
+
+            // Stop auto-sliding after user input
+            autoSlideStoppable: true,
+
+            // Use this method for navigation when auto-sliding
+            autoSlideMethod: null,
+
+            // Specify the average time in seconds that you think you'll spend
+            // presenting each slide. This is used to show a pacing timer in the
+            // speaker view
+            defaultTiming: null,
+
+            // Enable slide navigation via mouse wheel
+            mouseWheel: false,
+
+            // The display mode that will be used to show slides
+            display: 'block',
+
+            // Hide cursor if inactive
+            hideInactiveCursor: true,
+
+            // Time before the cursor is hidden (in ms)
+            hideCursorTime: 5000,
+
+            // Opens links in an iframe preview overlay
+            previewLinks: false,
+
+            // Exposes the reveal.js API through window.postMessage
+            postMessage: true,
+
+            // Dispatches all reveal.js events to the parent window through postMessage
+            postMessageEvents: false,
+
+            // Focuses body when page changes visibility to ensure keyboard shortcuts work
+            focusBodyOnPageVisibilityChange: true,
+
+            // Transition style
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Transition speed
+            transitionSpeed: 'default', // default/fast/slow
+
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+            // Number of slides away from the current that are visible
+            viewDistance: 3,
+
+            // Number of slides away from the current that are visible on mobile
+            // devices. It is advisable to set this to a lower number than
+            // viewDistance in order to save resources.
+            mobileViewDistance: 2,
+
+            // Parallax background image
+            parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+            // Parallax background size
+            parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+            // Number of pixels to move the parallax background per slide
+            // - Calculated automatically unless specified
+            // - Set to 0 to disable movement along an axis
+            parallaxBackgroundHorizontal: null,
+            parallaxBackgroundVertical: null,
+
+            // The maximum number of pages a single slide can expand onto when printing
+            // to PDF, unlimited by default
+            pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+
+            // Prints each fragment on a separate slide
+            pdfSeparateFragments: true,
+
+            // Offset used to reduce the height of content within exported PDF pages.
+            // This exists to account for environment differences based on how you
+            // print to PDF. CLI printing options, like phantomjs and wkpdf, can end
+            // on precisely the total height of the document whereas in-browser
+            // printing has to end one pixel before.
+            pdfPageHeightOffset: -1,
+
+            // Number of slides away from the current that will be preloaded
+            preloadIframes: null,
+
+            // Can be used to globally disable auto-animation
+            autoAnimate: true,
+
+            // Optionally provide a custom element matcher that will be
+            // used to dictate which elements we can animate between.
+            autoAnimateEasing: 'ease',
+
+            // Default settings for our auto-animate transitions, can be
+            // overridden per-slide or per-element via data arguments
+            autoAnimateDuration: 1.0,
+            autoAnimateUnmatched: true
+        });
+
+        // Log when Reveal is ready
+        Reveal.on('ready', function () {
+            console.log('Reveal.js is ready!');
+        });
+    </script>
+
+</body>
+
+</html>
