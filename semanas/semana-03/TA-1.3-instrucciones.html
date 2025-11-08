@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TA-1.3 Historias de Usuario con Criterios de Aceptación</title>
+</head>
+<body>
+<p>Esta actividad te permitirá <strong>escribir historias de usuario</strong> siguiendo el formato estándar y aplicando los criterios <strong>INVEST</strong>. Incluirás criterios de aceptación claros para cada historia.</p>
+
+<p><strong>¿Qué realizarás?</strong></p>
+<div class="_tableContainer_1rjym_1">
+    <div class="group _tableWrapper_1rjym_13 flex w-fit flex-col-reverse">
+        <table class="w-fit min-w-(--thread-content-width)" style="border-collapse: collapse; width: 100%;" border="1">
+            <thead>
+                <tr>
+                    <th style="width: 25%;" data-col-size="md">Componente</th>
+                    <th style="width: 50%;" data-col-size="xl">Instrucciones específicas</th>
+                    <th style="width: 25%;" data-col-size="md">Criterios de calidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-col-size="md">Historias de usuario</td>
+                    <td data-col-size="xl">Escribe 5 historias de usuario para tu proyecto usando el formato: "Como [rol], quiero [funcionalidad], para [beneficio]".</td>
+                    <td data-col-size="md">5 historias con formato correcto.</td>
+                </tr>
+                <tr>
+                    <td data-col-size="md">Criterios de aceptación</td>
+                    <td data-col-size="xl">Para cada historia, define 3-5 criterios de aceptación usando formato "Dado que... Cuando... Entonces..." (Gherkin).</td>
+                    <td data-col-size="md">3-5 criterios por historia.</td>
+                </tr>
+                <tr>
+                    <td data-col-size="md">Validación INVEST</td>
+                    <td data-col-size="xl">Verifica que cada historia cumpla con INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable). Marca con ✓ cada criterio.</td>
+                    <td data-col-size="md">Tabla INVEST completa.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p><strong>Formato de historia de usuario:</strong></p>
+<pre>
+Como [rol de usuario]
+Quiero [funcionalidad/acción]
+Para [beneficio/valor]
+</pre>
+
+<p><strong>Ejemplo de historia de usuario:</strong></p>
+<div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+<p><strong>Historia #1: Registro de usuario</strong></p>
+<p><strong>Como</strong> usuario nuevo<br>
+<strong>Quiero</strong> registrarme en la plataforma con mi correo electrónico<br>
+<strong>Para</strong> acceder a las funcionalidades del sistema</p>
+
+<p><strong>Criterios de aceptación:</strong></p>
+<ol>
+    <li><strong>Dado que</strong> estoy en la página de registro, <strong>cuando</strong> ingreso un correo válido y contraseña, <strong>entonces</strong> el sistema crea mi cuenta.</li>
+    <li><strong>Dado que</strong> ingreso un correo ya registrado, <strong>cuando</strong> intento registrarme, <strong>entonces</strong> el sistema muestra error "Correo ya existe".</li>
+    <li><strong>Dado que</strong> ingreso una contraseña débil, <strong>cuando</strong> intento registrarme, <strong>entonces</strong> el sistema solicita contraseña más segura.</li>
+</ol>
+</div>
+
+<p><strong>Criterios INVEST:</strong></p>
+<ul>
+    <li><strong>I</strong>ndependent (Independiente): La historia puede desarrollarse sin depender de otras.</li>
+    <li><strong>N</strong>egotiable (Negociable): Los detalles pueden ajustarse con el equipo.</li>
+    <li><strong>V</strong>aluable (Valiosa): Aporta valor al usuario o negocio.</li>
+    <li><strong>E</strong>stimable (Estimable): Se puede estimar el esfuerzo de desarrollo.</li>
+    <li><strong>S</strong>mall (Pequeña): Puede completarse en un sprint.</li>
+    <li><strong>T</strong>estable (Verificable): Se puede probar si funciona correctamente.</li>
+</ul>
+
+<p><strong>Plantilla de tabla INVEST:</strong></p>
+<div class="_tableContainer_1rjym_1">
+    <div class="group _tableWrapper_1rjym_13 flex w-fit flex-col-reverse">
+        <table class="w-fit min-w-(--thread-content-width)" style="border-collapse: collapse; width: 100%;" border="1">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Historia</th>
+                    <th style="width: 10%;">I</th>
+                    <th style="width: 10%;">N</th>
+                    <th style="width: 10%;">V</th>
+                    <th style="width: 10%;">E</th>
+                    <th style="width: 10%;">S</th>
+                    <th style="width: 10%;">T</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Historia #1: Registro de usuario</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Historia #2: ...</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p><strong>Especificaciones técnicas de entrega</strong></p>
+<div class="_tableContainer_1rjym_1">
+    <div class="group _tableWrapper_1rjym_13 flex w-fit flex-col-reverse">
+        <table class="w-fit min-w-(--thread-content-width)" style="border-collapse: collapse; width: 100%;" border="1">
+            <thead>
+                <tr>
+                    <th style="width: 25%;" data-col-size="md">Aspecto</th>
+                    <th style="width: 75%;" data-col-size="xl">Especificación requerida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-col-size="md"><strong>Formato de archivo</strong></td>
+                    <td data-col-size="xl">PDF con 5 historias de usuario, criterios de aceptación y tabla INVEST. Nomenclatura: TA-1.3_ApellidoNombre_HistoriasUsuario.pdf</td>
+                </tr>
+                <tr>
+                    <td data-col-size="md"><strong>Contenido</strong></td>
+                    <td data-col-size="xl">5 historias de usuario con formato estándar, 3-5 criterios de aceptación por historia (formato Gherkin), tabla INVEST completa.</td>
+                </tr>
+                <tr>
+                    <td data-col-size="md"><strong>Extensión</strong></td>
+                    <td data-col-size="xl">2-3 páginas máximo.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p><strong>Información importante</strong></p>
+<ul>
+    <li><strong>Modalidad:</strong> Trabajo autónomo individual — <strong>2 pts</strong>.</li>
+    <li><strong>Extensión:</strong> 2-3 páginas.</li>
+    <li><strong>Entrega:</strong> Plataforma institucional antes de la fecha límite especificada.</li>
+    <li><strong>Penalización por retraso:</strong> -0.25 puntos por cada día de retraso.</li>
+</ul>
+
+<p><strong>Recursos de apoyo:</strong></p>
+<ul>
+    <li>Compendio Semana 3</li>
+    <li>User Stories Applied (Mike Cohn)</li>
+    <li>Gherkin Syntax: https://cucumber.io/docs/gherkin/</li>
+</ul>
+
+<p>Si tienes dudas, utiliza el <strong>horario de tutorías (lunes 10:00-12:00, viernes 08:00-09:00)</strong> o envía consulta por <strong>correo institucional</strong>.</p>
+</body>
+</html>
