@@ -76,8 +76,8 @@
                     style="color: #ffffff; font-size: 1.3rem; font-weight: 600; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
                     Prof. Charlie Cárdenas Toledo, M.Sc.
                 </p>
-                <p style="color: var(--uide-primary); font-size: 1.2rem; font-weight: 500; margin-top: 0.5rem;">
-                    Universidad Internacional del Ecuador • Octubre 2025 – Febrero 2026
+                <p style="color: #ffffff; font-size: 1.2rem; font-weight: 500; margin-top: 0.5rem;">
+                    Octubre 2025 – Febrero 2026
                 </p>
             </div>
 
@@ -99,16 +99,56 @@
         <!-- Slide 2: Objetivos -->
         <div class="slide">
             <h2><i class="fas fa-bullseye"></i> Objetivos de la Presentación</h2>
+            <div class="quote">
+                <i class="fas fa-seedling"></i> Caso de Estudio: Marketplace Agrícola para Productores Familiares
+            </div>
             <ul>
-                <li>Comprender los <span class="highlight">fundamentos de requerimientos</span> del sistema</li>
-                <li>Dominar las <span class="highlight">historias de usuario</span> en metodologías ágiles</li>
-                <li>Analizar los <span class="highlight">casos de uso</span> como técnica UML formal</li>
-                <li>Definir <span class="highlight">criterios de aceptación</span> efectivos</li>
-                <li>Aplicar <span class="highlight">métodos de validación</span> y trazabilidad</li>
+                <li>Comprender los <span class="highlight">fundamentos de requerimientos</span> del sistema aplicados al marketplace agrícola</li>
+                <li>Dominar las <span class="highlight">historias de usuario</span> en metodologías ágiles con ejemplos del productor y comprador</li>
+                <li>Analizar los <span class="highlight">casos de uso</span> como técnica UML formal para el sistema de comercialización</li>
+                <li>Definir <span class="highlight">criterios de aceptación</span> efectivos para funcionalidades del marketplace</li>
+                <li>Aplicar <span class="highlight">métodos de validación</span> y trazabilidad en el contexto agrícola rural</li>
             </ul>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px; border-left: 4px solid #2ecc71;">
+                <p style="margin: 0; font-size: 0.95rem;"><strong><i class="fas fa-info-circle"></i> Contexto:</strong> El 84.5% de las UPAs ecuatorianas son agricultura familiar con acceso limitado a mercados justos</p>
+            </div>
         </div>
 
-        <!-- Slide 3: Agenda -->
+        <!-- Slide 3: Conexión con Semana 2 -->
+        <div class="slide">
+            <h2><i class="fas fa-link"></i> Conexión con Semana 2: Marketplace Agrícola</h2>
+            <div style="padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px; border-left: 4px solid #2ecc71; margin-bottom: 1.5rem;">
+                <h3 style="color: #2ecc71; margin-bottom: 0.5rem;"><i class="fas fa-seedling"></i> Recordatorio del Caso de Estudio</h3>
+                <p style="margin: 0; font-size: 0.95rem;">Sistema que conecta productores agrícolas familiares (84.5% de UPAs ecuatorianas) con compradores directos, eliminando intermediarios y proporcionando herramientas de gestión financiera</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-clipboard-list"></i> Semana 2: Requerimientos</h3>
+                    <ul style="font-size: 0.9rem;">
+                        <li><strong>RF1:</strong> Registro de productores con GPS</li>
+                        <li><strong>RF2:</strong> Catálogo dinámico con precios</li>
+                        <li><strong>RF3:</strong> Sistema de cotizaciones directas</li>
+                        <li><strong>RNF:</strong> Optimización para redes 2G/3G</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-arrow-right"></i> Semana 3: Validación</h3>
+                    <ul style="font-size: 0.9rem;">
+                        <li><strong>Historias de Usuario:</strong> Formato ágil</li>
+                        <li><strong>Casos de Uso:</strong> Modelado UML</li>
+                        <li><strong>Criterios de Aceptación:</strong> Medibles</li>
+                        <li><strong>Trazabilidad:</strong> Gestión de cambios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center; padding: 1rem; background: rgba(233, 171, 33, 0.1); border-radius: 8px;">
+                <p style="margin: 0; font-size: 1rem;"><strong><i class="fas fa-lightbulb"></i> Hoy aprenderemos:</strong> Cómo transformar los requerimientos de la semana 2 en historias de usuario, casos de uso y criterios de aceptación validables</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Agenda -->
         <div class="slide">
             <h2><i class="fas fa-chart-line"></i> Agenda</h2>
             <div class="content-grid">
@@ -135,20 +175,26 @@
         <div class="slide">
             <h2><i class="fas fa-clipboard-list"></i> Fundamentos: Requerimientos del Sistema</h2>
             <div class="quote">
-                "Los requerimientos son las descripciones de lo que el sistema debe hacer, incluyendo los servicios que ofrece y las restricciones en su operación" (Sommerville, 2011)
+                "Los requerimientos son las descripciones de lo que el sistema debe hacer, incluyendo los servicios que
+                ofrece y las restricciones en su operación" (Sommerville, 2011)
             </div>
             <div class="content-grid">
                 <div>
                     <h3>Técnicas Basadas en Escenarios</h3>
                     <ul>
-                        <li><span class="emphasis">Historias de Usuario</span>: Enfoque ágil centrado en el valor del usuario</li>
-                        <li><span class="emphasis">Casos de Uso</span>: Técnica formal UML para modelar interacciones</li>
-                        <li><span class="emphasis">Criterios de Aceptación</span>: Definición objetiva de "terminado"</li>
+                        <li><span class="emphasis">Historias de Usuario</span>: Enfoque ágil centrado en el valor del
+                            usuario</li>
+                        <li><span class="emphasis">Casos de Uso</span>: Técnica formal UML para modelar interacciones
+                        </li>
+                        <li><span class="emphasis">Criterios de Aceptación</span>: Definición objetiva de "terminado"
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h3>Importancia Estratégica</h3>
-                    <p>Según Robertson y Robertson (1999), los requerimientos forman el contrato fundamental entre cliente y desarrollador, estableciendo las bases para el éxito del proyecto y la satisfacción del usuario final.</p>
+                    <p>Según Robertson y Robertson (1999), los requerimientos forman el contrato fundamental entre
+                        cliente y desarrollador, estableciendo las bases para el éxito del proyecto y la satisfacción
+                        del usuario final.</p>
                 </div>
             </div>
         </div>
@@ -160,30 +206,67 @@
             <div class="quote">
                 "Validación: ¿construimos el producto correcto? Verificación: ¿construimos bien el producto?"
             </div>
-            <div class="content-grid">
-                <div>
-                    <h3>Validación</h3>
-                    <div class="feature-card">
-                        <p><strong>"¿Construimos el producto correcto?"</strong></p>
-                        <ul>
-                            <li>Verificar que el software sea lo que el cliente requiere</li>
-                            <li>Enfoque en necesidades del usuario</li>
-                            <li>Pruebas de aceptación</li>
-                        </ul>
+            
+            <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
+                <!-- Validación -->
+                <div style="flex: 1;">
+                    <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(46, 204, 113, 0.05) 100%); border-left: 5px solid #2ecc71; border-radius: 12px; box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2); height: 100%;">
+                        <div style="position: absolute; top: -12px; left: 15px; background: #2ecc71; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.8rem; font-weight: 700;">
+                            <i class="fas fa-check-circle"></i> VALIDACIÓN
+                        </div>
+                        <h3 style="color: #2ecc71; margin-top: 1rem; margin-bottom: 1rem; font-size: 1.1rem;">
+                            "¿Construimos el producto correcto?"
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; align-items: start; gap: 0.5rem;">
+                                <i class="fas fa-user-check" style="color: #2ecc71; margin-top: 3px; font-size: 1.1rem;"></i>
+                                <span style="font-size: 0.9rem; line-height: 1.4;">Verificar que el software sea lo que el cliente requiere</span>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 0.5rem;">
+                                <i class="fas fa-heart" style="color: #27ae60; margin-top: 3px; font-size: 1.1rem;"></i>
+                                <span style="font-size: 0.9rem; line-height: 1.4;">Enfoque en necesidades del usuario</span>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 0.5rem;">
+                                <i class="fas fa-clipboard-check" style="color: #229954; margin-top: 3px; font-size: 1.1rem;"></i>
+                                <span style="font-size: 0.9rem; line-height: 1.4;">Pruebas de aceptación</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding: 0.6rem; background: rgba(46, 204, 113, 0.1); border-radius: 6px; font-size: 0.8rem; font-style: italic; color: #555;">
+                            <i class="fas fa-seedling" style="color: #2ecc71;"></i> <strong>Marketplace:</strong> ¿Los productores pueden vender más?
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <h3>Verificación</h3>
-                    <div class="feature-card">
-                        <p><strong>"¿Construimos bien el producto?"</strong></p>
-                        <ul>
-                            <li>Verificar que el software cumpla especificaciones</li>
-                            <li>Enfoque en calidad técnica</li>
-                            <li>Pruebas unitarias e integración</li>
-                        </ul>
+
+                <!-- Verificación -->
+                <div style="flex: 1;">
+                    <div style="position: relative; padding: 1.5rem; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0.05) 100%); border-left: 5px solid #3498db; border-radius: 12px; box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2); height: 100%;">
+                        <div style="position: absolute; top: -12px; left: 15px; background: #3498db; color: white; padding: 5px 15px; border-radius: 15px; font-size: 0.8rem; font-weight: 700;">
+                            <i class="fas fa-cog"></i> VERIFICACIÓN
+                        </div>
+                        <h3 style="color: #3498db; margin-top: 1rem; margin-bottom: 1rem; font-size: 1.1rem;">
+                            "¿Construimos bien el producto?"
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; align-items: start; gap: 0.5rem;">
+                                <i class="fas fa-file-code" style="color: #3498db; margin-top: 3px; font-size: 1.1rem;"></i>
+                                <span style="font-size: 0.9rem; line-height: 1.4;">Verificar que el software cumpla especificaciones</span>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 0.5rem;">
+                                <i class="fas fa-award" style="color: #2980b9; margin-top: 3px; font-size: 1.1rem;"></i>
+                                <span style="font-size: 0.9rem; line-height: 1.4;">Enfoque en calidad técnica</span>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 0.5rem;">
+                                <i class="fas fa-vial" style="color: #21618c; margin-top: 3px; font-size: 1.1rem;"></i>
+                                <span style="font-size: 0.9rem; line-height: 1.4;">Pruebas unitarias e integración</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding: 0.6rem; background: rgba(52, 152, 219, 0.1); border-radius: 6px; font-size: 0.8rem; font-style: italic; color: #555;">
+                            <i class="fas fa-seedling" style="color: #3498db;"></i> <strong>Marketplace:</strong> ¿La app funciona en 3G?
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Boehm (1979)
             </div>
@@ -193,10 +276,13 @@
         <div class="slide">
             <h2><i class="fas fa-user-edit"></i> Historias de Usuario: Enfoque Ágil</h2>
             <div class="quote">
-                "La programación extrema (XP) es un método ágil en el cual los requerimientos del usuario se expresan como historias, y cada historia se escribe en una tarjeta"
+                "La programación extrema (XP) es un método ágil en el cual los requerimientos del usuario se expresan
+                como historias, y cada historia se escribe en una tarjeta"
             </div>
-            <div class="content-grid">
-                <div>
+            
+            <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
+                <!-- Columna Izquierda: Características -->
+                <div style="flex: 1;">
                     <h3>Características Principales</h3>
                     <ul>
                         <li><span class="emphasis">Formato de tarjeta</span>: Descripciones concisas</li>
@@ -204,21 +290,43 @@
                         <li><span class="emphasis">Entrada para planeación</span>: Base del "juego de planeación" XP</li>
                         <li><span class="emphasis">Descomposición en tareas</span>: Estimación de esfuerzo</li>
                     </ul>
+                    
+                    <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(233, 171, 33, 0.1); border-radius: 8px; border-left: 4px solid #e9ab21;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: #e9ab21; font-size: 0.95rem;">Formato Estándar</h4>
+                        <div style="font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.6;">
+                            <strong>Como</strong> [tipo de usuario]<br>
+                            <strong>Quiero</strong> [realizar alguna acción]<br>
+                            <strong>Para</strong> [obtener algún beneficio]
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3>Formato Típico</h3>
-                    <div class="code-block">
-Como [tipo de usuario]
-Quiero [realizar alguna acción]
-Para [obtener algún beneficio]
 
-Ejemplo:
-Como productor agrícola
-Quiero publicar mis productos
-Para llegar a más compradores
+                <!-- Columna Derecha: Ejemplos en Prisma -->
+                <div style="flex: 1.2;">
+                    <h3 style="color: #2ecc71; margin-bottom: 1rem;"><i class="fas fa-seedling"></i> Ejemplos Marketplace Agrícola</h3>
+                    
+                    <!-- HU-01: Productor -->
+                    <div style="position: relative; margin-bottom: 1.5rem; padding: 1rem; background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(46, 204, 113, 0.05) 100%); border-left: 5px solid #2ecc71; border-radius: 8px; box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);">
+                        <div style="position: absolute; top: -10px; left: 10px; background: #2ecc71; color: white; padding: 3px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">HU-01</div>
+                        <div style="margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.6;">
+                            <div style="margin-bottom: 0.4rem;"><i class="fas fa-user" style="color: #2ecc71; width: 20px;"></i> <strong style="color: #2ecc71;">Como</strong> productor agrícola</div>
+                            <div style="margin-bottom: 0.4rem;"><i class="fas fa-bullseye" style="color: #27ae60; width: 20px;"></i> <strong style="color: #27ae60;">Quiero</strong> publicar mis productos con foto y precio</div>
+                            <div><i class="fas fa-star" style="color: #229954; width: 20px;"></i> <strong style="color: #229954;">Para</strong> llegar a compradores directos sin intermediarios</div>
+                        </div>
+                    </div>
+
+                    <!-- HU-02: Comprador -->
+                    <div style="position: relative; padding: 1rem; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0.05) 100%); border-left: 5px solid #3498db; border-radius: 8px; box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);">
+                        <div style="position: absolute; top: -10px; left: 10px; background: #3498db; color: white; padding: 3px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">HU-02</div>
+                        <div style="margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.6;">
+                            <div style="margin-bottom: 0.4rem;"><i class="fas fa-user" style="color: #3498db; width: 20px;"></i> <strong style="color: #3498db;">Como</strong> comprador</div>
+                            <div style="margin-bottom: 0.4rem;"><i class="fas fa-bullseye" style="color: #2980b9; width: 20px;"></i> <strong style="color: #2980b9;">Quiero</strong> buscar productos por ubicación GPS</div>
+                            <div><i class="fas fa-star" style="color: #21618c; width: 20px;"></i> <strong style="color: #21618c;">Para</strong> encontrar productores cercanos</div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Sommerville (2011)
             </div>
@@ -233,10 +341,13 @@ Para llegar a más compradores
                     <h3>Ventajas</h3>
                     <div class="feature-card">
                         <ul>
-                            <li><span class="emphasis">Simplicidad</span>: Fáciles de comprender por todos los stakeholders</li>
-                            <li><span class="emphasis">Enfoque en usuario</span>: Mantienen la perspectiva del cliente como prioridad</li>
+                            <li><span class="emphasis">Simplicidad</span>: Fáciles de comprender por todos los
+                                stakeholders</li>
+                            <li><span class="emphasis">Enfoque en usuario</span>: Mantienen la perspectiva del cliente
+                                como prioridad</li>
                             <li><span class="emphasis">Agilidad</span>: Permiten cambios rápidos según Beck (1999)</li>
-                            <li><span class="emphasis">Comunicación</span>: Facilitan el diálogo continuo entre equipo y cliente</li>
+                            <li><span class="emphasis">Comunicación</span>: Facilitan el diálogo continuo entre equipo y
+                                cliente</li>
                         </ul>
                     </div>
                 </div>
@@ -244,16 +355,22 @@ Para llegar a más compradores
                     <h3>Desventajas</h3>
                     <div class="feature-card">
                         <ul>
-                            <li><span class="emphasis">Brevedad problemática</span>: La falta de detalle puede generar ambigüedad</li>
-                            <li><span class="emphasis">Ambigüedad</span>: Múltiples interpretaciones posibles del mismo texto</li>
-                            <li><span class="emphasis">Falta de estructura</span>: Ausencia de formato estándar riguroso</li>
-                            <li><span class="emphasis">Documentación limitada</span>: Insuficiente para sistemas complejos</li>
+                            <li><span class="emphasis">Brevedad problemática</span>: La falta de detalle puede generar
+                                ambigüedad</li>
+                            <li><span class="emphasis">Ambigüedad</span>: Múltiples interpretaciones posibles del mismo
+                                texto</li>
+                            <li><span class="emphasis">Falta de estructura</span>: Ausencia de formato estándar riguroso
+                            </li>
+                            <li><span class="emphasis">Documentación limitada</span>: Insuficiente para sistemas
+                                complejos</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
-                <i class="fas fa-exclamation-triangle"></i> Consideración Ética: Kamthan y Shahmir (2021) advierten que "la ingeniería de historias de usuario puede ser sensible éticamente"
+            <div
+                style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+                <i class="fas fa-exclamation-triangle"></i> Consideración Ética: Kamthan y Shahmir (2021) advierten que
+                "la ingeniería de historias de usuario puede ser sensible éticamente"
             </div>
         </div>
 
@@ -261,7 +378,9 @@ Para llegar a más compradores
         <div class="slide">
             <h2><i class="fas fa-sitemap"></i> Casos de Uso: Técnica UML Formal</h2>
             <div class="quote">
-                "Los casos de uso son una técnica de descubrimiento de requerimientos que se introdujo por primera vez en el método Objectory. Ahora se ha convertido en una característica fundamental del modelado de lenguaje unificado"
+                "Los casos de uso son una técnica de descubrimiento de requerimientos que se introdujo por primera vez
+                en el método Objectory. Ahora se ha convertido en una característica fundamental del modelado de
+                lenguaje unificado"
             </div>
             <div class="content-grid">
                 <div>
@@ -281,7 +400,8 @@ Para llegar a más compradores
                     </ul>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+            <div
+                style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Jacobson et al. (1993); Sommerville (2011)
             </div>
         </div>
@@ -292,18 +412,25 @@ Para llegar a más compradores
             <h2><i class="fas fa-seedling"></i> Ejemplo Práctico: Marketplace Agrícola</h2>
             <div class="quote">
                 "La agricultura familiar representa el 84.5% de las UPAs pero controla solo el 20% de la tierra"
-                <a href="https://www.fao.org/ecuador/fao-en-ecuador/ecuador-en-una-mirada/es/#:~:text=La%20Agricultura%20Familiar%20representa%20el,en%20manos%20de%20peque%C3%B1os%20productores." target="_blank" style="margin-left: 10px; color: var(--uide-accent); text-decoration: none; font-size: 1.2rem;" title="Fuente: FAO Ecuador">
+                <a href="https://www.fao.org/ecuador/fao-en-ecuador/ecuador-en-una-mirada/es/#:~:text=La%20Agricultura%20Familiar%20representa%20el,en%20manos%20de%20peque%C3%B1os%20productores."
+                    target="_blank"
+                    style="margin-left: 10px; color: var(--uide-accent); text-decoration: none; font-size: 1.2rem;"
+                    title="Fuente: FAO Ecuador">
                     <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
-            
+
             <!-- Diagrama de Casos de Uso SVG -->
-            <div style="display: flex; justify-content: center; align-items: center; margin: 30px auto; max-width: 1200px;">
-                <img src="caseuse.svg" alt="Diagrama de Casos de Uso - Sistema Marketplace Agrícola" style="width: 100%; max-width: 1000px; height: auto; filter: brightness(1.1); border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);">
+            <div
+                style="display: flex; justify-content: center; align-items: center; margin: 30px auto; max-width: 1200px;">
+                <img src="caseuse.svg" alt="Diagrama de Casos de Uso - Sistema Marketplace Agrícola"
+                    style="width: 100%; max-width: 1000px; height: auto; filter: brightness(1.1); border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);">
             </div>
 
-            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
-                <i class="fas fa-info-circle"></i> Diagrama de Casos de Uso UML - Sistema de Marketplace para Agricultura Familiar
+            <div
+                style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+                <i class="fas fa-info-circle"></i> Diagrama de Casos de Uso UML - Sistema de Marketplace para
+                Agricultura Familiar
             </div>
         </div>
 
@@ -311,16 +438,21 @@ Para llegar a más compradores
         <div class="slide">
             <h2><i class="fas fa-check-circle"></i> Criterios de Aceptación: Contrato del Sistema</h2>
             <div class="quote">
-                "Los criterios de aceptación forman parte del contrato del sistema y tienen que convenirse entre el cliente y el desarrollador" (Sommerville, 2011)
+                "Los criterios de aceptación forman parte del contrato del sistema y tienen que convenirse entre el
+                cliente y el desarrollador" (Sommerville, 2011)
             </div>
             <div class="content-grid">
                 <div>
                     <h3>Rol en Métodos Ágiles</h3>
                     <ul>
-                        <li><span class="emphasis">Responsabilidad del cliente</span>: El cliente, como parte del equipo, define las pruebas de aceptación</li>
-                        <li><span class="emphasis">Definición de pruebas</span>: Determinan si el software soporta la historia del usuario</li>
-                        <li><span class="emphasis">Bloqueo del avance</span>: Según Beck (1999), "el desarrollo no avanza hasta que se pasan estas pruebas"</li>
-                        <li><span class="emphasis">Validación continua</span>: Verificación constante del cumplimiento</li>
+                        <li><span class="emphasis">Responsabilidad del cliente</span>: El cliente, como parte del
+                            equipo, define las pruebas de aceptación</li>
+                        <li><span class="emphasis">Definición de pruebas</span>: Determinan si el software soporta la
+                            historia del usuario</li>
+                        <li><span class="emphasis">Bloqueo del avance</span>: Según Beck (1999), "el desarrollo no
+                            avanza hasta que se pasan estas pruebas"</li>
+                        <li><span class="emphasis">Validación continua</span>: Verificación constante del cumplimiento
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -333,7 +465,38 @@ Para llegar a más compradores
                     </ul>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+            <div style="margin-top: 1.5rem;">
+                <h4 style="color: #2ecc71; margin-bottom: 1rem;"><i class="fas fa-seedling"></i> Ejemplo: HU-01 Publicar Productos</h4>
+                
+                <!-- CA1 -->
+                <div style="position: relative; margin-bottom: 1rem; padding: 0.8rem 0.8rem 0.8rem 3rem; background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(46, 204, 113, 0.05) 100%); border-left: 5px solid #2ecc71; border-radius: 8px; box-shadow: 0 3px 10px rgba(46, 204, 113, 0.15);">
+                    <div style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #2ecc71; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">CA1</div>
+                    <div style="font-size: 0.9rem; line-height: 1.5;">
+                        <i class="fas fa-clock" style="color: #2ecc71; margin-right: 8px;"></i>
+                        El productor puede subir hasta <strong>5 fotos</strong> por producto en menos de <strong>30 segundos</strong> con conexión 3G
+                    </div>
+                </div>
+
+                <!-- CA2 -->
+                <div style="position: relative; margin-bottom: 1rem; padding: 0.8rem 0.8rem 0.8rem 3rem; background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0.05) 100%); border-left: 5px solid #3498db; border-radius: 8px; box-shadow: 0 3px 10px rgba(52, 152, 219, 0.15);">
+                    <div style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #3498db; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">CA2</div>
+                    <div style="font-size: 0.9rem; line-height: 1.5;">
+                        <i class="fas fa-dollar-sign" style="color: #3498db; margin-right: 8px;"></i>
+                        El sistema valida automáticamente que el precio esté dentro del rango de mercado regional <strong>(±20%)</strong>
+                    </div>
+                </div>
+
+                <!-- CA3 -->
+                <div style="position: relative; padding: 0.8rem 0.8rem 0.8rem 3rem; background: linear-gradient(135deg, rgba(155, 89, 182, 0.15) 0%, rgba(155, 89, 182, 0.05) 100%); border-left: 5px solid #9b59b6; border-radius: 8px; box-shadow: 0 3px 10px rgba(155, 89, 182, 0.15);">
+                    <div style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: #9b59b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">CA3</div>
+                    <div style="font-size: 0.9rem; line-height: 1.5;">
+                        <i class="fas fa-map-marker-alt" style="color: #9b59b6; margin-right: 8px;"></i>
+                        La publicación aparece visible para compradores en un radio de <strong>50km</strong> en menos de <strong>2 minutos</strong>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Sommerville (2011); Beck (1999)
             </div>
         </div>
@@ -348,10 +511,16 @@ Para llegar a más compradores
                     <div class="feature-card">
                         <p><strong>Técnicas estáticas de V&V</strong></p>
                         <ul>
-                            <li><strong>No requieren ejecutar software</strong>: Se analizan documentos y código estáticamente</li>
-                            <li><strong>Verificación de calidad</strong>: Sommerville (2011) indica que "se utilizan para comprobar la calidad de los entregables"</li>
-                            <li><strong>Cumplimiento de estándares</strong>: Aseguran que se siguieron los estándares de calidad establecidos</li>
+                            <li><strong>No requieren ejecutar software</strong>: Se analizan documentos y código
+                                estáticamente</li>
+                            <li><strong>Verificación de calidad</strong>: Sommerville (2011) indica que "se utilizan
+                                para comprobar la calidad de los entregables"</li>
+                            <li><strong>Cumplimiento de estándares</strong>: Aseguran que se siguieron los estándares de
+                                calidad establecidos</li>
                         </ul>
+                        <div style="margin-top: 0.8rem; padding: 0.5rem; background: rgba(46, 204, 113, 0.1); border-radius: 5px; font-size: 0.85rem;">
+                            <strong><i class="fas fa-seedling"></i> Marketplace:</strong> Revisión de historias de usuario con productores reales para validar comprensión
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -359,18 +528,29 @@ Para llegar a más compradores
                     <div class="feature-card">
                         <p><strong>Validación temprana</strong></p>
                         <ul>
-                            <li><strong>Demostrar conceptos</strong>: Versión inicial para validar ideas fundamentales</li>
-                            <li><strong>Probar opciones de diseño</strong>: Evaluar alternativas antes de la implementación final</li>
-                            <li><strong>Obtener información</strong>: "Obtener más información sobre el problema y sus posibles soluciones" (Sommerville, 2011)</li>
+                            <li><strong>Demostrar conceptos</strong>: Versión inicial para validar ideas fundamentales
+                            </li>
+                            <li><strong>Probar opciones de diseño</strong>: Evaluar alternativas antes de la
+                                implementación final</li>
+                            <li><strong>Obtener información</strong>: "Obtener más información sobre el problema y sus
+                                posibles soluciones" (Sommerville, 2011)</li>
                         </ul>
+                        <div style="margin-top: 0.8rem; padding: 0.5rem; background: rgba(46, 204, 113, 0.1); border-radius: 5px; font-size: 0.85rem;">
+                            <strong><i class="fas fa-seedling"></i> Marketplace:</strong> Prototipo de baja fidelidad probado con 10 productores en zona rural
+                        </div>
                     </div>
                 </div>
             </div>
             <div style="margin-top: 2rem; text-align: center;">
                 <h3>Pruebas de Aceptación</h3>
-                <p>"Las pruebas de aceptación constituyen la etapa final del proceso de pruebas antes de que el sistema se acepte para uso operacional" (Sommerville, 2011)</p>
+                <p>"Las pruebas de aceptación constituyen la etapa final del proceso de pruebas antes de que el sistema
+                    se acepte para uso operacional" (Sommerville, 2011)</p>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px;">
+                    <strong><i class="fas fa-seedling"></i> Marketplace:</strong> Prueba piloto con 50 productores durante 2 semanas validando publicación de productos y búsqueda por ubicación
+                </div>
             </div>
-            <div style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+            <div
+                style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Sommerville (2011)
             </div>
         </div>
@@ -380,13 +560,16 @@ Para llegar a más compradores
         <div class="slide">
             <h2><i class="fas fa-link"></i> Trazabilidad y Administración</h2>
             <div class="quote">
-                "Es indispensable seguir la huella de las relaciones entre requerimientos, sus fuentes y el diseño del sistema, de modo que usted pueda analizar las razones para los cambios propuestos, así como el efecto que dichos cambios tengan probablemente sobre otras partes del sistema"
+                "Es indispensable seguir la huella de las relaciones entre requerimientos, sus fuentes y el diseño del
+                sistema, de modo que usted pueda analizar las razones para los cambios propuestos, así como el efecto
+                que dichos cambios tengan probablemente sobre otras partes del sistema"
             </div>
             <div class="content-grid">
                 <div>
                     <h3>Componentes de Administración</h3>
                     <ul>
-                        <li><span class="emphasis">Identificación</span>: Identificación única y referencias cruzadas</li>
+                        <li><span class="emphasis">Identificación</span>: Identificación única y referencias cruzadas
+                        </li>
                         <li><span class="emphasis">Proceso de Cambio</span>: Evaluación de impacto y costos</li>
                         <li><span class="emphasis">Políticas de Seguimiento</span>: Mantenimiento de registros</li>
                     </ul>
@@ -401,7 +584,35 @@ Para llegar a más compradores
                     </ul>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px;">
+                <h4 style="color: #2ecc71; margin-bottom: 0.5rem;"><i class="fas fa-seedling"></i> Ejemplo de Trazabilidad: Marketplace Agrícola</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                    <thead>
+                        <tr style="background: rgba(35, 53, 110, 0.2);">
+                            <th style="padding: 0.5rem; border: 1px solid #ddd; color: #1a1f2e; font-weight: 700;">Stakeholder</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd; color: #1a1f2e; font-weight: 700;">Historia Usuario</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd; color: #1a1f2e; font-weight: 700;">Caso de Uso</th>
+                            <th style="padding: 0.5rem; border: 1px solid #ddd; color: #1a1f2e; font-weight: 700;">Componente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">Productor rural</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">HU-01: Publicar productos</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">CU-01: Gestionar catálogo</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">Módulo Publicación</td>
+                        </tr>
+                        <tr style="background: #f8f9fa;">
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">Comprador</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">HU-02: Buscar por GPS</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">CU-02: Búsqueda geolocalizada</td>
+                            <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">Servicio Geolocalización</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div
+                style="margin-top: 1.5rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Sommerville (2011)
             </div>
         </div>
@@ -413,26 +624,91 @@ Para llegar a más compradores
                 <div>
                     <h3>Beneficios Clave</h3>
                     <ul>
-                        <li><span class="emphasis">Gestión de cambios</span>: Según Sommerville (2011), permite "analizar las razones para los cambios propuestos"</li>
-                        <li><span class="emphasis">Verificación</span>: Asegurar que todos los requerimientos se implementen correctamente</li>
-                        <li><span class="emphasis">Auditoría</span>: Demostrar cumplimiento de estándares y regulaciones</li>
-                        <li><span class="emphasis">Mantenimiento</span>: Robertson y Robertson (1999) destacan que facilita la evolución del sistema</li>
+                        <li><span class="emphasis">Gestión de cambios</span>: Según Sommerville (2011), permite
+                            "analizar las razones para los cambios propuestos"</li>
+                        <li><span class="emphasis">Verificación</span>: Asegurar que todos los requerimientos se
+                            implementen correctamente</li>
+                        <li><span class="emphasis">Auditoría</span>: Demostrar cumplimiento de estándares y regulaciones
+                        </li>
+                        <li><span class="emphasis">Mantenimiento</span>: Robertson y Robertson (1999) destacan que
+                            facilita la evolución del sistema</li>
                     </ul>
                 </div>
                 <div>
                     <h3>Tipos de Trazabilidad</h3>
                     <ul>
-                        <li><span class="emphasis">Hacia adelante</span>: Desde requerimientos hasta implementación y pruebas</li>
-                        <li><span class="emphasis">Hacia atrás</span>: Desde código hasta stakeholders y fuentes originales</li>
-                        <li><span class="emphasis">Horizontal</span>: Relaciones entre requerimientos del mismo nivel de abstracción</li>
+                        <li><span class="emphasis">Hacia adelante</span>: Desde requerimientos hasta implementación y
+                            pruebas</li>
+                        <li><span class="emphasis">Hacia atrás</span>: Desde código hasta stakeholders y fuentes
+                            originales</li>
+                        <li><span class="emphasis">Horizontal</span>: Relaciones entre requerimientos del mismo nivel de
+                            abstracción</li>
                     </ul>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">
-                "La trazabilidad es crucial en el proceso de validación porque los requerimientos deben ser comprobables" (Sommerville, 2011)
+            <div
+                style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">
+                "La trazabilidad es crucial en el proceso de validación porque los requerimientos deben ser
+                comprobables" (Sommerville, 2011)
             </div>
-            <div style="margin-top: 1rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
+            <div
+                style="margin-top: 1rem; text-align: right; font-size: 0.85rem; color: var(--uide-secondary); font-style: italic;">
                 <i class="fas fa-book"></i> Fuente: Robertson & Robertson (1999); Sommerville (2011)
+            </div>
+        </div>
+
+        <!-- Slide 14b: Flujo Completo Marketplace -->
+        <div class="slide">
+            <h2><i class="fas fa-seedling"></i> Flujo Completo: Del Requerimiento a la Validación</h2>
+            <div style="padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px; margin-bottom: 1rem;">
+                <h3 style="color: #2ecc71; margin-bottom: 0.5rem;">Ejemplo Integrado: Publicación de Productos</h3>
+            </div>
+
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                <thead>
+                    <tr style="background: rgba(35, 53, 110, 0.3);">
+                        <th style="padding: 0.5rem; border: 1px solid #ddd; width: 15%; color: #1a1f2e; font-weight: 700;">Fase</th>
+                        <th style="padding: 0.5rem; border: 1px solid #ddd; width: 85%; color: #1a1f2e; font-weight: 700;">Artefacto del Marketplace Agrícola</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: 600; color: #2c3e50;">RF (Semana 2)</td>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;"><strong>RF1:</strong> El sistema permitirá registro de productores con ubicación GPS, tipos de cultivos y capacidad productiva mensual</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: 600; color: #2c3e50;">Historia Usuario</td>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;"><strong>HU-01:</strong> Como productor agrícola, quiero publicar mis productos con foto y precio, para llegar a compradores directos sin intermediarios</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: 600; color: #2c3e50;">Caso de Uso</td>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;"><strong>CU-01:</strong> Gestionar Catálogo de Productos (Actor: Productor | Flujo: Login → Subir foto → Ingresar datos → Publicar)</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: 600; color: #2c3e50;">Criterios Aceptación</td>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">
+                            <strong>CA1:</strong> Subir 5 fotos en <30s con 3G<br>
+                            <strong>CA2:</strong> Precio validado ±20% mercado regional<br>
+                            <strong>CA3:</strong> Visible en 50km en <2min
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: 600; color: #2c3e50;">Validación</td>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">
+                            <strong>Prototipo:</strong> Probado con 10 productores rurales<br>
+                            <strong>Prueba Aceptación:</strong> Piloto 50 productores × 2 semanas<br>
+                            <strong>Métrica:</strong> 95% logró publicar en primer intento
+                        </td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; font-weight: 600; color: #2c3e50;">Trazabilidad</td>
+                        <td style="padding: 0.5rem; border: 1px solid #ddd; color: #2c3e50;">RF1 → HU-01 → CU-01 → Módulo Publicación → Test_Publicacion.py → Productor Rural (Stakeholder)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(233, 171, 33, 0.1); border-radius: 8px; text-align: center;">
+                <p style="margin: 0; font-size: 0.9rem;"><strong><i class="fas fa-lightbulb"></i> Clave:</strong> Cada fase se conecta y valida la anterior, asegurando que el sistema final resuelva el problema real del productor</p>
             </div>
         </div>
 
@@ -440,78 +716,98 @@ Para llegar a más compradores
         <!-- Slide 15: Ciclo de Vida -->
         <div class="slide">
             <h2><i class="fas fa-puzzle-piece"></i> Ciclo de Vida de Requerimientos</h2>
-            
+
             <!-- Ciclo Circular -->
             <div style="position: relative; width: 600px; height: 600px; margin: 40px auto;">
-                
+
                 <!-- Centro del círculo -->
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
-                    <div style="background: linear-gradient(135deg, var(--uide-primary) 0%, var(--uide-secondary) 100%); width: 140px; height: 140px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border: 4px solid var(--uide-accent);">
+                <div
+                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;">
+                    <div
+                        style="background: linear-gradient(135deg, var(--uide-primary) 0%, var(--uide-secondary) 100%); width: 140px; height: 140px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border: 4px solid var(--uide-accent);">
                         <i class="fas fa-sync-alt" style="font-size: 2.5rem; color: #fff; margin-bottom: 8px;"></i>
-                        <div style="font-weight: 700; font-size: 0.9rem; color: #fff; line-height: 1.2;">PROCESO<br>ITERATIVO</div>
+                        <div style="font-weight: 700; font-size: 0.9rem; color: #fff; line-height: 1.2;">
+                            PROCESO<br>ITERATIVO</div>
                     </div>
                 </div>
 
                 <!-- Fase 1: Elicitación (Arriba) -->
                 <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-                    <div style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border: 4px solid #4caf50; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4); position: relative;">
+                    <div
+                        style="background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%); border: 4px solid #4caf50; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4); position: relative;">
                         <i class="fas fa-comments" style="font-size: 2.8rem; color: #2e7d32; margin-bottom: 8px;"></i>
-                        <div style="font-weight: 700; font-size: 1.1rem; color: #2e7d32; margin-bottom: 5px;">ELICITACIÓN</div>
-                        <div style="font-size: 0.75rem; color: #1b5e20; font-weight: 500; text-align: center; line-height: 1.2;">
+                        <div style="font-weight: 700; font-size: 1.1rem; color: #2e7d32; margin-bottom: 5px;">
+                            ELICITACIÓN</div>
+                        <div
+                            style="font-size: 0.75rem; color: #1b5e20; font-weight: 500; text-align: center; line-height: 1.2;">
                             <i class="fas fa-user-edit"></i> Historias<br>
                             <i class="fas fa-sitemap"></i> Casos de Uso
                         </div>
                     </div>
                 </div>
                 <!-- Flecha 1: Elicitación → Especificación -->
-                <div style="position: absolute; top: 100px; right: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(60deg);">
+                <div
+                    style="position: absolute; top: 100px; right: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(60deg);">
                     <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
 
                 <!-- Fase 2: Especificación (Derecha) -->
                 <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
-                    <div style="background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); border: 4px solid #2196f3; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(33, 150, 243, 0.4); position: relative;">
+                    <div
+                        style="background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); border: 4px solid #2196f3; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(33, 150, 243, 0.4); position: relative;">
                         <i class="fas fa-file-alt" style="font-size: 2.8rem; color: #1565c0; margin-bottom: 8px;"></i>
-                        <div style="font-weight: 700; font-size: 1.1rem; color: #1565c0; margin-bottom: 5px;">ESPECIFICACIÓN</div>
-                        <div style="font-size: 0.75rem; color: #0d47a1; font-weight: 500; text-align: center; line-height: 1.2;">
+                        <div style="font-weight: 700; font-size: 1.1rem; color: #1565c0; margin-bottom: 5px;">
+                            ESPECIFICACIÓN</div>
+                        <div
+                            style="font-size: 0.75rem; color: #0d47a1; font-weight: 500; text-align: center; line-height: 1.2;">
                             <i class="fas fa-check-circle"></i> Criterios de<br>Aceptación
                         </div>
                     </div>
                 </div>
                 <!-- Flecha 2: Especificación → Validación -->
-                <div style="position: absolute; bottom: 100px; right: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(120deg);">
+                <div
+                    style="position: absolute; bottom: 100px; right: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(120deg);">
                     <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
 
                 <!-- Fase 3: Validación (Abajo) -->
                 <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-                    <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 4px solid #ff9800; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4); position: relative;">
-                        <i class="fas fa-check-double" style="font-size: 2.8rem; color: #e65100; margin-bottom: 8px;"></i>
-                        <div style="font-weight: 700; font-size: 1.1rem; color: #e65100; margin-bottom: 5px;">VALIDACIÓN</div>
-                        <div style="font-size: 0.75rem; color: #bf360c; font-weight: 500; text-align: center; line-height: 1.2;">
+                    <div
+                        style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 4px solid #ff9800; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4); position: relative;">
+                        <i class="fas fa-check-double"
+                            style="font-size: 2.8rem; color: #e65100; margin-bottom: 8px;"></i>
+                        <div style="font-weight: 700; font-size: 1.1rem; color: #e65100; margin-bottom: 5px;">VALIDACIÓN
+                        </div>
+                        <div
+                            style="font-size: 0.75rem; color: #bf360c; font-weight: 500; text-align: center; line-height: 1.2;">
                             <i class="fas fa-search"></i> Revisiones<br>
                             <i class="fas fa-vial"></i> Pruebas
                         </div>
                     </div>
                 </div>
                 <!-- Flecha 3: Validación → Gestión -->
-                <div style="position: absolute; bottom: 100px; left: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(180deg);">
+                <div
+                    style="position: absolute; bottom: 100px; left: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(180deg);">
                     <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
 
                 <!-- Fase 4: Gestión (Izquierda) -->
                 <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                    <div style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 4px solid #9c27b0; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(156, 39, 176, 0.4); position: relative;">
+                    <div
+                        style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border: 4px solid #9c27b0; border-radius: 50%; width: 160px; height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(156, 39, 176, 0.4); position: relative;">
                         <i class="fas fa-cogs" style="font-size: 2.8rem; color: #6a1b9a; margin-bottom: 8px;"></i>
-                        <div style="font-weight: 700; font-size: 1.1rem; color: #6a1b9a; margin-bottom: 5px;">GESTIÓN</div>
-                        <div style="font-size: 0.75rem; color: #4a148c; font-weight: 500; text-align: center; line-height: 1.2;">
+                        <div style="font-weight: 700; font-size: 1.1rem; color: #6a1b9a; margin-bottom: 5px;">GESTIÓN
+                        </div>
+                        <div
+                            style="font-size: 0.75rem; color: #4a148c; font-weight: 500; text-align: center; line-height: 1.2;">
                             <i class="fas fa-link"></i> Trazabilidad<br>
                             <i class="fas fa-tasks"></i> Administración
                         </div>
                     </div>
                 </div>
                 <!-- Flecha 4: Gestión → Elicitación (cierra el ciclo) -->
-                <div style="position: absolute; top: 100px; left: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(-60deg);">
+                <div
+                    style="position: absolute; top: 100px; left: 120px; font-size: 2.5rem; color: var(--uide-accent); transform: rotate(-60deg);">
                     <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
 
@@ -526,20 +822,36 @@ Para llegar a más compradores
                 <div>
                     <h3>Complementariedad de Enfoques</h3>
                     <ul>
-                        <li><span class="emphasis">Ágil</span>: Beck (1999) propone historias de usuario para maximizar flexibilidad y adaptación al cambio</li>
-                        <li><span class="emphasis">Formal</span>: Jacobson et al. (1993) establecen casos de uso para sistemas complejos y críticos</li>
-                        <li><span class="emphasis">Híbrido</span>: Combinación estratégica según contexto y necesidades del proyecto</li>
+                        <li><span class="emphasis">Ágil</span>: Beck (1999) propone historias de usuario para maximizar
+                            flexibilidad y adaptación al cambio</li>
+                        <li><span class="emphasis">Formal</span>: Jacobson et al. (1993) establecen casos de uso para
+                            sistemas complejos y críticos</li>
+                        <li><span class="emphasis">Híbrido</span>: Combinación estratégica según contexto y necesidades
+                            del proyecto</li>
                     </ul>
                 </div>
                 <div>
                     <h3>Elementos Críticos de Éxito</h3>
                     <ul>
-                        <li><span class="emphasis">Criterios claros</span>: Sommerville (2011) enfatiza que son "la base fundamental para validación"</li>
-                        <li><span class="emphasis">Trazabilidad completa</span>: Esencial para gestión efectiva de cambios</li>
-                        <li><span class="emphasis">Validación continua</span>: Detección temprana de problemas y desviaciones</li>
-                        <li><span class="emphasis">Herramientas adecuadas</span>: Soporte automatizado para administración de requerimientos</li>
+                        <li><span class="emphasis">Criterios claros</span>: Sommerville (2011) enfatiza que son "la base
+                            fundamental para validación"</li>
+                        <li><span class="emphasis">Trazabilidad completa</span>: Esencial para gestión efectiva de
+                            cambios</li>
+                        <li><span class="emphasis">Validación continua</span>: Detección temprana de problemas y
+                            desviaciones</li>
+                        <li><span class="emphasis">Herramientas adecuadas</span>: Soporte automatizado para
+                            administración de requerimientos</li>
                     </ul>
                 </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px;">
+                <h3 style="color: #2ecc71; margin-bottom: 0.5rem;"><i class="fas fa-seedling"></i> Lecciones del Marketplace Agrícola</h3>
+                <ul style="font-size: 0.9rem; margin: 0;">
+                    <li><strong>Contexto importa:</strong> Los RNF de conectividad rural fueron tan críticos como los RF de publicación</li>
+                    <li><strong>Validación temprana:</strong> El prototipo con 10 productores evitó 3 meses de desarrollo incorrecto</li>
+                    <li><strong>Criterios medibles:</strong> "Subir foto en <30s con 3G" es verificable; "interfaz amigable" no lo es</li>
+                    <li><strong>Trazabilidad salva proyectos:</strong> Cuando cambió el requisito de GPS, la matriz de trazabilidad identificó 12 componentes afectados</li>
+                </ul>
             </div>
         </div>
 
@@ -547,14 +859,19 @@ Para llegar a más compradores
         <div class="slide title-slide">
             <h1><i class="fas fa-lightbulb"></i> Reflexiones Finales</h1>
             <div class="quote">
-                "La calidad de un sistema de software se determina en gran medida por la calidad de sus requerimientos y la efectividad de su proceso de validación"
+                "La calidad de un sistema de software se determina en gran medida por la calidad de sus requerimientos y
+                la efectividad de su proceso de validación"
             </div>
             <h3 style="margin-top: 2rem;">Preguntas para Considerar</h3>
             <ul>
-                <li>¿Cómo <span class="highlight">balancear</span> agilidad vs formalidad?</li>
-                <li>¿Qué <span class="highlight">técnicas</span> usar según el contexto del proyecto?</li>
-                <li>¿Cómo <span class="highlight">garantizar</span> trazabilidad efectiva?</li>
+                <li>¿Cómo <span class="highlight">balancear</span> agilidad vs formalidad en el marketplace?</li>
+                <li>¿Qué <span class="highlight">técnicas</span> usar para validar con productores rurales?</li>
+                <li>¿Cómo <span class="highlight">garantizar</span> trazabilidad cuando los requerimientos cambian?</li>
             </ul>
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(46, 204, 113, 0.1); border-radius: 8px;">
+                <h3 style="color: #2ecc71; margin-bottom: 0.5rem;"><i class="fas fa-seedling"></i> Desafío para Estudiantes</h3>
+                <p style="margin: 0; font-size: 0.95rem;">Piensa en tu proyecto: ¿Cómo aplicarías historias de usuario, casos de uso y criterios de aceptación? ¿Qué técnicas de validación serían más efectivas para tu contexto específico?</p>
+            </div>
         </div>
 
         <!-- Slide 19: Criterio INVEST -->
@@ -576,16 +893,49 @@ Para llegar a más compradores
                     </ul>
                 </div>
                 <div>
-                    <h3>Ejemplo INVEST</h3>
-                    <div class="code-block">
-✅ BUENA Historia:
-Como productor agrícola
-Quiero publicar un producto con foto
-Para atraer más compradores
+                    <h3 style="color: #2ecc71; margin-bottom: 1rem;"><i class="fas fa-seedling"></i> Análisis INVEST: Marketplace</h3>
+                    
+                    <!-- Historia de Usuario -->
+                    <div style="padding: 1rem; background: linear-gradient(135deg, rgba(46, 204, 113, 0.15) 0%, rgba(46, 204, 113, 0.05) 100%); border-left: 5px solid #2ecc71; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 3px 10px rgba(46, 204, 113, 0.2);">
+                        <div style="font-weight: 700; color: #2ecc71; margin-bottom: 0.5rem; font-size: 0.95rem;">✅ BUENA Historia (HU-01):</div>
+                        <div style="font-size: 0.85rem; line-height: 1.5; font-style: italic; color: #555;">
+                            Como productor agrícola<br>
+                            Quiero publicar un producto con foto<br>
+                            Para atraer más compradores
+                        </div>
+                    </div>
 
-❌ MALA Historia:
-Como usuario quiero que el sistema
-funcione bien y sea rápido
+                    <!-- Criterios INVEST -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem;">
+                        <div style="padding: 0.5rem; background: rgba(46, 204, 113, 0.1); border-left: 3px solid #2ecc71; border-radius: 4px;">
+                            <strong style="color: #2ecc71;">✓ Independent:</strong> No depende de otras HU
+                        </div>
+                        <div style="padding: 0.5rem; background: rgba(52, 152, 219, 0.1); border-left: 3px solid #3498db; border-radius: 4px;">
+                            <strong style="color: #3498db;">✓ Negotiable:</strong> Puede ser 1-5 fotos
+                        </div>
+                        <div style="padding: 0.5rem; background: rgba(155, 89, 182, 0.1); border-left: 3px solid #9b59b6; border-radius: 4px;">
+                            <strong style="color: #9b59b6;">✓ Valuable:</strong> Aumenta ventas del productor
+                        </div>
+                        <div style="padding: 0.5rem; background: rgba(230, 126, 34, 0.1); border-left: 3px solid #e67e22; border-radius: 4px;">
+                            <strong style="color: #e67e22;">✓ Estimable:</strong> 3 días de desarrollo
+                        </div>
+                        <div style="padding: 0.5rem; background: rgba(241, 196, 15, 0.1); border-left: 3px solid #f1c40f; border-radius: 4px;">
+                            <strong style="color: #d4a017;">✓ Small:</strong> Una funcionalidad específica
+                        </div>
+                        <div style="padding: 0.5rem; background: rgba(26, 188, 156, 0.1); border-left: 3px solid #1abc9c; border-radius: 4px;">
+                            <strong style="color: #1abc9c;">✓ Testable:</strong> Verificar subida de foto
+                        </div>
+                    </div>
+
+                    <!-- Mala Historia -->
+                    <div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, rgba(231, 76, 60, 0.15) 0%, rgba(231, 76, 60, 0.05) 100%); border-left: 5px solid #e74c3c; border-radius: 8px; box-shadow: 0 3px 10px rgba(231, 76, 60, 0.15);">
+                        <div style="font-weight: 700; color: #e74c3c; margin-bottom: 0.3rem; font-size: 0.9rem;">❌ MALA Historia:</div>
+                        <div style="font-size: 0.8rem; line-height: 1.4; color: #666; font-style: italic;">
+                            Como usuario quiero que el sistema funcione bien y sea rápido
+                        </div>
+                        <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #999;">
+                            <i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Demasiado vaga, no es medible ni específica
+                        </div>
                     </div>
                 </div>
             </div>
@@ -633,20 +983,31 @@ funcione bien y sea rápido
             <div style="max-width: 900px; margin: 0 auto;">
                 <h3 style="color: var(--uide-primary); margin-bottom: 1rem;">Bibliografía Básica</h3>
                 <ul style="font-size: 0.85rem; line-height: 1.6; text-align: left; margin-bottom: 1.5rem;">
-                    <li><strong>Pressman, R. S. (2021).</strong> <em>Ingeniería de software: un enfoque práctico</em>. McGraw-Hill Interamericana</li>
-                    <li><strong>Sommerville, I. (2021).</strong> <em>Engineering software products: an introduction to modern software engineering</em>. Pearson Education.</li>
-                    <li><strong>Jiménez de Parga, C. (2021).</strong> <em>UML: arquitectura de aplicaciones en Java, C++ y Python</em> (2 ed.). RA-MA Editorial. <a href="https://0310s0jwj-y-https-elibro-net.proxy.uide.edu.ec/es/lc/uide/titulos/222720" style="color: var(--uide-accent);" target="_blank">Enlace</a></li>
-                    <li><strong>Canosa Ferreiro, A. J. (2024).</strong> <em>SCRUM: teoría e Implementación práctica</em> (1 ed.). RA-MA Editorial. <a href="https://0310s0jwj-y-https-elibro-net.proxy.uide.edu.ec/es/lc/uide/titulos/267660" style="color: var(--uide-accent);" target="_blank">Enlace</a></li>
+                    <li><strong>Pressman, R. S. (2021).</strong> <em>Ingeniería de software: un enfoque práctico</em>.
+                        McGraw-Hill Interamericana</li>
+                    <li><strong>Sommerville, I. (2021).</strong> <em>Engineering software products: an introduction to
+                            modern software engineering</em>. Pearson Education.</li>
+                    <li><strong>Jiménez de Parga, C. (2021).</strong> <em>UML: arquitectura de aplicaciones en Java, C++
+                            y Python</em> (2 ed.). RA-MA Editorial. <a
+                            href="https://0310s0jwj-y-https-elibro-net.proxy.uide.edu.ec/es/lc/uide/titulos/222720"
+                            style="color: var(--uide-accent);" target="_blank">Enlace</a></li>
+                    <li><strong>Canosa Ferreiro, A. J. (2024).</strong> <em>SCRUM: teoría e Implementación práctica</em>
+                        (1 ed.). RA-MA Editorial. <a
+                            href="https://0310s0jwj-y-https-elibro-net.proxy.uide.edu.ec/es/lc/uide/titulos/267660"
+                            style="color: var(--uide-accent);" target="_blank">Enlace</a></li>
                 </ul>
                 <h3 style="color: var(--uide-primary); margin-bottom: 1rem;">Bibliografía Complementaria</h3>
                 <ul style="font-size: 0.85rem; line-height: 1.6; text-align: left; margin-bottom: 1.5rem;">
-                    <li><strong>Carullo, G. (2020).</strong> <em>Implementing Effective Code Reviews: How to Build and Maintain Clean Code</em>. Apress Media LLC.</li>
+                    <li><strong>Carullo, G. (2020).</strong> <em>Implementing Effective Code Reviews: How to Build and
+                            Maintain Clean Code</em>. Apress Media LLC.</li>
                     <li><strong>Poulton, N. (2023).</strong> <em>Docker Deep Dive</em>. Nigel Poulton Ltd.</li>
                 </ul>
                 <h3 style="color: var(--uide-primary); margin-bottom: 1rem;">Fuentes ASU</h3>
                 <ul style="font-size: 0.85rem; line-height: 1.6; text-align: left;">
-                    <li><strong>Arizona State University. (2025).</strong> <em>ASU: SER-216 Software Enterprise Processes and Quality</em>. Information Technology Program. Online.</li>
-                    <li><strong>Arizona State University. (2025).</strong> <em>ASU: Inclusive Mindset: Tools for Building Positive Team Culture</em>. Information Technology Program. Online.</li>
+                    <li><strong>Arizona State University. (2025).</strong> <em>ASU: SER-216 Software Enterprise
+                            Processes and Quality</em>. Information Technology Program. Online.</li>
+                    <li><strong>Arizona State University. (2025).</strong> <em>ASU: Inclusive Mindset: Tools for
+                            Building Positive Team Culture</em>. Information Technology Program. Online.</li>
                 </ul>
             </div>
         </div>
@@ -661,7 +1022,7 @@ funcione bien y sea rápido
 
     <!-- Slide Counter -->
     <div class="slide-counter">
-        <span id="currentSlide">1</span> / <span id="totalSlides">19</span>
+        <span id="currentSlide">1</span> / <span id="totalSlides">20</span>
     </div>
 
     <!-- Progress Bar -->
