@@ -50,9 +50,12 @@
                     <i class="fas fa-seedling"></i> Caso de Uso: Marketplace Agrícola Inclusivo
                 </h3>
                 <p style="color: #e2e8f0; font-size: 1.1rem; line-height: 1.4; margin: 0.5rem 0;">
-                    <strong>Semana 2</strong> • Requerimientos funcionales y no funcionales • Técnicas de elicitación • SRS/backlog inicial<br>
-                    <strong>Herramientas:</strong> NotebookLM, recursos bibliográficos, podcasts, casos de estudio, ejercicios prácticos, tarjetas didácticas<br>
-                    <strong>Actividades:</strong> Análisis de requerimientos, elicitación con stakeholders, documentación SRS
+                    <strong>Semana 2</strong> • Requerimientos funcionales y no funcionales • Técnicas de elicitación •
+                    SRS/backlog inicial<br>
+                    <strong>Herramientas:</strong> NotebookLM, recursos bibliográficos, podcasts, casos de estudio,
+                    ejercicios prácticos, tarjetas didácticas<br>
+                    <strong>Actividades:</strong> Análisis de requerimientos, elicitación con stakeholders,
+                    documentación SRS
                 </p>
                 <p style="color: #cbd5e1; font-size: 1rem; margin-top: 1rem; font-style: italic;">
                     Traducir la problemática del Marketplace Agrícola en requerimientos claros
@@ -64,10 +67,14 @@
         <div class="slide">
             <h2><i class="fas fa-bullseye"></i> Objetivos de la Presentación</h2>
             <ul>
-                <li>Traducir la problemática del <span class="highlight">Marketplace Agrícola</span> en requerimientos funcionales y no funcionales claros</li>
-                <li>Seleccionar técnicas de <span class="highlight">elicitación</span> (entrevistas, workshops, prototipos) que conecten con pequeños productores y compradores urbanos</li>
-                <li>Estructurar un <span class="highlight">SRS/backlog inicial</span> que incorpore equidad algorítmica, trazabilidad y certificaciones digitales</li>
-                <li>Definir <span class="highlight">criterios de aceptación medibles</span> para asegurar rendimiento, seguridad y accesibilidad de la plataforma</li>
+                <li>Traducir la problemática del <span class="highlight">Marketplace Agrícola</span> en requerimientos
+                    funcionales y no funcionales claros</li>
+                <li>Seleccionar técnicas de <span class="highlight">elicitación</span> (entrevistas, workshops,
+                    prototipos) que conecten con pequeños productores y compradores urbanos</li>
+                <li>Estructurar un <span class="highlight">SRS/backlog inicial</span> que incorpore equidad algorítmica,
+                    trazabilidad y certificaciones digitales</li>
+                <li>Definir <span class="highlight">criterios de aceptación medibles</span> para asegurar rendimiento,
+                    seguridad y accesibilidad de la plataforma</li>
             </ul>
         </div>
 
@@ -98,17 +105,355 @@
             </div>
         </div>
 
-        <!-- Slide 4: Caso de Uso -->
+        <!-- Slide 4: Teoría - Tipos de Requerimientos -->
+        <div class="slide">
+            <h2><i class="fas fa-book-open"></i> Tipos de Requerimientos: Teoría</h2>
+
+            <div style="padding: 0 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--uide-accent);">
+                            <i class="fas fa-cogs"></i> Requerimientos Funcionales (RF)
+                        </h3>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin-bottom: 15px;">
+                            Describen <strong>qué debe hacer</strong> el sistema:
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li>Servicios que el sistema debe proveer</li>
+                            <li>Reacciones ante entradas específicas</li>
+                            <li>Comportamiento en situaciones particulares</li>
+                            <li>Lo que el sistema NO debe hacer (restricciones)</li>
+                        </ul>
+                        <div style="background: rgba(233, 171, 33, 0.15); padding: 12px; border-radius: 8px; margin-top: 15px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: #e2e8f0;">
+                                <strong>Ejemplo:</strong> "El sistema debe permitir buscar productos por categoría y mostrar resultados en <2 segundos"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #4ade80;">
+                            <i class="fas fa-shield-alt"></i> Requerimientos No Funcionales (RNF)
+                        </h3>
+                        <p style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin-bottom: 15px;">
+                            Describen <strong>cómo debe funcionar</strong> el sistema:
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li><strong>Producto:</strong> rendimiento, usabilidad, fiabilidad</li>
+                            <li><strong>Organización:</strong> estándares, procesos de desarrollo</li>
+                            <li><strong>Externos:</strong> regulatorios, éticos, legales</li>
+                        </ul>
+                        <div style="background: rgba(74, 222, 128, 0.15); padding: 12px; border-radius: 8px; margin-top: 15px;">
+                            <p style="margin: 0; font-size: 0.85rem; color: #e2e8f0;">
+                                <strong>Clave:</strong> Los RNF deben ser <em>medibles y verificables</em> (ej. "99.9% disponibilidad", no "alta disponibilidad")
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Cómo Escribir Buenos Requerimientos -->
+        <div class="slide">
+            <h2><i class="fas fa-pen-fancy"></i> Cómo Escribir Buenos Requerimientos</h2>
+
+            <div style="padding: 0 40px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--uide-accent);">
+                            <i class="fas fa-check-circle"></i> Características Esenciales
+                        </h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.8; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li><strong>Claro:</strong> sin ambigüedades, una sola interpretación</li>
+                            <li><strong>Completo:</strong> toda la información necesaria</li>
+                            <li><strong>Consistente:</strong> no contradice otros requerimientos</li>
+                            <li><strong>Verificable:</strong> se puede probar/medir</li>
+                            <li><strong>Trazable:</strong> identificable y rastreable</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #4ade80;">
+                            <i class="fas fa-exclamation-triangle"></i> Errores Comunes a Evitar
+                        </h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.8; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li>Usar términos vagos: "rápido", "fácil", "robusto"</li>
+                            <li>Mezclar requerimientos con diseño</li>
+                            <li>Incluir múltiples requerimientos en uno</li>
+                            <li>No especificar criterios de aceptación</li>
+                            <li>Omitir casos excepcionales o de error</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent);">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--uide-accent);">
+                        <i class="fas fa-lightbulb"></i> Plantilla Recomendada (IEEE 830)
+                    </h3>
+                    <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0;">
+                        <strong>[ID]</strong> El sistema <strong>[debe/deberá]</strong> [acción] [objeto] [condición] [criterio de aceptación]
+                    </p>
+                    <p style="margin: 10px 0 0 0; font-size: 0.85rem; line-height: 1.5; color: #cbd5e1; font-style: italic;">
+                        Ejemplo: <em>"RF-001: El sistema debe procesar pagos mediante tarjeta de crédito en menos de 3 segundos con una tasa de éxito ≥99.5%"</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Técnicas de Elicitación - Introducción -->
+        <div class="slide">
+            <h2><i class="fas fa-users"></i> Técnicas de Elicitación: Panorama General</h2>
+
+            <div style="padding: 0 20px;">
+                <p style="font-size: 1.05rem; line-height: 1.7; color: #e2e8f0; margin-bottom: 25px; text-align: center;">
+                    La <strong>elicitación</strong> es el proceso de descubrir, extraer y comprender los requerimientos de los stakeholders
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--uide-accent); text-align: center;">
+                            <i class="fas fa-comments"></i><br>Entrevistas
+                        </h3>
+                        <p style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; margin: 0; text-align: center;">
+                            Conversaciones directas con stakeholders
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: #4ade80; text-align: center;">
+                            <i class="fas fa-users-cog"></i><br>Workshops
+                        </h3>
+                        <p style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; margin: 0; text-align: center;">
+                            Sesiones colaborativas grupales
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid #60a5fa;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: #60a5fa; text-align: center;">
+                            <i class="fas fa-pencil-ruler"></i><br>Prototipos
+                        </h3>
+                        <p style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; margin: 0; text-align: center;">
+                            Modelos visuales para validación
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-primary);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--uide-primary); text-align: center;">
+                            <i class="fas fa-eye"></i><br>Observación
+                        </h3>
+                        <p style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; margin: 0; text-align: center;">
+                            Análisis del contexto real
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--uide-accent); text-align: center;">
+                            <i class="fas fa-file-alt"></i><br>Cuestionarios
+                        </h3>
+                        <p style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; margin: 0; text-align: center;">
+                            Recopilación masiva de datos
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: #4ade80; text-align: center;">
+                            <i class="fas fa-question-circle"></i><br>Escenarios
+                        </h3>
+                        <p style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0; margin: 0; text-align: center;">
+                            Casos "What if...?" hipotéticos
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Entrevistas - Preparación -->
+        <div class="slide">
+            <h2><i class="fas fa-clipboard-list"></i> Entrevistas: Preparación</h2>
+
+            <div style="padding: 0 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--uide-accent);">
+                            <i class="fas fa-tasks"></i> Antes de la Entrevista
+                        </h3>
+                        <ol style="font-size: 0.95rem; line-height: 1.8; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li><strong>Definir objetivos:</strong> ¿Qué información necesito?</li>
+                            <li><strong>Investigar el dominio:</strong> Conocer el contexto del negocio</li>
+                            <li><strong>Identificar stakeholders:</strong> Usuarios finales, gerentes, técnicos</li>
+                            <li><strong>Preparar preguntas:</strong> Abiertas y cerradas balanceadas</li>
+                            <li><strong>Agendar:</strong> Tiempo suficiente (45-90 min), lugar tranquilo</li>
+                            <li><strong>Herramientas:</strong> Grabadora, notas, prototipos si aplica</li>
+                        </ol>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #4ade80;">
+                            <i class="fas fa-list-ol"></i> Tipos de Entrevistas
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="font-size: 1rem; margin: 0 0 8px 0; color: var(--uide-accent);">
+                                    Estructurada
+                                </h4>
+                                <p style="margin: 0; font-size: 0.85rem; line-height: 1.5; color: #cbd5e1;">
+                                    Preguntas predefinidas, mismo orden. Útil para comparar respuestas.
+                                </p>
+                            </div>
+
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="font-size: 1rem; margin: 0 0 8px 0; color: #4ade80;">
+                                    Semiestructurada ⭐
+                                </h4>
+                                <p style="margin: 0; font-size: 0.85rem; line-height: 1.5; color: #cbd5e1;">
+                                    Guía flexible, permite profundizar. <strong>Más recomendada</strong> para elicitación.
+                                </p>
+                            </div>
+
+                            <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">
+                                <h4 style="font-size: 1rem; margin: 0 0 8px 0; color: #60a5fa;">
+                                    No estructurada
+                                </h4>
+                                <p style="margin: 0; font-size: 0.85rem; line-height: 1.5; color: #cbd5e1;">
+                                    Conversación libre. Útil para exploración inicial.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Entrevistas - Estructura y Preguntas -->
+        <div class="slide">
+            <h2><i class="fas fa-question"></i> Entrevistas: Estructura y Tipos de Preguntas</h2>
+
+            <div style="padding: 0 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 20px;">
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--uide-accent);">
+                            <i class="fas fa-stream"></i> Estructura de la Entrevista
+                        </h3>
+                        <ol style="font-size: 0.9rem; line-height: 1.7; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li><strong>Apertura (5 min):</strong> Presentación, objetivos, consentimiento</li>
+                            <li><strong>Calentamiento (5-10 min):</strong> Preguntas generales, contexto</li>
+                            <li><strong>Cuerpo (30-60 min):</strong> Preguntas específicas sobre requerimientos</li>
+                            <li><strong>Cierre (5-10 min):</strong> Resumen, aclaraciones, próximos pasos</li>
+                        </ol>
+                    </div>
+
+                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #4ade80;">
+                            <i class="fas fa-comments"></i> Tipos de Preguntas
+                        </h3>
+                        <div style="font-size: 0.85rem; line-height: 1.6; color: #e2e8f0;">
+                            <p style="margin: 0 0 10px 0;"><strong style="color: #4ade80;">Abiertas:</strong> "¿Cómo describe su proceso actual?"</p>
+                            <p style="margin: 0 0 10px 0;"><strong style="color: #60a5fa;">Cerradas:</strong> "¿Usa actualmente un sistema digital?"</p>
+                            <p style="margin: 0 0 10px 0;"><strong style="color: var(--uide-accent);">Sondeo:</strong> "¿Puede darme un ejemplo?"</p>
+                            <p style="margin: 0;"><strong style="color: var(--uide-primary);">Hipotéticas:</strong> "¿Qué haría si...?"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent);">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: var(--uide-accent);">
+                        <i class="fas fa-star"></i> Ejemplos de Preguntas para el Marketplace Agrícola
+                    </h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85rem; line-height: 1.6; color: #e2e8f0;">
+                        <div>
+                            <p style="margin: 0 0 5px 0;"><strong>Contexto:</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>"¿Cómo vende actualmente sus productos?"</li>
+                                <li>"¿Qué desafíos enfrenta en la comercialización?"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="margin: 0 0 5px 0;"><strong>Funcionalidad:</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>"¿Qué información necesita ver sobre cada pedido?"</li>
+                                <li>"¿Cómo le gustaría recibir notificaciones?"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="margin: 0 0 5px 0;"><strong>Restricciones:</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>"¿Qué tipo de conectividad tiene en su finca?"</li>
+                                <li>"¿Usa smartphone? ¿Qué sistema operativo?"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="margin: 0 0 5px 0;"><strong>Validación:</strong></p>
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>"Si el sistema hiciera X, ¿le sería útil?"</li>
+                                <li>"¿Qué tan importante es Y para usted? (1-5)"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Entrevistas - Buenas Prácticas -->
+        <div class="slide">
+            <h2><i class="fas fa-thumbs-up"></i> Entrevistas: Buenas Prácticas y Errores Comunes</h2>
+
+            <div style="padding: 0 40px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div style="background: rgba(74, 222, 128, 0.15); padding: 25px; border-radius: 12px; border-left: 4px solid #4ade80;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #4ade80;">
+                            <i class="fas fa-check-circle"></i> Hacer ✓
+                        </h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.8; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li>Escuchar activamente, tomar notas</li>
+                            <li>Hacer preguntas de seguimiento</li>
+                            <li>Usar lenguaje del dominio del entrevistado</li>
+                            <li>Validar comprensión: "Entonces, usted dice que..."</li>
+                            <li>Permitir silencios para reflexión</li>
+                            <li>Grabar (con permiso) para revisión posterior</li>
+                            <li>Documentar inmediatamente después</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(220, 53, 69, 0.15); padding: 25px; border-radius: 12px; border-left: 4px solid var(--uide-primary);">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--uide-primary);">
+                            <i class="fas fa-times-circle"></i> Evitar ✗
+                        </h3>
+                        <ul style="font-size: 0.95rem; line-height: 1.8; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                            <li>Preguntas sesgadas o que sugieren respuesta</li>
+                            <li>Interrumpir al entrevistado</li>
+                            <li>Usar jerga técnica innecesaria</li>
+                            <li>Asumir que entendiste sin confirmar</li>
+                            <li>Hacer múltiples preguntas a la vez</li>
+                            <li>Discutir o contradecir al stakeholder</li>
+                            <li>Proponer soluciones prematuramente</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 25px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--uide-accent);">
+                        <i class="fas fa-lightbulb"></i> Consejo Clave
+                    </h3>
+                    <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0;">
+                        <strong>Regla 80/20:</strong> El entrevistado debe hablar el 80% del tiempo, tú el 20%. Tu rol es facilitar, no dominar la conversación.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Caso de Uso -->
         <div class="slide">
             <h2><i class="fas fa-seedling"></i> Caso de Uso: Marketplace Agrícola</h2>
 
             <div style="padding: 0 20px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
-                    <div style="background: rgba(233, 171, 33, 0.15); padding: 25px; border-radius: 12px; border-left: 4px solid var(--uide-accent);">
+                    <div
+                        style="background: rgba(233, 171, 33, 0.15); padding: 25px; border-radius: 12px; border-left: 4px solid var(--uide-accent);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--uide-accent);">
                             <i class="fas fa-exclamation-triangle"></i> Problemática
                         </h3>
-                        <ul style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin: 0; padding-left: 20px;">
+                        <ul
+                            style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin: 0; padding-left: 20px;">
                             <li>84.5% de las UPAs son de agricultura familiar pero poseen solo 20% de la tierra</li>
                             <li>75.6% son pequeños productores (<10 ha)</li>
                             <li>Solo 7.4% acceden a crédito; 6.8% recibe asistencia técnica</li>
@@ -116,7 +461,8 @@
                         </ul>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #4ade80;">
                             <i class="fas fa-lightbulb"></i> Solución Propuesta
                         </h3>
@@ -139,17 +485,26 @@
 
             <div style="padding: 0 20px;">
                 <ul style="font-size: 1rem; line-height: 2; color: #e2e8f0;">
-                    <li><strong>RF-1:</strong> El catálogo permitirá a consumidores describir su pedido (producto, volumen, certificación) sin elegir productor específico; el sistema asignará automáticamente</li>
-                    <li><strong>RF-2:</strong> El algoritmo de asignación implementará rotación aleatoria ponderada para distribuir pedidos equitativamente entre productores habilitados</li>
-                    <li><strong>RF-3:</strong> La plataforma registrará la trazabilidad completa (lote, finca, transporte, entrega) disponible para comprador y auditor</li>
-                    <li><strong>RF-4:</strong> Generar certificados digitales para productos orgánicos o con buenas prácticas, visibles en cada ficha</li>
-                    <li><strong>RF-5:</strong> Dashboard para productores con métricas de ventas, rotación de inventario y alertas de oportunidad</li>
-                    <li><strong>RF-6:</strong> Módulo de logística que optimiza rutas mediante geolocalización y disponibilidad de transporte comunitario</li>
+                    <li><strong>RF-1:</strong> El catálogo permitirá a consumidores describir su pedido (producto,
+                        volumen, certificación) sin elegir productor específico; el sistema asignará automáticamente
+                    </li>
+                    <li><strong>RF-2:</strong> El algoritmo de asignación implementará rotación aleatoria ponderada para
+                        distribuir pedidos equitativamente entre productores habilitados</li>
+                    <li><strong>RF-3:</strong> La plataforma registrará la trazabilidad completa (lote, finca,
+                        transporte, entrega) disponible para comprador y auditor</li>
+                    <li><strong>RF-4:</strong> Generar certificados digitales para productos orgánicos o con buenas
+                        prácticas, visibles en cada ficha</li>
+                    <li><strong>RF-5:</strong> Dashboard para productores con métricas de ventas, rotación de inventario
+                        y alertas de oportunidad</li>
+                    <li><strong>RF-6:</strong> Módulo de logística que optimiza rutas mediante geolocalización y
+                        disponibilidad de transporte comunitario</li>
                 </ul>
 
-                <div style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <div
+                    style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
                     <p style="margin: 0; font-size: 0.9rem; line-height: 1.6; color: #e2e8f0; font-style: italic;">
-                        Basado en las definiciones de RF del compendio: servicios que el sistema debe proveer, reacciones ante entradas específicas y restricciones de comportamiento.
+                        Basado en las definiciones de RF del compendio: servicios que el sistema debe proveer,
+                        reacciones ante entradas específicas y restricciones de comportamiento.
                     </p>
                 </div>
             </div>
@@ -161,7 +516,8 @@
 
             <div style="padding: 0 20px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--uide-accent);">
                             <i class="fas fa-tachometer-alt"></i> Rendimiento
                         </h3>
@@ -170,16 +526,19 @@
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #4ade80;">
                             <i class="fas fa-lock"></i> Seguridad
                         </h3>
                         <p style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin: 0;">
-                            No permitir que productores modifiquen certificados ajenos; autenticación MFA; cifrado TLS 1.3
+                            No permitir que productores modifiquen certificados ajenos; autenticación MFA; cifrado TLS
+                            1.3
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid #60a5fa;">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid #60a5fa;">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #60a5fa;">
                             <i class="fas fa-server"></i> Fiabilidad/Disponibilidad
                         </h3>
@@ -188,17 +547,19 @@
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-primary);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-primary);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--uide-primary);">
                             <i class="fas fa-universal-access"></i> Usabilidad/Accesibilidad
                         </h3>
                         <p style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin: 0;">
-                            Interfaz móvil con lectura fácil (índice Gunning-Fog <12), soporte offline parcial para zonas rurales
-                        </p>
+                            Interfaz móvil con lectura fácil (índice Gunning-Fog <12), soporte offline parcial para
+                                zonas rurales </p>
                     </div>
                 </div>
 
-                <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent); margin-top: 20px;">
+                <div
+                    style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent); margin-top: 20px;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--uide-accent);">
                         <i class="fas fa-gavel"></i> Regulatorio y Operacional
                     </h3>
@@ -216,16 +577,19 @@
 
             <div style="padding: 0 20px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--uide-accent);">
                             <i class="fas fa-user-friends"></i> Entrevistas Semiestructuradas
                         </h3>
                         <p style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin: 0;">
-                            Con asociaciones de agricultura familiar para captar escenarios de inequidad y requisitos de certificación
+                            Con asociaciones de agricultura familiar para captar escenarios de inequidad y requisitos de
+                            certificación
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #4ade80;">
                             <i class="fas fa-users"></i> Workshops de Co-creación
                         </h3>
@@ -234,7 +598,8 @@
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid #60a5fa;">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid #60a5fa;">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: #60a5fa;">
                             <i class="fas fa-pencil-ruler"></i> Prototipos de Baja Fidelidad
                         </h3>
@@ -243,7 +608,8 @@
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-primary);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-primary);">
                         <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--uide-primary);">
                             <i class="fas fa-eye"></i> Observación Contextual
                         </h3>
@@ -253,9 +619,11 @@
                     </div>
                 </div>
 
-                <div style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <div
+                    style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
                     <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0;">
-                        <strong>Escenarios "What if…?"</strong> (Kaner, 2003) para probar variaciones: demandas imprevistas, productor con inventario cero, falla en logística
+                        <strong>Escenarios "What if…?"</strong> (Kaner, 2003) para probar variaciones: demandas
+                        imprevistas, productor con inventario cero, falla en logística
                     </p>
                 </div>
             </div>
@@ -267,10 +635,13 @@
 
             <div style="padding: 0 20px;">
                 <ol style="font-size: 1rem; line-height: 2; color: #e2e8f0;">
-                    <li><strong>Visión general:</strong> Propósito, alcance del Marketplace Agrícola y stakeholders (productores, compradores, cooperativas, MAG)</li>
+                    <li><strong>Visión general:</strong> Propósito, alcance del Marketplace Agrícola y stakeholders
+                        (productores, compradores, cooperativas, MAG)</li>
                     <li><strong>Requerimientos funcionales</strong> (RF-1 … RF-n)</li>
-                    <li><strong>Requerimientos no funcionales</strong> clasificados por producto, organización y externos</li>
-                    <li><strong>Modelos de usuario</strong> (personas: productora rural, comprador retail, administrador MAG)</li>
+                    <li><strong>Requerimientos no funcionales</strong> clasificados por producto, organización y
+                        externos</li>
+                    <li><strong>Modelos de usuario</strong> (personas: productora rural, comprador retail, administrador
+                        MAG)</li>
                     <li><strong>Casos de uso prioritarios:</strong>
                         <ul style="margin-top: 10px; padding-left: 20px;">
                             <li>Registrar productor y certificaciones</li>
@@ -283,7 +654,8 @@
                     <li><strong>Backlog inicial</strong> en formato épica → features → user stories</li>
                 </ol>
 
-                <div style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <div
+                    style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
                     <p style="margin: 0; font-size: 0.9rem; line-height: 1.6; color: #e2e8f0; font-style: italic;">
                         Estructura alineada con IEEE Std 830-1998 y guías de Sommerville & Sawyer.
                     </p>
@@ -297,16 +669,19 @@
 
             <div style="padding: 0 20px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid var(--uide-accent);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--uide-accent);">
                             <i class="fas fa-sort-amount-down"></i> Priorización Incremental (Scrum)
                         </h3>
                         <p style="font-size: 0.95rem; line-height: 1.7; color: #e2e8f0; margin: 0;">
-                            Primero funcionalidades núcleo (catálogo, asignación, trazabilidad), luego analytics y optimización logística
+                            Primero funcionalidades núcleo (catálogo, asignación, trazabilidad), luego analytics y
+                            optimización logística
                         </p>
                     </div>
 
-                    <div style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
+                    <div
+                        style="background: rgba(35, 53, 110, 0.3); padding: 25px; border-radius: 12px; border: 2px solid rgba(74, 222, 128, 0.3);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #4ade80;">
                             <i class="fas fa-tasks"></i> KPIs de Validación
                         </h3>
@@ -319,7 +694,8 @@
                     </div>
                 </div>
 
-                <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 25px;">
+                <div
+                    style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 25px;">
                     <h3 style="font-size: 1.1rem; margin-bottom: 10px; color: var(--uide-accent);">
                         <i class="fas fa-check-circle"></i> Definición de Listo
                     </h3>
@@ -346,20 +722,27 @@
             <h2><i class="fas fa-book"></i> Referencias Clave</h2>
 
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px; padding: 0 40px;">
-                <div style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
+                <div
+                    style="background: rgba(35, 53, 110, 0.3); padding: 20px; border-radius: 12px; border: 2px solid var(--uide-accent);">
                     <ul style="font-size: 0.95rem; line-height: 1.9; color: #e2e8f0; margin: 0; padding-left: 20px;">
-                        <li><strong>IEEE (1998).</strong> <em>Recommended Practice for Software Requirements Specifications (IEEE Std 830-1998).</em></li>
-                        <li><strong>Kotonya, G. & Sommerville, I. (1998).</strong> <em>Requirements Engineering: Processes and Techniques.</em></li>
-                        <li><strong>Robertson, S. & Robertson, J. (1999).</strong> <em>Mastering the Requirements Process.</em></li>
+                        <li><strong>IEEE (1998).</strong> <em>Recommended Practice for Software Requirements
+                                Specifications (IEEE Std 830-1998).</em></li>
+                        <li><strong>Kotonya, G. & Sommerville, I. (1998).</strong> <em>Requirements Engineering:
+                                Processes and Techniques.</em></li>
+                        <li><strong>Robertson, S. & Robertson, J. (1999).</strong> <em>Mastering the Requirements
+                                Process.</em></li>
                         <li><strong>Kaner, C. (2003).</strong> <em>Scenario Testing.</em></li>
                         <li><strong>Beck, K. (1999).</strong> <em>Extreme Programming Explained.</em></li>
                     </ul>
                 </div>
             </div>
 
-            <div style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin: 20px 40px 0 40px;">
-                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0; text-align: center; font-style: italic;">
-                    Presentación elaborada a partir del Compendio Semana 2 y contextualizada para el Marketplace Agrícola con asignación equitativa.
+            <div
+                style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin: 20px 40px 0 40px;">
+                <p
+                    style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0; text-align: center; font-style: italic;">
+                    Presentación elaborada a partir del Compendio Semana 2 y contextualizada para el Marketplace
+                    Agrícola con asignación equitativa.
                 </p>
             </div>
         </div>
@@ -368,7 +751,7 @@
         <div class="navigation">
             <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
             <span class="slide-counter">
-                <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
+                <span id="currentSlide">1</span> / <span id="totalSlides">17</span>
             </span>
             <button class="nav-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>

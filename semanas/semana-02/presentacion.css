@@ -171,6 +171,7 @@ th {
 }
 
 /* Navigation */
+.navigation,
 .nav-controls {
     position: fixed;
     bottom: 30px;
@@ -209,15 +210,14 @@ th {
 
 /* Simplified slide counter */
 .slide-counter {
-    position: fixed;
-    top: 30px;
-    right: 30px;
     background: rgba(26, 31, 58, 0.9);
     padding: 10px 20px;
     border-radius: 25px;
     border: 1px solid var(--border-color);
     font-weight: 600;
-    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Logo UIDE */
@@ -244,10 +244,17 @@ th {
     position: fixed;
     bottom: 0;
     left: 0;
+    width: 100%;
     height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.progress-fill {
+    height: 100%;
     background: var(--uide-accent);
     transition: width 0.3s ease;
-    z-index: 1000;
+    width: 0%;
 }
 
 /* All animations removed for maximum performance */
