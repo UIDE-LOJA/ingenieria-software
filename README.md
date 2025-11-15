@@ -286,7 +286,7 @@ Gestión de aprendizaje:
 
 Cargo: Docente de la carrera de Ingeniería en Tecnologías de la información
 
-Nombre: Mgs. Charlie Cárdenas Toledo
+Nombre: Prof. Charlie Cárdenas Toledo, M.Sc.
 
 **Revisado Por:**
 
