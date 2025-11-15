@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps: Estrategia de Desarrollo - Semana 4</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <link rel="stylesheet" href="presentacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="presentacion.js" defer></script>
+</head>
+
+<body>
+    <!-- Logo UIDE (Fijo en todas las slides) -->
+    <div class="uide-logo">
+        <img src="../../assets/images/Logo%20UIDE.png" alt="UIDE Logo">
+    </div>
+
+    <div class="presentation-container">
+
+        <!-- ============================================ -->
+        <!-- SLIDE 1: CARÁTULA -->
+        <!-- ============================================ -->
+        <div class="slide active title-slide">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3
+                    style="color: #e2e8f0; font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
+                    Presentación Semana 4
+                </h3>
+                <h2 style="color: var(--uide-accent); font-size: 2.2rem; font-weight: 600; margin-bottom: 0.5rem;">
+                    DevOps: Estrategia de Desarrollo y Flujo de Trabajo
+                </h2>
+                <p
+                    style="color: #ffffff; font-size: 1.4rem; font-weight: 500; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
+                    LTI_05A_INS • Nivel 5
+                </p>
+                <p style="color: #e2e8f0; font-size: 1.2rem; margin-top: 0.5rem;">
+                    Ingeniería del Software
+                </p>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <p
+                    style="color: #ffffff; font-size: 1.3rem; font-weight: 600; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
+                    Prof. Charlie Cárdenas Toledo, M.Sc.
+                </p>
+                <p style="color: var(--uide-accent); font-size: 1.2rem; font-weight: 500; margin-top: 0.5rem;">
+                    Octubre 2025 – Febrero 2026
+                </p>
+            </div>
+
+
+            <div
+                style="text-align: center; margin-top: 2.5rem; padding: 25px; background: rgba(15, 20, 25, 0.6); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="color: var(--uide-accent); font-size: 1.4rem; margin-bottom: 1rem; text-shadow: none;">
+                    <i class="fas fa-seedling"></i> Marketplace Agrícola Inclusivo
+                </h3>
+                <p style="color: #e2e8f0; font-size: 1.1rem; line-height: 1.4; margin: 0.5rem 0;">
+                    <strong>Semana 4</strong> • Plan-driven vs Ágil • Scrum/Kanban • Git
+                </p>
+                <p style="color: #cbd5e1; font-size: 1rem; margin-top: 1rem; font-style: italic;">
+                    Estrategias de desarrollo para plataformas inclusivas
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 2: ACTIVIDADES Y HERRAMIENTAS -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-clipboard-list"></i> Actividades Calificadas y Herramientas</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 0 40px;">
+                <!-- Columna Izquierda: Actividades Calificadas -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div
+                        style="padding: 20px; background: rgba(15, 20, 25, 0.6); border-radius: 12px; border: 2px solid var(--uide-primary);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: var(--uide-primary); font-size: 1.3rem; margin: 0;">
+                                <i class="fas fa-clipboard-check"></i> Actividades Calificadas
+                            </h3>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <!-- PE-1.4 -->
+                            <div
+                                style="background: rgba(74, 222, 128, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                    <span style="color: #e2e8f0; font-size: 1rem; font-weight: 600;">
+                                        <i class="fas fa-flask"></i> PE-1.4: Simulación Scrum/Kanban y Git
+                                    </span>
+                                    <span style="color: var(--uide-accent); font-size: 1rem; font-weight: 700;">3 pts</span>
+                                </div>
+                                <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                                    Simulación práctica con issue + Pull Request
+                                </p>
+                            </div>
+
+                            <!-- TA-1.4 -->
+                            <div
+                                style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                    <span style="color: #e2e8f0; font-size: 1rem; font-weight: 600;">
+                                        <i class="fas fa-file-alt"></i> TA-1.4: Roadmap + Tablero
+                                    </span>
+                                    <span style="color: var(--uide-accent); font-size: 1rem; font-weight: 700;">3 pts</span>
+                                </div>
+                                <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                                    Épicas, Definition of Ready/Done
+                                </p>
+                            </div>
+
+                            <!-- GA-1.4 -->
+                            <div
+                                style="background: rgba(96, 165, 250, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #60a5fa;">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                    <span style="color: #e2e8f0; font-size: 1rem; font-weight: 600;">
+                                        <i class="fas fa-graduation-cap"></i> GA-1.4: Módulo 4 ASC-5
+                                    </span>
+                                    <span style="color: var(--uide-accent); font-size: 1rem; font-weight: 700;">1 pt</span>
+                                </div>
+                                <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                                    Completar módulo de aprendizaje ASU
+                                </p>
+                            </div>
+
+                            <!-- Total -->
+                            <div
+                                style="background: rgba(233, 171, 33, 0.2); padding: 15px; border-radius: 10px; border: 2px solid var(--uide-accent); margin-top: 5px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: var(--uide-accent); font-size: 1.1rem; font-weight: 700;">
+                                        <i class="fas fa-star"></i> Total Semana 4
+                                    </span>
+                                    <span style="color: var(--uide-accent); font-size: 1.3rem; font-weight: 700;">7 pts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Columna Derecha: Herramientas y Recursos -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div
+                        style="padding: 20px; background: rgba(35, 53, 110, 0.3); border-radius: 12px; border: 2px solid #60a5fa;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="color: #60a5fa; font-size: 1.3rem; margin: 0;">
+                                <i class="fas fa-tools"></i> Recursos de Aprendizaje
+                            </h3>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div
+                                style="background: rgba(74, 222, 128, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #4ade80;">
+                                <i class="fas fa-infinity" style="color: #4ade80; margin-right: 8px;"></i>
+                                <span style="color: #e2e8f0; font-size: 0.95rem; font-weight: 500;">Scrum Framework</span>
+                            </div>
+                            <div
+                                style="background: rgba(74, 222, 128, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #4ade80;">
+                                <i class="fas fa-columns" style="color: #4ade80; margin-right: 8px;"></i>
+                                <span style="color: #e2e8f0; font-size: 0.95rem; font-weight: 500;">Kanban Board</span>
+                            </div>
+                            <div
+                                style="background: rgba(74, 222, 128, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #4ade80;">
+                                <i class="fas fa-code-branch" style="color: #4ade80; margin-right: 8px;"></i>
+                                <span style="color: #e2e8f0; font-size: 0.95rem; font-weight: 500;">Git Version Control</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 3: OBJETIVOS -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-bullseye"></i> Objetivos de la Presentación</h2>
+            <ul>
+                <li>Evaluar cuándo aplicar enfoques <span class="highlight">plan-driven vs. ágiles</span> para el marketplace agrícola</li>
+                <li>Operativizar <span class="highlight">Scrum + Kanban</span> para entregar incrementos que garanticen la asignación equitativa de pedidos</li>
+                <li>Implementar ciclos de <span class="highlight">backlog grooming y sprint planning</span> alineados con productores y stakeholders rurales</li>
+                <li>Normalizar un <span class="highlight">flujo Git colaborativo</span> que preserve la trazabilidad del código y facilite CI/CD</li>
+                <li>Comprender las <span class="highlight">diferencias fundamentales</span> entre metodologías tradicionales y ágiles</li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 4: AGENDA -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-chart-line"></i> Agenda</h2>
+            <div class="content-grid">
+                <div class="feature-card">
+                    <h3>1. Contexto del Proyecto</h3>
+                    <p>Marketplace Agrícola Inclusivo y sus desafíos</p>
+                </div>
+                <div class="feature-card">
+                    <h3>2. Plan-driven vs. Ágil</h3>
+                    <p>Criterios de decisión según Sommerville</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3. Scrum + Kanban</h3>
+                    <p>Marcos ágiles aplicados al caso</p>
+                </div>
+                <div class="feature-card">
+                    <h3>4. Backlog y Planning</h3>
+                    <p>Grooming y planificación de sprints</p>
+                </div>
+                <div class="feature-card">
+                    <h3>5. Flujo Git</h3>
+                    <p>Gestión de versiones del equipo</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SLIDE 5: CONTEXTO DEL MARKETPLACE -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-seedling"></i> Contexto del Marketplace Agrícola</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Realidad del Sector</h3>
+                    <ul>
+                        <li><span class="emphasis">84.5%</span> de las UPAs son familiares y solo controlan 20% de la tierra</li>
+                        <li><span class="emphasis">75.6%</span> son pequeños productores (menos de 10 ha)</li>
+                        <li>Menos del <span class="emphasis">10%</span> accede a crédito (7.4%) o asistencia técnica (6.8%)</li>
+                        <li>Pobreza rural alcanza <span class="emphasis">43.3%</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Plataforma Digital Propuesta</h3>
+                    <ul>
+                        <li>Catálogo sin selección directa del productor</li>
+                        <li>Algoritmo de asignación/rotación equitativa</li>
+                        <li>Certificaciones orgánicas y trazabilidad del lote</li>
+                        <li>Logística geolocalizada</li>
+                        <li>Dashboard para productores</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Desafío:</strong> Necesitamos un proceso que combine formalidad (para transparencia ante MAG/FAO) con adaptabilidad a requerimientos cambiantes de campo.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 6: PLAN-DRIVEN VS ÁGIL -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-balance-scale"></i> Plan-Driven vs. Ágil en el Caso</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Factor (Sommerville, 2012)</th>
+                        <th>Necesidad del Marketplace</th>
+                        <th>Enfoque Sugerido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Especificaciones detalladas previas</strong></td>
+                        <td>Certificaciones, trazabilidad y cumplimiento MAG requieren documentación exhaustiva</td>
+                        <td><span class="highlight">Plan-driven</span> para módulos regulados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entrega incremental práctica</strong></td>
+                        <td>Algoritmo equitativo y app móvil necesitan iteraciones frecuentes con usuarios rurales</td>
+                        <td><span class="highlight">Ágil</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tamaño del equipo</strong></td>
+                        <td>Célula de 8–10 personas multidisciplinaria</td>
+                        <td><span class="highlight">Agile-friendly</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vida útil prolongada</strong></td>
+                        <td>Plataforma nacional con soporte ≥5 años</td>
+                        <td>Mezcla: documentación base + releases incrementales</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="background: rgba(145, 0, 72, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-primary); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Decisión:</strong> Arquitectura y requisitos regulatorios siguen un mini-V Model (planes de prueba ligados a requerimientos); funcionalidades de front/logística se desarrollan con Scrum iterativo.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 7: DESARROLLO PLAN-DRIVEN -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-project-diagram"></i> Desarrollo Dirigido por un Plan</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Características</h3>
+                    <ul>
+                        <li>Todas las actividades se <span class="emphasis">planifican con anticipación</span></li>
+                        <li>El avance se mide en función del plan establecido</li>
+                        <li>Iteración ocurre <span class="emphasis">dentro de las actividades</span></li>
+                        <li>Documentos formales para comunicación entre etapas</li>
+                        <li>Ejemplo: <span class="highlight">Modelo en Cascada (Waterfall)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Cuándo Usar</h3>
+                    <ul>
+                        <li>Sistemas críticos de seguridad</li>
+                        <li>Proyectos grandes con múltiples equipos</li>
+                        <li>Requerimientos estables y bien definidos</li>
+                        <li>Necesidad de documentación exhaustiva</li>
+                        <li>Cumplimiento regulatorio estricto</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(35, 53, 110, 0.2); padding: 20px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Modelo V:</strong> Vincula los planes de prueba con las actividades de desarrollo secuenciales, asegurando que cada fase tenga su correspondiente validación.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SLIDE 8: DESARROLLO ÁGIL -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-rocket"></i> Desarrollo Ágil</h2>
+            <div class="quote">
+                "Los métodos ágiles surgieron como respuesta al descontento con los enfoques engorrosos de la ingeniería de software basada en la planeación"
+            </div>
+            <div class="content-grid">
+                <div>
+                    <h3>Manifiesto Ágil</h3>
+                    <ul>
+                        <li><span class="emphasis">Individuos e interacciones</span> sobre procesos y herramientas</li>
+                        <li><span class="emphasis">Software operativo</span> sobre documentación exhaustiva</li>
+                        <li><span class="emphasis">Colaboración con el cliente</span> sobre negociación del contrato</li>
+                        <li><span class="emphasis">Respuesta al cambio</span> sobre seguimiento de un plan</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Características Clave</h3>
+                    <ul>
+                        <li>Enfoque <span class="highlight">incremental</span> para especificación y desarrollo</li>
+                        <li>Diseñado para <span class="highlight">requerimientos cambiantes</span></li>
+                        <li>Entregas frecuentes de software funcional</li>
+                        <li>Equipos pequeños y auto-organizados</li>
+                        <li>Comunicación informal y directa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 9: SCRUM FRAMEWORK -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-infinity"></i> Scrum Framework</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>El Sprint</h3>
+                    <ul>
+                        <li>Períodos fijos de tiempo: <span class="emphasis">2-4 semanas</span></li>
+                        <li>Unidad de planeación donde se valora, selecciona e implementa software</li>
+                        <li><span class="highlight">El objetivo del sprint no puede cambiarse</span> durante su ejecución</li>
+                        <li>Al final se entrega un incremento potencialmente liberable</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Roles Clave</h3>
+                    <ul>
+                        <li><span class="emphasis">Product Owner:</span> Optimiza el valor del producto y gestiona el Product Backlog</li>
+                        <li><span class="emphasis">Scrum Master:</span> Guía al equipo en el uso efectivo de Scrum</li>
+                        <li><span class="emphasis">Development Team:</span> Profesionales auto-organizados que completan incrementos</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Para el Marketplace:</strong> Sprint de 2 semanas con objetivo inmutable (ej. "Liberar dashboard de trazabilidad"). Product Owner representa al consorcio productor.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 10: KANBAN METHOD -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-columns"></i> Método Kanban</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Prácticas Centrales</h3>
+                    <ul>
+                        <li><span class="emphasis">1. Visualizar</span> el flujo de trabajo usando un Kanban board</li>
+                        <li><span class="emphasis">2. Limitar</span> la cantidad de trabajo en curso (WIP)</li>
+                        <li><span class="emphasis">3. Gestionar</span> el flujo de trabajo</li>
+                        <li><span class="emphasis">4. Hacer explícitas</span> las políticas del proceso</li>
+                        <li><span class="emphasis">5. Implementar</span> ciclos de retroalimentación</li>
+                        <li><span class="emphasis">6. Mejorar</span> colaborativamente</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tablero Kanban Típico</h3>
+                    <div style="background: rgba(15, 23, 42, 0.8); padding: 15px; border-radius: 10px; margin-top: 10px;">
+                        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; font-size: 0.85rem;">
+                            <div style="background: rgba(96, 165, 250, 0.2); padding: 10px; border-radius: 5px; text-align: center;">
+                                <strong>Selected</strong>
+                            </div>
+                            <div style="background: rgba(233, 171, 33, 0.2); padding: 10px; border-radius: 5px; text-align: center;">
+                                <strong>Analysis</strong>
+                            </div>
+                            <div style="background: rgba(74, 222, 128, 0.2); padding: 10px; border-radius: 5px; text-align: center;">
+                                <strong>Development</strong>
+                            </div>
+                            <div style="background: rgba(251, 146, 60, 0.2); padding: 10px; border-radius: 5px; text-align: center;">
+                                <strong>Testing</strong>
+                            </div>
+                            <div style="background: rgba(34, 197, 94, 0.2); padding: 10px; border-radius: 5px; text-align: center;">
+                                <strong>Done</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.95rem; margin-top: 1rem;">
+                        <strong>Expedite Lane:</strong> Carril rápido para urgencias (ej. bug en pagos)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SLIDE 11: BACKLOG GROOMING -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-list-check"></i> Grooming del Backlog</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Product Backlog</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        Lista viva de tareas pendientes (to-do list) que define lo que se debe hacer para completar el producto. Se refina e incrementa durante el proceso de desarrollo.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Para el Marketplace:</strong> Épicas/historias sobre equidad algorítmica, trazabilidad, certificaciones, logística.
+                    </p>
+                </div>
+                <div>
+                    <h3>Actividades de Grooming</h3>
+                    <ul>
+                        <li><span class="emphasis">1. Refinamiento:</span> Análisis y refinamiento de PBIs existentes</li>
+                        <li><span class="emphasis">2. Estimación:</span> Asignar story points mediante planning poker</li>
+                        <li><span class="emphasis">3. Priorización:</span> Reorganizar según valor social y riesgos</li>
+                        <li><span class="emphasis">4. Adición:</span> Integrar nuevos requerimientos o defectos</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(145, 0, 72, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-primary); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Rol del Product Owner:</strong> Autoridad para decidir qué elementos tienen prioridad y si el backlog debe reorganizarse debido a cambios sugeridos.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 12: SPRINT PLANNING -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-calendar-check"></i> Planificación de Sprint</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Sprint Planning Meeting</h3>
+                    <ul>
+                        <li>Involucra a <span class="emphasis">todo el Equipo Scrum</span></li>
+                        <li>PO presenta el <span class="highlight">objetivo del sprint</span></li>
+                        <li>PO presenta elementos de mayor prioridad listos para implementación</li>
+                        <li>Equipo decide colectivamente qué PBIs se implementarán</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tres Acciones Principales</h3>
+                    <ul>
+                        <li><span class="emphasis">1. Selección:</span> Mover elementos del Product Backlog al Sprint Backlog</li>
+                        <li><span class="emphasis">2. Determinación:</span> Definir qué puede entregarse en el time-box</li>
+                        <li><span class="emphasis">3. Roles:</span> Decidir qué roles se necesitan y cómo se cubrirán</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Sprint Backlog:</strong> Registro que documenta todos los requisitos del sprint actual en los que se va a trabajar, creado durante el proceso de planificación.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 13: XP PLANNING GAME -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-gamepad"></i> XP Planning Game</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Etapas del Juego</h3>
+                    <ul>
+                        <li><span class="emphasis">1. Identificación:</span> Equipo y cliente identifican historias de usuario</li>
+                        <li><span class="emphasis">2. Estimación inicial:</span> Clasificar historias según tiempo de implementación</li>
+                        <li><span class="emphasis">3. Planeación de entrega:</span> Seleccionar y refinar historias para release específico</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Filosofía XP</h3>
+                    <div class="quote" style="margin: 0;">
+                        "Si el trabajo no puede completarse a tiempo, la filosofía XP es reducir el alcance del trabajo en lugar de extender el calendario"
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 1rem;">
+                        <strong>Aplicación al Marketplace:</strong> Si no llegamos a la fecha de feria agrícola, se reduce alcance, no se extiende calendario.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 14: GIT BÁSICO -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-code-branch"></i> Git Básico y Flujo de Trabajo</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Conceptos Fundamentales</h3>
+                    <ul>
+                        <li><span class="emphasis">Repositorio (Público):</span> Contiene versiones controladas y estables</li>
+                        <li><span class="emphasis">Workspace (Privado):</span> Área donde desarrolladores modifican sin afectar a otros</li>
+                        <li><span class="emphasis">Version Control System:</span> Rastrea, almacena y controla acceso a versiones</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Flujo de Trabajo Básico</h3>
+                    <ul>
+                        <li><span class="emphasis">1. Check-out (co):</span> Obtener componentes del repositorio</li>
+                        <li><span class="emphasis">2. Modificación:</span> Realizar cambios en workspace privado</li>
+                        <li><span class="emphasis">3. Check-in:</span> Devolver componentes modificados al repositorio</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(35, 53, 110, 0.2); padding: 20px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Gestión de Conflictos:</strong> El sistema notifica conflictos si dos personas modificaron el mismo componente, utilizando técnicas como deltas (listas de diferencias) entre versiones.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SLIDE 15: BRANCHING Y MERGING -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-code-merge"></i> Branching y Merging</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Conceptos</h3>
+                    <ul>
+                        <li><span class="emphasis">Codeline:</span> Conjunto de versiones de un componente</li>
+                        <li><span class="emphasis">Baseline:</span> Versión estable de referencia</li>
+                        <li><span class="emphasis">Branching:</span> Desarrollo en paralelo de diferentes versiones</li>
+                        <li><span class="emphasis">Merging:</span> Integración de cambios de una rama a otra</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Flujo Recomendado para el Marketplace</h3>
+                    <ul>
+                        <li><span class="highlight">main/release:</span> Versiones estables auditables (para MAG)</li>
+                        <li><span class="highlight">develop:</span> Integración continua</li>
+                        <li><span class="highlight">feature branches:</span> Por historia de usuario</li>
+                        <li><span class="highlight">hotfix branches:</span> Para correcciones urgentes</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <h3>Ejemplo de Flujo Git</h3>
+                <pre><code class="language-bash"># 1. Obtener última versión
+git pull origin main
+
+# 2. Crear branch por historia
+git checkout -b feature/asignacion-equitativa
+
+# 3. Desarrollar y commitear
+git add .
+git commit -m "Implementar algoritmo de rotación equitativa"
+
+# 4. Push y crear Pull Request
+git push origin feature/asignacion-equitativa
+
+# 5. Merge después de code review
+git checkout main
+git merge feature/asignacion-equitativa</code></pre>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 16: FLUJO GIT COLABORATIVO -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-users-cog"></i> Flujo Git Colaborativo</h2>
+            <div class="content-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-code-pull-request"></i> Pull Requests</h3>
+                    <p>Revisión cruzada de código antes de integrar cambios. Incluye code review + pruebas automatizadas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-sync"></i> Sincronización Frecuente</h3>
+                    <p>Merges frecuentes para evitar divergencias largas. Uso de diffs/deltas para optimizar cambios.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-shield-alt"></i> Protección de Ramas</h3>
+                    <p>Ramas main/release protegidas. Requieren aprobación de revisores antes de merge.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-robot"></i> CI/CD Integration</h3>
+                    <p>Cada merge dispara pruebas y despliegues al entorno de staging para pilotos con productores.</p>
+                </div>
+            </div>
+            <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Mensajes de Commit:</strong> Deben ser claros y descriptivos. Ejemplo: "feat: agregar algoritmo de rotación equitativa para asignación de pedidos"
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 17: SCRUM + KANBAN APLICADO -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-project-diagram"></i> Scrum + Kanban para el Marketplace</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>Configuración del Equipo</h3>
+                    <ul>
+                        <li><span class="emphasis">Sprint:</span> 2 semanas con objetivo inmutable</li>
+                        <li><span class="emphasis">Product Owner:</span> Representante del consorcio productor</li>
+                        <li><span class="emphasis">Scrum Master:</span> Facilita ceremonias, elimina impedimentos</li>
+                        <li><span class="emphasis">Dev Team:</span> UX, backend, data, mobile y QA auto-organizados</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Kanban Complementario</h3>
+                    <ul>
+                        <li>Visualizar WIP y urgencias (ej. bug en pagos)</li>
+                        <li><span class="highlight">Límite WIP:</span> Máx. 2 historias por dev</li>
+                        <li>Evitar congestión en integración</li>
+                        <li>Expedite Lane para casos críticos</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(145, 0, 72, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-primary); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Ejemplo de Objetivo de Sprint:</strong> "Liberar dashboard de trazabilidad con certificaciones digitales para piloto en 3 provincias"
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 18: PRÓXIMOS PASOS -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-forward"></i> Próximos Pasos Operativos</h2>
+            <div class="content-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-file-contract"></i> 1. Documentar Decisión</h3>
+                    <p>Documentar la decisión híbrida: mini-V para cumplimiento + Scrum/Kanban para funcionalidades.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-users"></i> 2. Backlog Grooming</h3>
+                    <p>Completar ciclo de grooming con representantes de agricultores de 3 provincias.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-sliders-h"></i> 3. Límites WIP</h3>
+                    <p>Establecer límites de WIP y políticas claras para el Expedite Lane (casos críticos).</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-code-branch"></i> 4. Configurar Git</h3>
+                    <p>Configurar repositorio Git con ramas iniciales y pipeline CI/CD.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-rocket"></i> 5. Sprint 1</h3>
+                    <p>Preparar planificación del Sprint 1 enfocada en MVP de catálogo + asignación equitativa.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ============================================ -->
+        <!-- SLIDE 19: ACTIVIDADES CALIFICADAS DETALLADAS -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-clipboard-check"></i> Actividades Calificadas - Semana 4</h2>
+            <div class="content-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-flask"></i> Gestión de Práctica</h3>
+                    <p style="color: var(--uide-accent); font-weight: 600; margin-bottom: 1rem;">PE-1.4 (3 puntos)</p>
+                    <p><strong>Simulación Scrum/Kanban y Git básico:</strong> Práctica con issue + Pull Request</p>
+                    <ul style="margin-top: 1rem; font-size: 1rem;">
+                        <li>Crear y gestionar issues en tablero Kanban</li>
+                        <li>Implementar flujo de trabajo con Git</li>
+                        <li>Crear feature branch y realizar commits</li>
+                        <li>Generar Pull Request con descripción clara</li>
+                        <li>Realizar code review de compañeros</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-file-alt"></i> Trabajo Autónomo</h3>
+                    <p style="color: var(--uide-accent); font-weight: 600; margin-bottom: 1rem;">TA-1.4 (3 puntos)</p>
+                    <p><strong>Roadmap + Tablero:</strong> Épicas, Definition of Ready/Done</p>
+                    <ul style="margin-top: 1rem; font-size: 1rem;">
+                        <li>Crear roadmap del proyecto con épicas principales</li>
+                        <li>Definir Definition of Ready (DoR) para historias</li>
+                        <li>Definir Definition of Done (DoD) para incrementos</li>
+                        <li>Configurar tablero Kanban con columnas apropiadas</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(96, 165, 250, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-top: 20px;">
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
+                    <strong>GA-1.4:</strong> Completar módulo 4 de ASC-5 (1 punto) - Contenido de Arizona State University sobre procesos ágiles
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 20: BIBLIOGRAFÍA -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-book"></i> Referencias Bibliográficas</h2>
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h3 style="margin-bottom: 1.5rem;">Bibliografía Básica</h3>
+                <ul style="font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <li><strong>Sommerville, I.</strong> (2012). <em>Ingeniería de Software (9ª ed.).</em></li>
+                    <li><strong>Schwaber, K.</strong> (2004). <em>Agile Project Management with Scrum.</em> Microsoft Press.</li>
+                    <li><strong>Schwaber, K., & Beedle, M.</strong> (2001). <em>Agile Software Development with Scrum.</em> Prentice Hall.</li>
+                    <li><strong>Cohn, M.</strong> (2005). <em>Agile Estimating and Planning.</em> Prentice Hall.</li>
+                </ul>
+                
+                <h3 style="margin-bottom: 1.5rem;">Bibliografía Complementaria</h3>
+                <ul style="font-size: 0.95rem; line-height: 1.7;">
+                    <li><strong>Beck, K.</strong> (2000). <em>Extreme Programming Explained: Embrace Change (2nd ed.).</em> Addison-Wesley.</li>
+                    <li><strong>Pilato, C., et al.</strong> (2008). <em>Subversion Version Control: Official Guide.</em> O'Reilly Media.</li>
+                    <li><strong>Firdaus, J., et al.</strong> (2019). Agile-scrum Software Development Monitoring System. <em>International Conference on Electrical, Electronics and Information Engineering (ICEEIE).</em></li>
+                    <li><strong>Srivastava, V., et al.</strong> (2017). SCRUM Model for Agile Methodology. <em>International Conference on Computing, Communication and Automation (ICCCA).</em></li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin: 20px 40px 0 40px;">
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #e2e8f0; text-align: center; font-style: italic;">
+                    <strong>Presentación elaborada a partir del Compendio Semana 4 – Estrategia de Desarrollo y Flujo de Trabajo, contextualizada para el Marketplace Agrícola Inclusivo.</strong>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls (Fijos - NO MODIFICAR) -->
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <span class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">20</span>
+        </span>
+        <button class="nav-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Progress Bar (Fijo - NO MODIFICAR) -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+    </div>
+</body>
+
+</html>
