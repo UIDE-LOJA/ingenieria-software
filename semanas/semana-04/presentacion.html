@@ -40,7 +40,7 @@
                     LTI_05A_INS • Nivel 5
                 </p>
                 <p style="color: #e2e8f0; font-size: 1.2rem; margin-top: 0.5rem;">
-                    Ingeniería del Software
+                    Ingeniería de Software
                 </p>
             </div>
 
@@ -206,8 +206,8 @@
                     <p>Criterios de decisión</p>
                 </div>
                 <div class="feature-card">
-                    <h3>3. Scrum + Kanban</h3>
-                    <p>Marcos ágiles aplicados</p>
+                    <h3>3. Metodologías Ágiles</h3>
+                    <p>Scrum, Kanban, XP, FDD</p>
                 </div>
                 <div class="feature-card">
                     <h3>4. Backlog y Planning</h3>
@@ -216,6 +216,10 @@
                 <div class="feature-card">
                     <h3>5. Flujo Git</h3>
                     <p>Gestión de versiones</p>
+                </div>
+                <div class="feature-card">
+                    <h3>6. Integración</h3>
+                    <p>Trazabilidad completa</p>
                 </div>
             </div>
         </div>
@@ -266,7 +270,7 @@
 
 
         <!-- ============================================ -->
-        <!-- SLIDE 6: PLAN-DRIVEN VS ÁGIL -->
+        <!-- SLIDE 6: PLAN-DRIVEN VS ÁGIL - CRITERIOS -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-balance-scale"></i> Plan-Driven vs. Ágil: Criterios de Decisión</h2>
@@ -302,8 +306,11 @@
                 </tbody>
             </table>
             <div style="background: rgba(145, 0, 72, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-primary); margin-top: 20px;">
-                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6; margin-bottom: 15px;">
                     <strong>Enfoque Híbrido:</strong> Arquitectura y requisitos regulatorios con mini-V Model; funcionalidades de negocio con Scrum iterativo.
+                </p>
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
+                    <strong>Ejemplo Real:</strong> Sistema bancario - módulo de seguridad y cumplimiento (plan-driven con auditorías) + interfaz de usuario y nuevas funcionalidades (Scrum con sprints de 2 semanas).
                 </p>
             </div>
         </div>
@@ -375,7 +382,55 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 9: SCRUM FRAMEWORK -->
+        <!-- SLIDE 9: METODOLOGÍAS ÁGILES: COMPARACIÓN -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-layer-group"></i> Metodologías Ágiles: ¿Cuál Elegir?</h2>
+            <table style="font-size: 0.8rem;">
+                <thead>
+                    <tr>
+                        <th>Metodología</th>
+                        <th>Enfoque Principal</th>
+                        <th>Cuándo Usarla</th>
+                        <th>Ejemplo de Proyecto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Scrum</strong></td>
+                        <td>Iteraciones fijas (sprints) con roles definidos</td>
+                        <td>Equipos autónomos, entregas frecuentes, requisitos cambiantes</td>
+                        <td>Desarrollo de app móvil de e-commerce con releases mensuales</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kanban</strong></td>
+                        <td>Flujo continuo visual con límites WIP</td>
+                        <td>Trabajo continuo, prioridades cambiantes, sin sprints fijos</td>
+                        <td>Equipo de soporte técnico o mantenimiento de sistemas legacy</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XP</strong></td>
+                        <td>Calidad técnica y prácticas de ingeniería</td>
+                        <td>Proyectos técnicos, alta calidad de código, cambios frecuentes</td>
+                        <td>API crítica de pagos o sistema de trading financiero</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FDD</strong></td>
+                        <td>Características (features) bien definidas</td>
+                        <td>Funcionalidades bien definidas, equipos medianos/grandes</td>
+                        <td>Sistema ERP con módulos específicos (inventario, facturación, RRHH)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="background: rgba(233, 171, 33, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-accent); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Nota:</strong> Estas metodologías no son mutuamente excluyentes. Muchos equipos combinan elementos (ej. Scrum + Kanban = "Scrumban").
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 10: SCRUM FRAMEWORK -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-infinity"></i> Scrum Framework</h2>
@@ -406,7 +461,7 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 10: CEREMONIAS SCRUM -->
+        <!-- SLIDE 11: CEREMONIAS SCRUM -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-calendar-alt"></i> Ceremonias Scrum</h2>
@@ -447,14 +502,17 @@
                 </tbody>
             </table>
             <div style="background: rgba(145, 0, 72, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-primary); margin-top: 20px;">
-                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6; margin-bottom: 10px;">
                     <strong>Daily Standup - 3 Preguntas:</strong> ¿Qué hice ayer? ¿Qué haré hoy? ¿Qué impedimentos tengo?
+                </p>
+                <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: #cbd5e1;">
+                    <strong>Ejemplo:</strong> "Ayer completé el endpoint de autenticación (US-015). Hoy trabajaré en los tests unitarios. Necesito acceso a la base de datos de staging."
                 </p>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 11: KANBAN METHOD -->
+        <!-- SLIDE 12: KANBAN METHOD -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-columns"></i> Método Kanban</h2>
@@ -500,7 +558,85 @@
 
 
         <!-- ============================================ -->
-        <!-- SLIDE 12: BACKLOG GROOMING -->
+        <!-- SLIDE 13: EXTREME PROGRAMMING (XP) -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-code"></i> Extreme Programming (XP)</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>¿Qué es XP?</h3>
+                    <p style="font-size: 1rem; line-height: 1.6;">
+                        Metodología ágil centrada en <span class="emphasis">desarrollo de software</span>, enfatiza calidad técnica, pruebas exhaustivas, entregas frecuentes y gran interacción cliente-equipo.
+                    </p>
+                    <h3 style="margin-top: 1.5rem;">Cuándo Usarla</h3>
+                    <ul>
+                        <li>Proyectos técnicos donde el código y la calidad son críticos</li>
+                        <li>Requisitos cambiantes frecuentemente</li>
+                        <li>Necesidad de alta adaptabilidad y robustez</li>
+                        <li>Equipos pequeños y altamente colaborativos</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Prácticas Clave de XP</h3>
+                    <ul>
+                        <li><span class="emphasis">Pair Programming:</span> Dos desarrolladores, una computadora - mejora calidad y conocimiento compartido</li>
+                        <li><span class="emphasis">TDD (Test-Driven Development):</span> Escribir pruebas antes del código</li>
+                        <li><span class="emphasis">Integración Continua:</span> Integrar y probar código múltiples veces al día</li>
+                        <li><span class="emphasis">Refactoring:</span> Mejorar continuamente el diseño del código</li>
+                        <li><span class="emphasis">Diseño Simple:</span> La solución más simple que funcione</li>
+                        <li><span class="emphasis">Entregas Frecuentes:</span> Releases pequeños y constantes</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background: rgba(74, 222, 128, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #4ade80; margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Ejemplo de uso:</strong> Desarrollo de software de facturación, aplicación con IA, API crítica - donde la calidad técnica y adaptabilidad son fundamentales.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 14: FEATURE-DRIVEN DEVELOPMENT (FDD) -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-puzzle-piece"></i> Feature-Driven Development (FDD)</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>¿Qué es FDD?</h3>
+                    <p style="font-size: 1rem; line-height: 1.6;">
+                        Metodología ágil que pone foco en <span class="emphasis">"características" (features)</span> del producto, trabajando con plazos cortos y entregas frecuentes de funcionalidades.
+                    </p>
+                    <h3 style="margin-top: 1.5rem;">Cuándo Usarla</h3>
+                    <ul>
+                        <li>Proyecto divisible en funcionalidades bien definidas</li>
+                        <li>Equipos medianos o grandes</li>
+                        <li>Necesidad de entregas incrementales con valor visible</li>
+                        <li>Desarrollo de módulos específicos o fases claras</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Proceso FDD (5 Pasos)</h3>
+                    <ul>
+                        <li><span class="emphasis">1. Desarrollar Modelo General:</span> Visión de alto nivel del sistema</li>
+                        <li><span class="emphasis">2. Construir Lista de Features:</span> Identificar todas las características</li>
+                        <li><span class="emphasis">3. Planificar por Feature:</span> Secuenciar y asignar features</li>
+                        <li><span class="emphasis">4. Diseñar por Feature:</span> Diseño detallado de cada feature</li>
+                        <li><span class="emphasis">5. Construir por Feature:</span> Implementar, probar e integrar</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;">
+                        <strong>Feature típica:</strong> Completable en 2 semanas o menos
+                    </p>
+                </div>
+            </div>
+            <div style="background: rgba(96, 165, 250, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Ejemplo de uso:</strong> Desarrollo de un módulo de reportes, nueva funcionalidad de exportación, fase de integración con sistema externo.
+                </p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 15: BACKLOG GROOMING -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-list-check"></i> Grooming del Backlog</h2>
@@ -532,7 +668,7 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 13: SPRINT PLANNING -->
+        <!-- SLIDE 16: SPRINT PLANNING -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-calendar-check"></i> Planificación de Sprint</h2>
@@ -563,7 +699,7 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 14: DE HISTORIAS A TAREAS -->
+        <!-- SLIDE 17: DE HISTORIAS A TAREAS -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-tasks"></i> De Historias de Usuario a Tareas Técnicas</h2>
@@ -606,7 +742,7 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 15: XP PLANNING GAME -->
+        <!-- SLIDE 18: XP PLANNING GAME -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-gamepad"></i> XP Planning Game</h2>
@@ -635,7 +771,7 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 16: GIT BÁSICO -->
+        <!-- SLIDE 19: GIT BÁSICO -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-code-branch"></i> Git Básico y Flujo de Trabajo</h2>
@@ -666,13 +802,13 @@
 
 
         <!-- ============================================ -->
-        <!-- SLIDE 17: BRANCHING Y MERGING -->
+        <!-- SLIDE 20: BRANCHING Y MERGING - CONCEPTOS -->
         <!-- ============================================ -->
         <div class="slide">
-            <h2><i class="fas fa-code-merge"></i> Branching y Merging</h2>
+            <h2><i class="fas fa-code-merge"></i> Branching y Merging: Conceptos</h2>
             <div class="content-grid">
                 <div>
-                    <h3>Conceptos</h3>
+                    <h3>Conceptos Fundamentales</h3>
                     <ul>
                         <li><span class="emphasis">Codeline:</span> Conjunto de versiones de un componente</li>
                         <li><span class="emphasis">Baseline:</span> Versión estable de referencia</li>
@@ -690,38 +826,107 @@
                     </ul>
                 </div>
             </div>
-            <div style="margin-top: 20px;">
-                <h3>Ejemplo de Flujo Git</h3>
-                <div style="background: rgba(96, 165, 250, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-                    <p style="margin: 0; font-size: 0.9rem; color: #e2e8f0;">
-                        <strong>Convención de nombres:</strong> tipo/numero-historia-descripcion
-                    </p>
+            
+            <div style="background: rgba(96, 165, 250, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-top: 30px;">
+                <h3 style="color: #60a5fa; margin: 0 0 15px 0;">
+                    <i class="fas fa-sitemap"></i> Flujo Visual de Branches
+                </h3>
+                <div style="background: rgba(15, 23, 42, 0.8); padding: 20px; border-radius: 10px; font-family: monospace; font-size: 0.85rem;">
+                    <div style="margin-bottom: 10px;">
+                        <span style="color: #4ade80;">main</span> ────●────●────────●────────●──── (producción)
+                    </div>
+                    <div style="margin-bottom: 10px; margin-left: 40px;">
+                        <span style="color: #60a5fa;">develop</span> ──●────●────●────●──── (integración)
+                    </div>
+                    <div style="margin-bottom: 10px; margin-left: 80px;">
+                        <span style="color: #e9ab21;">feature/US-042</span> ──●──●──● (desarrollo)
+                    </div>
+                    <div style="margin-left: 80px;">
+                        <span style="color: #ef4444;">hotfix/bug-123</span> ──●──● (urgente)
+                    </div>
                 </div>
-                <pre><code class="language-bash"># 1. Obtener última versión
-git pull origin main
+            </div>
 
-# 2. Crear branch vinculado a historia de usuario
-git checkout -b feature/US-042-historial-pedidos
-
-# 3. Desarrollar y commitear con mensajes descriptivos
-git add .
-git commit -m "feat(US-042): implementar endpoint GET /orders/history"
-git commit -m "feat(US-042): agregar filtros de búsqueda por fecha"
-
-# 4. Push y crear Pull Request
-git push origin feature/US-042-historial-pedidos
-
-# 5. Merge después de code review y tests
-git checkout main
-git merge feature/US-042-historial-pedidos</code></pre>
-                <p style="margin-top: 10px; font-size: 0.85rem; color: #cbd5e1;">
-                    <strong>Otros tipos:</strong> bugfix/US-015-correccion-validacion, hotfix/critical-payment-error
+            <div style="background: rgba(145, 0, 72, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid var(--uide-primary); margin-top: 20px;">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
+                    <strong>Convención de nombres:</strong> tipo/numero-historia-descripcion (ej. feature/US-042-historial-pedidos, bugfix/US-015-correccion-validacion, hotfix/critical-payment-error)
                 </p>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 18: FLUJO GIT COLABORATIVO -->
+        <!-- SLIDE 21: FLUJO GIT PRÁCTICO -->
+        <!-- ============================================ -->
+        <div class="slide">
+            <h2><i class="fas fa-terminal"></i> Flujo Git: Ejemplo Práctico</h2>
+            
+            <div style="background: rgba(74, 222, 128, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80; margin-bottom: 20px;">
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
+                    <strong>Escenario:</strong> Implementar la historia de usuario US-042 (Historial de pedidos) en un feature branch
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <!-- Columna 1: Comandos Git -->
+                <div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Comandos Git</h3>
+                    <pre style="font-size: 0.7rem; line-height: 1.4;"><code class="language-bash"># 1. Obtener última versión
+git pull origin main
+
+# 2. Crear branch
+git checkout -b feature/US-042-historial-pedidos
+
+# 3. Desarrollar y commitear
+git add .
+git commit -m "feat(US-042): implementar endpoint GET /orders/history"
+git commit -m "feat(US-042): agregar filtros de búsqueda"
+git commit -m "feat(US-042): integrar exportación PDF"
+
+# 4. Push y PR
+git push origin feature/US-042-historial-pedidos
+
+# 5. Merge después de review
+git checkout main
+git merge feature/US-042-historial-pedidos
+git push origin main</code></pre>
+                </div>
+
+                <!-- Columna 2: Buenas Prácticas -->
+                <div style="background: rgba(233, 171, 33, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid var(--uide-accent);">
+                    <h4 style="color: var(--uide-accent); margin: 0 0 10px 0; font-size: 1.1rem;">
+                        <i class="fas fa-lightbulb"></i> Buenas Prácticas
+                    </h4>
+                    <ul style="font-size: 0.85rem; margin: 0; line-height: 1.6;">
+                        <li>Commits pequeños y frecuentes</li>
+                        <li>Mensajes descriptivos con prefijo (feat, fix, docs)</li>
+                        <li>Vincular commits con número de historia</li>
+                        <li>Sincronizar con main regularmente</li>
+                        <li>Code review antes de merge</li>
+                        <li>Tests automatizados en CI/CD</li>
+                        <li>Documentar cambios importantes</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Qué Evitar -->
+                <div style="background: rgba(239, 68, 68, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #ef4444;">
+                    <h4 style="color: #ef4444; margin: 0 0 10px 0; font-size: 1.1rem;">
+                        <i class="fas fa-exclamation-triangle"></i> Evitar
+                    </h4>
+                    <ul style="font-size: 0.85rem; margin: 0; line-height: 1.6;">
+                        <li>Commits directos a main sin revisión</li>
+                        <li>Mensajes vagos ("fix", "update")</li>
+                        <li>Branches de larga duración (>1 semana)</li>
+                        <li>Merge conflicts frecuentes</li>
+                        <li>Commits con código sin probar</li>
+                        <li>Ignorar feedback de code review</li>
+                        <li>No actualizar documentación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SLIDE 22: FLUJO GIT COLABORATIVO -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-users-cog"></i> Flujo Git Colaborativo</h2>
@@ -751,7 +956,7 @@ git merge feature/US-042-historial-pedidos</code></pre>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 19: SCRUM + KANBAN APLICADO -->
+        <!-- SLIDE 23: SCRUM + KANBAN APLICADO -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-project-diagram"></i> Scrum + Kanban: Integración Práctica</h2>
@@ -783,127 +988,101 @@ git merge feature/US-042-historial-pedidos</code></pre>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 20: TRAZABILIDAD COMPLETA -->
+        <!-- SLIDE 24: ERRORES COMUNES -->
         <!-- ============================================ -->
         <div class="slide">
-            <h2><i class="fas fa-project-diagram"></i> Trazabilidad Completa: Del Concepto al Código</h2>
-            
-            <div style="background: rgba(233, 171, 33, 0.15); padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-                <h3 style="color: var(--uide-accent); margin: 0 0 20px 0; text-align: center;">
-                    <i class="fas fa-route"></i> Flujo Completo del Curso
-                </h3>
-                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
-                    <div style="flex: 1; min-width: 120px; text-align: center;">
-                        <div style="background: rgba(145, 0, 72, 0.3); padding: 15px; border-radius: 8px;">
-                            <i class="fas fa-users" style="font-size: 2rem; color: var(--uide-primary); margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-weight: 600; color: #e2e8f0;">Stakeholders</p>
-                            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Semana 1</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right" style="color: var(--uide-accent); font-size: 1.5rem;"></i>
-                    <div style="flex: 1; min-width: 120px; text-align: center;">
-                        <div style="background: rgba(145, 0, 72, 0.3); padding: 15px; border-radius: 8px;">
-                            <i class="fas fa-clipboard-list" style="font-size: 2rem; color: var(--uide-primary); margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-weight: 600; color: #e2e8f0;">Requerimientos</p>
-                            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Semana 2</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right" style="color: var(--uide-accent); font-size: 1.5rem;"></i>
-                    <div style="flex: 1; min-width: 120px; text-align: center;">
-                        <div style="background: rgba(145, 0, 72, 0.3); padding: 15px; border-radius: 8px;">
-                            <i class="fas fa-book" style="font-size: 2rem; color: var(--uide-primary); margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-weight: 600; color: #e2e8f0;">Historias</p>
-                            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Semana 3</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right" style="color: var(--uide-accent); font-size: 1.5rem;"></i>
-                    <div style="flex: 1; min-width: 120px; text-align: center;">
-                        <div style="background: rgba(233, 171, 33, 0.4); padding: 15px; border-radius: 8px; border: 2px solid var(--uide-accent);">
-                            <i class="fas fa-tasks" style="font-size: 2rem; color: var(--uide-accent); margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-weight: 600; color: #e2e8f0;">Tareas</p>
-                            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Semana 4</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right" style="color: var(--uide-accent); font-size: 1.5rem;"></i>
-                    <div style="flex: 1; min-width: 120px; text-align: center;">
-                        <div style="background: rgba(233, 171, 33, 0.4); padding: 15px; border-radius: 8px; border: 2px solid var(--uide-accent);">
-                            <i class="fas fa-code-branch" style="font-size: 2rem; color: var(--uide-accent); margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-weight: 600; color: #e2e8f0;">Commits</p>
-                            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Semana 4</p>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right" style="color: var(--uide-accent); font-size: 1.5rem;"></i>
-                    <div style="flex: 1; min-width: 120px; text-align: center;">
-                        <div style="background: rgba(233, 171, 33, 0.4); padding: 15px; border-radius: 8px; border: 2px solid var(--uide-accent);">
-                            <i class="fas fa-rocket" style="font-size: 2rem; color: var(--uide-accent); margin-bottom: 10px;"></i>
-                            <p style="margin: 0; font-weight: 600; color: #e2e8f0;">Incremento</p>
-                            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #cbd5e1;">Semana 4</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <h2><i class="fas fa-exclamation-triangle"></i> Errores Comunes en Implementación Ágil</h2>
             <div class="content-grid">
-                <div class="feature-card">
-                    <h3><i class="fas fa-link"></i> Trazabilidad Bidireccional</h3>
-                    <p>Cada commit está vinculado a una tarea, cada tarea a una historia, cada historia a un requerimiento, y cada requerimiento a un stakeholder.</p>
+                <div style="background: rgba(239, 68, 68, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444; margin: 0 0 15px 0;">
+                        <i class="fas fa-times-circle"></i> En Scrum
+                    </h3>
+                    <ul style="font-size: 0.95rem; line-height: 1.7;">
+                        <li><strong>Cambiar el objetivo del sprint</strong> a mitad del ciclo</li>
+                        <li><strong>Daily Standups largos</strong> (>15 min) que se convierten en reuniones de resolución de problemas</li>
+                        <li><strong>Product Owner ausente</strong> o sin autoridad real para tomar decisiones</li>
+                        <li><strong>Sprint sin incremento funcional</strong> al final del período</li>
+                        <li><strong>Retrospectivas sin acciones concretas</strong> de mejora</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-check-double"></i> Valor Acumulativo</h3>
-                    <p>El aprendizaje de cada semana se construye sobre el anterior, creando un flujo completo de ingeniería de software moderna.</p>
+                <div style="background: rgba(239, 68, 68, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444; margin: 0 0 15px 0;">
+                        <i class="fas fa-times-circle"></i> En Kanban
+                    </h3>
+                    <ul style="font-size: 0.95rem; line-height: 1.7;">
+                        <li><strong>No respetar límites WIP</strong> - demasiado trabajo en progreso simultáneo</li>
+                        <li><strong>Tablero desactualizado</strong> que no refleja la realidad del trabajo</li>
+                        <li><strong>Falta de políticas claras</strong> para mover tarjetas entre columnas</li>
+                        <li><strong>Expedite Lane sobreutilizado</strong> - todo se vuelve "urgente"</li>
+                        <li><strong>No medir métricas</strong> como lead time o cycle time</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #ef4444;">
+                    <h3 style="color: #ef4444; margin: 0 0 15px 0;">
+                        <i class="fas fa-times-circle"></i> En Git
+                    </h3>
+                    <ul style="font-size: 0.95rem; line-height: 1.7;">
+                        <li><strong>Commits directos a main</strong> sin revisión de código</li>
+                        <li><strong>Mensajes de commit vagos</strong> ("fix", "update", "changes")</li>
+                        <li><strong>Branches de larga duración</strong> que divergen demasiado de main</li>
+                        <li><strong>No vincular commits con issues</strong> - pérdida de trazabilidad</li>
+                        <li><strong>Merge conflicts frecuentes</strong> por falta de sincronización</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 21: PRÓXIMOS PASOS -->
+        <!-- SLIDE 25: HERRAMIENTAS RECOMENDADAS -->
         <!-- ============================================ -->
         <div class="slide">
-            <h2><i class="fas fa-forward"></i> Próximos Pasos Operativos</h2>
-            
-            <div style="background: rgba(96, 165, 250, 0.15); padding: 20px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-bottom: 20px;">
-                <h3 style="color: #60a5fa; margin: 0 0 10px 0;">
-                    <i class="fas fa-history"></i> 0. Revisar Entregables Anteriores
-                </h3>
-                <ul style="margin: 0; font-size: 0.95rem;">
-                    <li>Requerimientos documentados (Semana 2)</li>
-                    <li>Historias de usuario priorizadas (Semana 3)</li>
-                    <li>Criterios de aceptación definidos (Semana 3)</li>
-                </ul>
-            </div>
-
+            <h2><i class="fas fa-toolbox"></i> Herramientas Recomendadas</h2>
             <div class="content-grid">
                 <div class="feature-card">
-                    <h3><i class="fas fa-file-contract"></i> 1. Documentar Decisión</h3>
-                    <p>Documentar la decisión híbrida: mini-V para cumplimiento + Scrum/Kanban para funcionalidades.</p>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;"><strong>Tiempo:</strong> 1-2 días</p>
+                    <h3><i class="fas fa-tasks"></i> Gestión de Proyectos</h3>
+                    <ul style="font-size: 0.9rem; line-height: 1.7;">
+                        <li><strong><a href="https://www.atlassian.com/software/jira" target="_blank" style="color: #60a5fa;">Jira</a>:</strong> Completo para Scrum/Kanban</li>
+                        <li><strong><a href="https://github.com/features/issues" target="_blank" style="color: #60a5fa;">GitHub Projects</a>:</strong> Integrado con repositorios</li>
+                        <li><strong><a href="https://trello.com" target="_blank" style="color: #60a5fa;">Trello</a>:</strong> Visual y fácil de usar</li>
+                        <li><strong><a href="https://azure.microsoft.com/en-us/products/devops" target="_blank" style="color: #60a5fa;">Azure DevOps</a>:</strong> Suite completa con CI/CD</li>
+                        <li><strong><a href="https://linear.app" target="_blank" style="color: #60a5fa;">Linear</a>:</strong> Moderno y rápido</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h3><i class="fas fa-users"></i> 2. Backlog Grooming</h3>
-                    <p>Completar ciclo de grooming con stakeholders clave del proyecto.</p>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;"><strong>Tiempo:</strong> 2-3 sesiones</p>
+                    <h3><i class="fas fa-code-branch"></i> Control de Versiones</h3>
+                    <ul style="font-size: 0.9rem; line-height: 1.7;">
+                        <li><strong><a href="https://github.com" target="_blank" style="color: #60a5fa;">GitHub</a>:</strong> Más popular, excelente para open source</li>
+                        <li><strong><a href="https://gitlab.com" target="_blank" style="color: #60a5fa;">GitLab</a>:</strong> CI/CD integrado, self-hosted</li>
+                        <li><strong><a href="https://bitbucket.org" target="_blank" style="color: #60a5fa;">Bitbucket</a>:</strong> Integración con Jira</li>
+                        <li><strong><a href="https://azure.microsoft.com/en-us/products/devops/repos" target="_blank" style="color: #60a5fa;">Azure Repos</a>:</strong> Ecosistema Microsoft</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h3><i class="fas fa-sliders-h"></i> 3. Límites WIP</h3>
-                    <p>Establecer límites de WIP y políticas claras para el Expedite Lane (casos críticos).</p>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;"><strong>Tiempo:</strong> 1 día</p>
+                    <h3><i class="fas fa-comments"></i> Comunicación</h3>
+                    <ul style="font-size: 0.9rem; line-height: 1.7;">
+                        <li><strong><a href="https://slack.com" target="_blank" style="color: #60a5fa;">Slack</a>:</strong> Canales por proyecto</li>
+                        <li><strong><a href="https://www.microsoft.com/en-us/microsoft-teams" target="_blank" style="color: #60a5fa;">Microsoft Teams</a>:</strong> Integrado con Office 365</li>
+                        <li><strong><a href="https://discord.com" target="_blank" style="color: #60a5fa;">Discord</a>:</strong> Alternativa moderna</li>
+                    </ul>
                 </div>
                 <div class="feature-card">
-                    <h3><i class="fas fa-code-branch"></i> 4. Configurar Git</h3>
-                    <p>Configurar repositorio Git con ramas iniciales y pipeline CI/CD.</p>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;"><strong>Tiempo:</strong> 2-3 días</p>
+                    <h3><i class="fas fa-chart-line"></i> Métricas y Análisis</h3>
+                    <ul style="font-size: 0.9rem; line-height: 1.7;">
+                        <li><strong><a href="https://www.sonarsource.com/products/sonarqube" target="_blank" style="color: #60a5fa;">SonarQube</a>:</strong> Calidad de código</li>
+                        <li><strong><a href="https://codeclimate.com" target="_blank" style="color: #60a5fa;">CodeClimate</a>:</strong> Análisis y cobertura</li>
+                        <li><strong><a href="https://grafana.com" target="_blank" style="color: #60a5fa;">Grafana</a>:</strong> Dashboards de métricas</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-rocket"></i> 5. Sprint 1</h3>
-                    <p>Preparar planificación del Sprint 1 enfocada en funcionalidades core del MVP.</p>
-                    <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 10px;"><strong>Tiempo:</strong> Sprint Planning (2-4h)</p>
-                </div>
+            </div>
+            <div style="background: rgba(74, 222, 128, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80; margin-top: 20px;">
+                <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
+                    <strong>Recomendación para el curso:</strong> <a href="https://github.com" target="_blank" style="color: #4ade80;">GitHub</a> + <a href="https://github.com/features/issues" target="_blank" style="color: #4ade80;">GitHub Projects</a> + <a href="https://github.com/features/actions" target="_blank" style="color: #4ade80;">GitHub Actions</a> para un flujo completo y gratuito
+                </p>
             </div>
         </div>
 
-
         <!-- ============================================ -->
-        <!-- SLIDE 22: ACTIVIDADES CALIFICADAS DETALLADAS -->
+        <!-- SLIDE 26: ACTIVIDADES CALIFICADAS DETALLADAS -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-clipboard-check"></i> Actividades Calificadas - Semana 4</h2>
@@ -940,32 +1119,50 @@ git merge feature/US-042-historial-pedidos</code></pre>
         </div>
 
         <!-- ============================================ -->
-        <!-- SLIDE 23: BIBLIOGRAFÍA -->
+        <!-- SLIDE 27: BIBLIOGRAFÍA -->
         <!-- ============================================ -->
         <div class="slide">
             <h2><i class="fas fa-book"></i> Referencias Bibliográficas</h2>
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <h3 style="margin-bottom: 1.5rem;">Bibliografía Básica</h3>
-                <ul style="font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
-                    <li><strong>Pressman, R. S. (2021).</strong> <em>Ingeniería de software: un enfoque práctico</em>. McGraw-Hill Interamericana.</li>
-                    <li><strong>Sommerville, I. (2021).</strong> <em>Engineering software products: an introduction to modern software engineering</em>. Pearson Education.</li>
-                    <li><strong>Jiménez de Parga, C. (2021).</strong> <em>UML: arquitectura de aplicaciones en Java, C++ y Python</em> (2 ed.). RA-MA Editorial.</li>
-                    <li><strong>Copei, S., & Kosiol, J. (2024).</strong> <em>DevOps Patterns: A Rapid Review</em>. Springer Science and Business Media Deutschland GmbH.</li>
-                    <li><strong>Canosa Ferreiro, A. J. (2024).</strong> <em>SCRUM: teoría e Implementación práctica</em> (1 ed.). RA-MA Editorial.</li>
-                </ul>
-                
-                <h3 style="margin-bottom: 1.5rem;">Bibliografía Complementaria</h3>
-                <ul style="font-size: 0.95rem; line-height: 1.7;">
-                    <li><strong>Ljung, K., & Gonzalez-Huerta, J. (2022).</strong> <em>"To Clean Code or Not to Clean Code" A Survey Among Practitioners</em>. Springer Science and Business Media Deutschland GmbH.</li>
-                    <li><strong>Carullo, G. (2020).</strong> <em>Implementing Effective Code Reviews: How to Build and Maintain Clean Code</em>. Apress Media LLC.</li>
-                    <li><strong>Poulton, N. (2023).</strong> <em>Docker Deep Dive</em>. Nigel Poulton Ltd.</li>
-                </ul>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 0 20px;">
+                <!-- Columna 1 -->
+                <div>
+                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--uide-accent);">Bibliografía Básica</h3>
+                    <ul style="font-size: 0.75rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                        <li><strong>Pressman, R. S. (2021).</strong> <em>Ingeniería de software: un enfoque práctico</em>. McGraw-Hill Interamericana.</li>
+                        <li><strong>Sommerville, I. (2021).</strong> <em>Engineering software products: an introduction to modern software engineering</em>. Pearson Education.</li>
+                        <li><strong>Jiménez de Parga, C. (2021).</strong> <em>UML: arquitectura de aplicaciones en Java, C++ y Python</em> (2 ed.). RA-MA Editorial.</li>
+                        <li><strong>Copei, S., & Kosiol, J. (2024).</strong> <em>DevOps Patterns: A Rapid Review</em>. Springer Science and Business Media Deutschland GmbH.</li>
+                        <li><strong>Canosa Ferreiro, A. J. (2024).</strong> <em>SCRUM: teoría e Implementación práctica</em> (1 ed.). RA-MA Editorial.</li>
+                    </ul>
+                    
+                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--uide-accent);">Bibliografía Complementaria</h3>
+                    <ul style="font-size: 0.75rem; line-height: 1.5;">
+                        <li><strong>Ljung, K., & Gonzalez-Huerta, J. (2022).</strong> <em>"To Clean Code or Not to Clean Code" A Survey Among Practitioners</em>. Springer Science and Business Media Deutschland GmbH.</li>
+                        <li><strong>Carullo, G. (2020).</strong> <em>Implementing Effective Code Reviews: How to Build and Maintain Clean Code</em>. Apress Media LLC.</li>
+                        <li><strong>Poulton, N. (2023).</strong> <em>Docker Deep Dive</em>. Nigel Poulton Ltd.</li>
+                    </ul>
+                </div>
 
-                <h3 style="margin-bottom: 1.5rem;">Fuentes ASU</h3>
-                <ul style="font-size: 0.95rem; line-height: 1.7;">
-                    <li><strong>Arizona State University. (2025).</strong> <em>ASU: SER-216 Software Enterprise Processes and Quality</em>. Information Technology Program. Online.</li>
-                    <li><strong>Arizona State University. (2025).</strong> <em>ASU: Inclusive Mindset: Tools for Building Positive Team Culture</em>. Information Technology Program. Online.</li>
-                </ul>
+                <!-- Columna 2 -->
+                <div>
+                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--uide-accent);">Fuentes ASU</h3>
+                    <ul style="font-size: 0.75rem; line-height: 1.5; margin-bottom: 1.5rem;">
+                        <li><strong>Arizona State University. (2025).</strong> <em>ASU: SER-216 Software Enterprise Processes and Quality</em>. Information Technology Program. Online.</li>
+                        <li><strong>Arizona State University. (2025).</strong> <em>ASU: Inclusive Mindset: Tools for Building Positive Team Culture</em>. Information Technology Program. Online.</li>
+                    </ul>
+
+                    <div style="background: rgba(96, 165, 250, 0.15); padding: 15px; border-radius: 10px; border-left: 4px solid #60a5fa; margin-top: 20px;">
+                        <h4 style="color: #60a5fa; margin: 0 0 10px 0; font-size: 1rem;">
+                            <i class="fas fa-info-circle"></i> Recursos Adicionales
+                        </h4>
+                        <ul style="font-size: 0.75rem; line-height: 1.5; margin: 0;">
+                            <li><strong>Scrum Guide:</strong> <a href="https://scrumguides.org" target="_blank" style="color: #60a5fa;">scrumguides.org</a></li>
+                            <li><strong>Agile Manifesto:</strong> <a href="https://agilemanifesto.org" target="_blank" style="color: #60a5fa;">agilemanifesto.org</a></li>
+                            <li><strong>Git Documentation:</strong> <a href="https://git-scm.com/doc" target="_blank" style="color: #60a5fa;">git-scm.com/doc</a></li>
+                            <li><strong>Atlassian Git Tutorials:</strong> <a href="https://www.atlassian.com/git/tutorials" target="_blank" style="color: #60a5fa;">atlassian.com/git/tutorials</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -975,7 +1172,7 @@ git merge feature/US-042-historial-pedidos</code></pre>
     <div class="navigation">
         <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
         <span class="slide-counter">
-            <span id="currentSlide">1</span> / <span id="totalSlides">23</span>
+            <span id="currentSlide">1</span> / <span id="totalSlides">27</span>
         </span>
         <button class="nav-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
     </div>
