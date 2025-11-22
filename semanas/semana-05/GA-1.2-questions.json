@@ -1,0 +1,261 @@
+[
+  {
+    "question": {
+      "question_name": "Crisis del Software",
+      "question_text": "<p>¿Qué problema caracteriza a la Crisis del Software?</p>",
+      "question_type": "multiple_choice_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Retrasos, sobrecostos y mala calidad",
+          "answer_weight": 100,
+          "answer_comments": "¡Correcto! La Crisis del Software se caracteriza por proyectos que se retrasan, exceden el presupuesto y entregan productos de baja calidad."
+        },
+        {
+          "answer_text": "Incremento de ancho de banda",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. El ancho de banda es un aspecto técnico de infraestructura, no un problema de la Crisis del Software."
+        },
+        {
+          "answer_text": "Usuarios mejor capacitados",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Usuarios capacitados son un beneficio, no un problema de la Crisis del Software."
+        },
+        {
+          "answer_text": "Software demasiado simple",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. La Crisis del Software se relaciona con la complejidad creciente, no con la simplicidad."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Historia de Usuario - Formato",
+      "question_text": "<p>¿Cuál es la estructura correcta de una historia de usuario?</p>",
+      "question_type": "multiple_choice_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Como [rol], quiero [función], para [beneficio].",
+          "answer_weight": 100,
+          "answer_comments": "¡Correcto! Esta es la estructura estándar de una historia de usuario que incluye el rol, la funcionalidad deseada y el beneficio esperado."
+        },
+        {
+          "answer_text": "Como usuario necesito requisitos",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Esta estructura es demasiado vaga y no sigue el formato estándar de historias de usuario."
+        },
+        {
+          "answer_text": "Ingreso → Proceso → Resultado",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Esta es una estructura de proceso, no el formato de una historia de usuario."
+        },
+        {
+          "answer_text": "Si pasa X debe ocurrir Y",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Esta es una estructura condicional, no el formato de una historia de usuario."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Criterios de Aceptación",
+      "question_text": "<p>Los criterios de aceptación deben ser:</p>",
+      "question_type": "multiple_choice_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Claros, medibles y verificables",
+          "answer_weight": 100,
+          "answer_comments": "¡Correcto! Los criterios de aceptación deben ser específicos, medibles y verificables para evitar ambigüedades."
+        },
+        {
+          "answer_text": "Ambiguos y flexibles",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. La ambigüedad genera confusión y malentendidos en el desarrollo."
+        },
+        {
+          "answer_text": "Solo redactados por el desarrollador",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Los criterios de aceptación deben ser definidos en colaboración con el Product Owner y stakeholders."
+        },
+        {
+          "answer_text": "Opcionales",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Los criterios de aceptación son fundamentales para validar que una historia de usuario está completa."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Requerimientos",
+      "question_text": "<p>Un requerimiento no funcional describe:</p>",
+      "question_type": "multiple_choice_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Cómo debe comportarse el sistema",
+          "answer_weight": 100,
+          "answer_comments": "¡Correcto! Los requerimientos no funcionales describen atributos de calidad como rendimiento, seguridad, usabilidad, etc."
+        },
+        {
+          "answer_text": "Qué funcionalidad debe tener",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Esto describe un requerimiento funcional, no uno no funcional."
+        },
+        {
+          "answer_text": "El diseño de la interfaz",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. El diseño de interfaz es parte de los requerimientos de diseño, aunque puede relacionarse con usabilidad."
+        },
+        {
+          "answer_text": "La base de datos",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. La base de datos es un componente técnico, no un tipo de requerimiento."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Stakeholders",
+      "question_text": "<p>Todos los stakeholders participan en la definición de requerimientos.</p>",
+      "question_type": "true_false_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Verdadero",
+          "answer_weight": 100,
+          "answer_comments": "¡Correcto! Los stakeholders (usuarios, clientes, patrocinadores, etc.) deben participar en la definición de requerimientos para asegurar que el sistema cumpla sus necesidades."
+        },
+        {
+          "answer_text": "Falso",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. La participación de los stakeholders es fundamental en la ingeniería de requerimientos."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Historias de Usuario",
+      "question_text": "<p>Una historia de usuario siempre debe incluir un beneficio para el usuario.</p>",
+      "question_type": "true_false_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Verdadero",
+          "answer_weight": 100,
+          "answer_comments": "¡Correcto! El beneficio es esencial en una historia de usuario porque explica el valor que aporta la funcionalidad."
+        },
+        {
+          "answer_text": "Falso",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. El beneficio es una parte fundamental de la estructura de una historia de usuario."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Criterios del Buen Requerimiento",
+      "question_text": "<p>Selecciona características de un requerimiento bien escrito según IEEE 830:</p>",
+      "question_type": "multiple_answers_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Claro",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Verificable",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Consistente",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Decorativo",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. Los requerimientos no deben ser decorativos, sino funcionales y precisos."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Atributos de Calidad",
+      "question_text": "<p>Selecciona atributos de calidad del software:</p>",
+      "question_type": "multiple_answers_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "Usabilidad",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Seguridad",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Color del logo",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. El color del logo es un aspecto de diseño gráfico, no un atributo de calidad del software."
+        },
+        {
+          "answer_text": "Tamaño del servidor",
+          "answer_weight": 0,
+          "answer_comments": "Incorrecto. El tamaño del servidor es un aspecto de infraestructura, no un atributo de calidad del software."
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Requerimiento Funcional",
+      "question_text": "<p>Escribe un ejemplo de requerimiento funcional válido.</p>",
+      "question_type": "short_answer_question",
+      "points_possible": 0.4,
+      "answers": [
+        {
+          "answer_text": "El sistema debe permitir registrar usuarios",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "El sistema debe permitir el registro de usuarios",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Permitir registrar usuarios",
+          "answer_weight": 100,
+          "answer_comments": ""
+        },
+        {
+          "answer_text": "Registrar usuarios",
+          "answer_weight": 100,
+          "answer_comments": ""
+        }
+      ]
+    }
+  },
+  {
+    "question": {
+      "question_name": "Historia de Usuario - Marketplace",
+      "question_text": "<p>Redacta una historia de usuario para el caso &quot;Marketplace Agrícola&quot;.</p>",
+      "question_type": "essay_question",
+      "points_possible": 0.4,
+      "answers": []
+    }
+  }
+]

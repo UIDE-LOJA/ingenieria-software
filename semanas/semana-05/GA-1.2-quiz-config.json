@@ -1,0 +1,24 @@
+{
+  "quiz": {
+    "title": "GA-1.2 — Evaluación Teórica: Ingeniería de Software y Requerimientos",
+    "description": "<p>Esta evaluación cubre los conceptos fundamentales de Ingeniería de Software estudiados en la semana 5, incluyendo: Crisis del Software, historias de usuario, criterios de aceptación, requerimientos funcionales y no funcionales, atributos de calidad del software, participación de stakeholders, y estándares IEEE 830 para documentación de requerimientos.</p><p><strong>Instrucciones:</strong></p><ul><li>Lee cuidadosamente cada pregunta antes de responder</li><li>Algunas preguntas tienen múltiples respuestas correctas</li><li>Tienes 60 minutos para completar la evaluación</li><li>Solo tienes 1 intento</li></ul>",
+    "quiz_type": "assignment",
+    "time_limit": 60,
+    "allowed_attempts": 1,
+    "scoring_policy": "keep_highest",
+    "cant_go_back": false,
+    "shuffle_answers": true,
+    "show_correct_answers": "always",
+    "show_correct_answers_last_attempt": false,
+    "one_question_at_a_time": false,
+    "require_lockdown_browser": false,
+    "require_lockdown_browser_for_results": false,
+    "access_code": "",
+    "ip_filter": "",
+    "due_at": null,
+    "lock_at": null,
+    "unlock_at": null,
+    "published": false,
+    "points_possible": 4
+  }
+}
